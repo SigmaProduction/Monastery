@@ -1,0 +1,50 @@
+version: '3'
+
+networks:
+  appnetwork:
+
+services:
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-service
+    ports:
+      - "9000:80"
+    volumes:
+      - ./:/var/www/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - appnetwork
+
+  mysql:
+    image: mysql:5.7.32
+    platform: linux/x86_64
+    container_name: mysql-service
+    restart: on-failure
+    tty: true
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: monasteries_app
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password1
+      MYSQL_ROOT_PASSWORD: password1
+    networks:
+      - appnetwork
+
+  php:
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-service
+    volumes:
+      - ./:/var/www/html
+    command: "sh entrypoint.sh"
+    networks:
+      - appnetwork
