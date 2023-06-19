@@ -48,3 +48,5 @@ services:
     command: "sh entrypoint.sh"
     networks:
       - appnetwork
+    ports:
+      - "3000:9000"
