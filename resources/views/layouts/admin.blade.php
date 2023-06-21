@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - AdminLTE</title>
+    <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -38,6 +39,11 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <!-- Other sidebar menu items -->
                             <li class="nav-item">
+                                <a class="nav-link {{ Request::is('admin/menus') ? 'active' : '' }}" href="{{ route('admin.menus.index') }}">
+                                    <p>Menus</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="nav-icon fas fa-sign-out-alt"></i>
                                     <p>Logout</p>
@@ -68,5 +74,5 @@
         @endif
     </div>
 </body>
-
+@yield('js')
 </html>

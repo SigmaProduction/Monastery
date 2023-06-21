@@ -28,10 +28,11 @@ Route::post('admin/login', [AdminAuthController::class, 'login'])->name('login.s
 Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
     Route::post('admin/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
-    Route::get('/menus', [MenuController::class, 'index']);
+    Route::get('/menus', [MenuController::class, 'index'])->name('admin.menus.index');
     Route::get('/menus/create', [MenuController::class, 'create']);
     Route::post('/menus', [MenuController::class, 'store']);
     Route::get('/menus/{id}/edit', [MenuController::class, 'edit']);
     Route::patch('/menus/{id}', [MenuController::class, 'update']);
     Route::delete('/menus/{id}', [MenuController::class, 'destroy']);
+    Route::post('/menu/update-order', [MenuController::class, 'updateOrder'])->name('menu.updateOrder');
 });

@@ -14,7 +14,7 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $menus = Menu::paginate(10);
+        $menus = Menu::orderBy('order')->get();
         return view('admin.menus.index', compact('menus'));
     }
 
@@ -38,7 +38,10 @@ class MenuController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $menu = Menu::create($request->only('name'));
+        $menu = new Menu();
+        $menu->name = $request->input('name');
+        $menu->order = Menu::max('order') + 1; // Assign the last order value + 1
+        $menu->save();
 
         return redirect('/admin/menus')->with('success', 'Menu created successfully.');
     }
@@ -76,5 +79,18 @@ class MenuController extends Controller
         $menu->delete();
 
         return redirect('/admin/menus')->with('success', 'Menu deleted successfully.');
+    }
+
+    public function updateOrder(Request $request)
+    {
+        $menuOrder = $request->input('menu');
+
+        foreach ($menuOrder as $index => $menuId) {
+            $menu = Menu::findOrFail($menuId);
+            $menu->order = $index + 1;
+            $menu->save();
+        }
+
+        return response()->json(['success' => true]);
     }
 }
