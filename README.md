@@ -44,19 +44,19 @@ Brief description or introduction of the project.
 7. Install Composer dependencies:
 
    ```bash
-   docker-compose exec app composer install
+   docker-compose exec php composer install
    ```
 
 8. Generate the application key:
 
    ```bash
-   docker-compose exec app php artisan key:generate
+   docker-compose exec php php artisan key:generate
    ```
 
 9. Run database migrations:
 
    ```bash
-   docker-compose exec app php artisan migrate
+   docker-compose exec php php artisan migrate
    ```
 
 10. Access the application:
