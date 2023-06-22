@@ -10,6 +10,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Auto fadeout the success alert after 1 seconds (1000 milliseconds)
+            $('.alert-success').delay(1000).fadeOut('slow');
+        });
+    </script>
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="{{ (!auth()->check()) ? 'login-page' : '' }}">
@@ -45,7 +51,6 @@
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="nav-icon fas fa-sign-out-alt"></i>
                                     <p>Logout</p>
                                 </a>
                                 <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
@@ -61,6 +66,11 @@
 
         <!-- Content Wrapper -->
         <div class="{{ auth()->check() ? 'content-wrapper' : 'login-box' }}">
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show">
+                    {{ session('success') }}
+                </div>
+            @endif
             <section class="content">
                 @yield('content')
             </section>
