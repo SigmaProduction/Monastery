@@ -15,7 +15,9 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::orderBy('order')->get();
-        return view('admin.menus.index', compact('menus'));
+        return view('admin.menus.index', [
+            "menus" => $menus
+        ]);
     }
 
     public function create()
@@ -49,7 +51,9 @@ class MenuController extends Controller
     public function edit($id)
     {
         $menu = Menu::findOrFail($id);
-        return view('admin.menus.edit', compact('menu'));
+        return view('admin.menus.edit',  [
+            "menu" => $menu
+        ]);
     }
 
     public function update(Request $request, $id)
