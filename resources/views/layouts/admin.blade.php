@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - AdminLTE</title>
+    <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Auto fadeout the success alert after 1 seconds (1000 milliseconds)
+            $('.alert-success').delay(1000).fadeOut('slow');
+        });
+    </script>
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="{{ (!auth()->check()) ? 'login-page' : '' }}">
@@ -38,8 +45,12 @@
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                             <!-- Other sidebar menu items -->
                             <li class="nav-item">
+                                <a class="nav-link {{ Request::is('admin/menus') ? 'active' : '' }}" href="{{ route('admin.menus.index') }}">
+                                    <p>Menus</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                    <i class="nav-icon fas fa-sign-out-alt"></i>
                                     <p>Logout</p>
                                 </a>
                                 <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
@@ -55,6 +66,11 @@
 
         <!-- Content Wrapper -->
         <div class="{{ auth()->check() ? 'content-wrapper' : 'login-box' }}">
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible fade show">
+                    {{ session('success') }}
+                </div>
+            @endif
             <section class="content">
                 @yield('content')
             </section>
@@ -68,5 +84,5 @@
         @endif
     </div>
 </body>
-
+@yield('js')
 </html>
