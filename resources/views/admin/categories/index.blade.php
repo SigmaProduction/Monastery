@@ -11,6 +11,34 @@
 @section('content')
     <div class="card">
         <div class="card-header">
+            <h3 class="card-title">Search Categories</h3>
+        </div>
+        <div class="card-body">
+            <form action="{{ route('categories.index') }}" method="get">
+                <div class="input-group mb-3">
+                    <input type="text" name="search" class="form-control" placeholder="Search by name..." value="{{ request('search') }}">
+
+                    <!-- Dropdown for menu_id -->
+                    <select name="menu_id" class="form-control">
+                        <option value="">Select Menu</option>
+                        @foreach($menus as $menu)
+                            <option value="{{ $menu->id }}" {{ (request('menu_id') == $menu->id) ? 'selected' : '' }}>
+                                {{ $menu->name }}
+                            </option>
+                        @endforeach
+                    </select>
+
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-header">
             <h3 class="card-title">Categories</h3>
             <div class="card-tools">
                 <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Create Category</a>
@@ -20,30 +48,33 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Meta Content</th>
                     <th>Menu</th>
+                    <th>Name</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($categories as $category)
-                    <tr>
-                        <td>{{ $category->name }}</td>
-                        <td>{{ $category->meta_content }}</td>
-                        <td>{{ $category->menu->name }}</td>
-                        <td>
-                            <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                            <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline-block;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this category?')">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
+                    @forelse($categories as $category)
+                        <tr>
+                            <td>{{ $category->menu->name }}</td>
+                            <td>{{ $category->name }}</td>
+                            <td>
+                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline-block;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this category?')">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="4">No results found for the given filters.</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
+            {{ $categories->appends(request()->query())->links('vendor.pagination.bootstrap-4') }}
         </div>
     </div>
 @stop

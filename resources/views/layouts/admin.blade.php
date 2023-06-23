@@ -18,7 +18,7 @@
     </script>
 </head>
 <body class="hold-transition sidebar-mini">
-    <div class="{{ (!auth()->check()) ? 'login-page' : '' }}">
+    <div class="{{ (!auth()->check()) ? 'login-page' : 'wrapper' }}">
         <!-- Navbar -->
         @if (auth()->check())
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -50,7 +50,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('admin/categoties') ? 'active' : '' }}" href="{{ route('categories.index') }}">
+                                <a class="nav-link {{ Request::is('admin/categories') ? 'active' : '' }}" href="{{ route('categories.index') }}">
                                     <p>Categories</p>
                                 </a>
                             </li>

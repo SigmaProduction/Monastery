@@ -11,10 +11,21 @@ use Illuminate\Support\Facades\Validator;
 
 class CategoriesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::all();
-        return view('admin.categories.index', compact('categories'));
+        $query = Category::query();
+
+        if ($request->get('search')) {
+            $query->where('name', 'like', '%' . $request->get('search') . '%');
+        }
+
+        if ($request->get('menu_id')) {
+            $query->where('menu_id', $request->get('menu_id'));
+        }
+
+        $categories = $query->paginate(10);
+        $menus = Menu::all();
+        return view('admin.categories.index', compact('categories', 'menus'));
     }
 
     public function create()
