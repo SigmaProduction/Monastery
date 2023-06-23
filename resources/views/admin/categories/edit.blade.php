@@ -19,6 +19,20 @@
                 @method('PUT')
 
                 <div class="form-group">
+                    <label for="menu_id">Menu</label>
+                    <select name="menu_id" id="menu_id" class="form-control{{ $errors->has('menu_id') ? ' is-invalid' : '' }}">
+                        @foreach($menus as $menu)
+                            <option value="{{ $menu->id }}" {{ old('menu_id', $category->menu_id) == $menu->id ? 'selected' : '' }}>{{ $menu->name }}</option>
+                        @endforeach
+                    </select>
+                    @if ($errors->has('menu_id'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('menu_id') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+                <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" value="{{ old('name', $category->name) }}">
                     @if ($errors->has('name'))
@@ -34,20 +48,6 @@
                     @if ($errors->has('meta_content'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('meta_content') }}</strong>
-                        </span>
-                    @endif
-                </div>
-
-                <div class="form-group">
-                    <label for="menu_id">Menu</label>
-                    <select name="menu_id" id="menu_id" class="form-control{{ $errors->has('menu_id') ? ' is-invalid' : '' }}">
-                        @foreach($menus as $menu)
-                            <option value="{{ $menu->id }}" {{ old('menu_id', $category->menu_id) == $menu->id ? 'selected' : '' }}>{{ $menu->name }}</option>
-                        @endforeach
-                    </select>
-                    @if ($errors->has('menu_id'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('menu_id') }}</strong>
                         </span>
                     @endif
                 </div>
