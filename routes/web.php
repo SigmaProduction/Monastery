@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\CategoriesController;
 
 
 /*
@@ -35,4 +36,5 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::patch('/menus/{id}', [MenuController::class, 'update']);
     Route::delete('/menus/{id}', [MenuController::class, 'destroy']);
     Route::post('/menu/update-order', [MenuController::class, 'updateOrder'])->name('menu.updateOrder');
+    Route::resource('categories', CategoriesController::class);
 });

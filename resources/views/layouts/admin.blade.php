@@ -50,6 +50,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link {{ Request::is('admin/categoties') ? 'active' : '' }}" href="{{ route('categories.index') }}">
+                                    <p>Categories</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <p>Logout</p>
                                 </a>

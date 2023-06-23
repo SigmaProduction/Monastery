@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -51,8 +52,11 @@ class MenuController extends Controller
     public function edit($id)
     {
         $menu = Menu::findOrFail($id);
+        $categories = $menu->categories()->orderBy('order')->get();
+
         return view('admin.menus.edit',  [
-            "menu" => $menu
+            "menu" => $menu,
+            "categories" => $categories
         ]);
     }
 
@@ -71,6 +75,19 @@ class MenuController extends Controller
         $menu->name = $request->input('name');
 
         if ($menu->save()) {
+            // Update the order of categories
+            $categoryOrder = json_decode($request->input('category_order'));
+
+            if (!empty($categoryOrder)) {
+                foreach ($categoryOrder as $index => $categoryId) {
+                    $category = Category::find($categoryId);
+                    if ($category) {
+                        $category->order = $index + 1; // Assuming the order starts from 1
+                        $category->save();
+                    }
+                }
+            }
+
             return redirect('/admin/menus')->with('success', 'Menu updated successfully.');
         } else {
             return redirect()->back()->with('error', 'Failed to update menu.')->withInput();
