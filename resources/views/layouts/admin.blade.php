@@ -7,9 +7,23 @@
     <link rel="stylesheet" href="{{ asset('css/admin/app.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/summernote/summernote-bs4.min.css">
+
+    <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/js/adminlte.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AdminLTE JS -->
+    <script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js?v=3.2.0"></script>
+
+    <!-- Summernote JS -->
+    <script src="https://adminlte.io/themes/v3/plugins/summernote/summernote-bs4.min.js"></script>
+
     <script>
         $(document).ready(function() {
             // Auto fadeout the success alert after 1 seconds (1000 milliseconds)
@@ -52,6 +66,11 @@
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::is('admin/categories') ? 'active' : '' }}" href="{{ route('categories.index') }}">
                                     <p>Categories</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Request::is('admin/about_us') ? 'active' : '' }}" href="{{ route('admin.about_us.edit') }}">
+                                    <p>About us</p>
                                 </a>
                             </li>
                             <li class="nav-item">

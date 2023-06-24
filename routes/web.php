@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\CategoriesController;
+use App\Http\Controllers\Admin\AboutUsController;
 
 
 /*
@@ -37,4 +38,6 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::delete('/menus/{id}', [MenuController::class, 'destroy']);
     Route::post('/menu/update-order', [MenuController::class, 'updateOrder'])->name('menu.updateOrder');
     Route::resource('categories', CategoriesController::class);
+    Route::get('/about_us', [AboutUsController::class, 'edit'])->name('admin.about_us.edit');
+    Route::post('/about_us', [AboutUsController::class, 'update'])->name('admin.about_us.update');
 });
