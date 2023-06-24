@@ -25,17 +25,18 @@
                 </div>
                 <div class="form-group">
                     <label>Categories</label>
+                    <div class="d-flex justify-content-end">
+                        <a href="{{ url('/admin/categories?menu_id=' . $menu->id) }}" class="btn btn-secondary mb-2">View Categories</a>
+                    </div>
                     <table id="sortable" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Id</th>
                                 <th>Name</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($categories as $category)
                                 <tr data-id="{{ $category->id }}">
-                                    <td>{{ $category->id }}</td>
                                     <td>{{ $category->name }}</td>
                                 </tr>
                             @endforeach

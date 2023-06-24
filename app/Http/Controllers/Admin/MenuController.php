@@ -97,6 +97,11 @@ class MenuController extends Controller
     public function destroy($id)
     {
         $menu = Menu::findOrFail($id);
+
+        if ($menu->categories()->count() > 0) {
+            return redirect('/admin/menus')->with('error', 'Cannot delete menu that has categories.');
+        }
+
         $menu->delete();
 
         return redirect('/admin/menus')->with('success', 'Menu deleted successfully.');

@@ -18,7 +18,6 @@
             <table class="table table-bordered sortable table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Name</th>
                         <th>Actions</th>
                     </tr>
@@ -26,7 +25,6 @@
                 <tbody>
                     @foreach($menus as $menu)
                         <tr data-menu-id="{{ $menu->id }}">
-                            <td>{{ $menu->id }}</td>
                             <td>{{ $menu->name }}</td>
                             <td>
                                 <a href="{{ url('/admin/menus/' . $menu->id . '/edit') }}" class="btn btn-sm btn-primary">Edit</a>

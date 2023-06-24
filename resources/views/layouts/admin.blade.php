@@ -13,7 +13,7 @@
     <script>
         $(document).ready(function() {
             // Auto fadeout the success alert after 1 seconds (1000 milliseconds)
-            $('.alert-success').delay(1000).fadeOut('slow');
+            $('.alert-success,.alert-danger').delay(1000).fadeOut('slow');
         });
     </script>
 </head>
@@ -76,6 +76,12 @@
                     {{ session('success') }}
                 </div>
             @endif
+            @if(session('error'))
+                <div class="alert alert-danger alert-dismissible fade show">
+                    {{ session('error') }}
+                </div>
+            @endif
+
             <section class="content">
                 @yield('content')
             </section>
