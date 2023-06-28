@@ -40,4 +40,5 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('categories', CategoriesController::class);
     Route::get('/about_us', [AboutUsController::class, 'edit'])->name('admin.about_us.edit');
     Route::post('/about_us', [AboutUsController::class, 'update'])->name('admin.about_us.update');
+    Route::post('/admin/about_us/upload_image', [AboutUsController::class, 'uploadImage'])->name('admin.about_us.upload_image');
 });

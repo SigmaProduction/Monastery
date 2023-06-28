@@ -9,4 +9,9 @@ class AboutUs extends Model
 {
     use HasFactory;
     protected $fillable = ['subtitle', 'title', 'description', 'content'];
+
+    public function images()
+    {
+        return $this->hasMany(AboutUsImage::class);
+    }
 }

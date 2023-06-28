@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - AdminLTE</title>
@@ -28,6 +29,11 @@
         $(document).ready(function() {
             // Auto fadeout the success alert after 1 seconds (1000 milliseconds)
             $('.alert-success,.alert-danger').delay(1000).fadeOut('slow');
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
         });
     </script>
 </head>
