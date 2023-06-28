@@ -46,7 +46,35 @@
 @section('js')
     <script>
         $(document).ready(function() {
-            $('#content').summernote();
+            $('#content').summernote({
+                callbacks: {
+                    onImageUpload: function(files) {
+                        var data = new FormData();
+                        data.append("image", files[0]);
+                        data.append("about_us_id", {{ $aboutUs->id }});
+                        $.ajax({
+                            url: '{{ route('admin.about_us.upload_image') }}',
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            data: data,
+                            type: "post",
+                            success: function(response) {
+                                var image = $('<img>').attr('src', response.url);
+                                $('#content').summernote("insertNode", image[0]);
+                            },
+                            error: function(data) {
+                                var errorMessage = 'An error occurred during image upload.';
+                                if (data && data.responseJSON && data.responseJSON.error) {
+                                    errorMessage = data.responseJSON.error;
+                                }
+                                // Display error message in a popup or any other desired way
+                                alert(errorMessage);
+                            }
+                        });
+                    }
+                }
+            });
         });
     </script>
 @stop
