@@ -12,33 +12,39 @@
             <h3 class="card-title">Edit About Us</h3>
         </div>
         <div class="card-body">
-            <form action="{{ route('admin.about_us.update') }}" method="POST">
-                @csrf
-                @method('POSt')
+            <div class="container-fluit">
+                <div class="row">
+                    <div class="col-md-8">
+                        <form action="{{ route('admin.about_us.update') }}" method="POST">
+                            @csrf
+                            @method('POSt')
 
-                <div class="form-group">
-                    <label for="subtitle">Subtitle</label>
-                    <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{ $aboutUs->subtitle }}">
+                            <div class="form-group">
+                                <label for="subtitle">Subtitle</label>
+                                <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{ $aboutUs->subtitle }}">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control" id="title" name="title" value="{{ $aboutUs->title }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" id="description" name="description">{{ $aboutUs->description }}</textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="content">Content</label>
+                                <textarea class="form-control" id="content" name="content">{{ $aboutUs->content }}</textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </div>
                 </div>
-
-
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{ $aboutUs->title }}">
-                </div>
-
-                <div class="form-group">
-                    <label for="description">Description</label>
-                    <textarea class="form-control" id="description" name="description">{{ $aboutUs->description }}</textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="content">Content</label>
-                    <textarea class="form-control" id="content" name="content">{{ $aboutUs->content }}</textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Update</button>
-            </form>
+            </div>
         </div>
     </div>
 @stop
