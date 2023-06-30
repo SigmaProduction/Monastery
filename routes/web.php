@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\AboutUsController;
+use App\Http\Controllers\Admin\PostController;
 
 
 /*
@@ -41,4 +42,5 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/about_us', [AboutUsController::class, 'edit'])->name('admin.about_us.edit');
     Route::post('/about_us', [AboutUsController::class, 'update'])->name('admin.about_us.update');
     Route::post('/admin/about_us/upload_image', [AboutUsController::class, 'uploadImage'])->name('admin.about_us.upload_image');
+    Route::resource('posts', PostController::class)->names('admin.posts');
 });
