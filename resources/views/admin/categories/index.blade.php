@@ -16,20 +16,28 @@
         <div class="card-body">
             <form action="{{ route('categories.index') }}" method="get">
                 <div class="input-group mb-3">
-                    <input type="text" name="search" class="form-control" placeholder="Search by name..." value="{{ request('search') }}">
-
-                    <!-- Dropdown for menu_id -->
-                    <select name="menu_id" class="form-control">
-                        <option value="">Select Menu</option>
-                        @foreach($menus as $menu)
-                            <option value="{{ $menu->id }}" {{ (request('menu_id') == $menu->id) ? 'selected' : '' }}>
-                                {{ $menu->name }}
-                            </option>
-                        @endforeach
-                    </select>
-
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary">Search</button>
+                    <div class="container-fluit">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <input type="text" name="search" class="form-control" placeholder="Search by name..." value="{{ request('search') }}">
+                            </div>
+                            <div class="col-md-5">
+                                <!-- Dropdown for menu_id -->
+                                <select name="menu_id" class="form-control">
+                                    <option value="">Select Menu</option>
+                                    @foreach($menus as $menu)
+                                        <option value="{{ $menu->id }}" {{ (request('menu_id') == $menu->id) ? 'selected' : '' }}>
+                                            {{ $menu->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

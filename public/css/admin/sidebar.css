@@ -1,0 +1,39 @@
+.table-hover tbody tr:hover {
+    cursor: move;
+}
+
+.user-panel img {
+    height: auto;
+    width: 13.1rem !important;
+}
+
+/* sidebar */
+body:not(.layout-fixed) .main-sidebar { 
+    background: #017EA7;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #00B4D8 !important;
+    color: #fff;
+}
+
+[class*=sidebar-dark] .user-panel { 
+    border-bottom: 1px solid #fff !important;
+}
+
+.nav > .nav-item .nav-link {
+    display: flex;
+    align-items: center;
+}
+
+.nav > .nav-item .nav-link p {
+    margin-left: 10px;
+ }
+
+ .nav > .nav-item .nav-link svg {
+    fill: #ffffff;
+ }
+
+ .btn-logout {
+    background: #c9184a;
+ }
