@@ -40,4 +40,9 @@ class Post extends Model
     {
         return $this->hasMany(PostImage::class);
     }
+
+    public function getPostTypeAttribute($value)
+    {
+        return array_search($value, $this->postTypes);
+    }
 }

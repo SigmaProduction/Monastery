@@ -80,6 +80,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link {{ Request::is('admin/posts') ? 'active' : '' }}" href="{{ route('admin.posts.index') }}">
+                                    <p>Posts</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <p>Logout</p>
                                 </a>

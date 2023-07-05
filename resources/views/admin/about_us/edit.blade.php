@@ -49,6 +49,10 @@
             $('#content').summernote({
                 callbacks: {
                     onImageUpload: function(files) {
+                        if (files.length > 1) {
+                            alert('You can only upload one image at a time.');
+                            return;
+                        }
                         var data = new FormData();
                         data.append("image", files[0]);
                         data.append("about_us_id", {{ $aboutUs->id }});

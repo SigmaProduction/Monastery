@@ -3,15 +3,16 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Create New Post</h3>
+            <h3 class="card-title">Edit Post</h3>
         </div>
         <div class="card-body">
-            <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.posts.update', $post) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
 
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}">
+                    <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $post->title) }}">
                     @error('title')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -22,7 +23,7 @@
                     <select class="form-control" id="category_id" name="category_id">
                         <option value="">Select Category</option>
                         @foreach ($categories as $id => $name)
-                            <option value="{{ $id }}">{{ $name }}</option>
+                            <option value="{{ $id }}" {{ old('category_id', $post->category_id) == $id ? 'selected' : '' }}>{{ $name }}</option>
                         @endforeach
                     </select>
                     @error('category_id')
@@ -32,7 +33,7 @@
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}">
+                    <input type="text" class="form-control" id="description" name="description" value="{{ old('description', $post->description) }}">
                     @error('description')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -45,7 +46,7 @@
                     <div class="col-sm-10">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" id="is_hide" name="is_hide" value="1" {{ old('is_hide') ? 'checked' : '' }}>
+                                <input type="checkbox" id="is_hide" name="is_hide" value="1" {{ old('is_hide', $post->is_hide) ? 'checked' : '' }}>
                                 <span class="cr"><i class="cr-icon fas fa-check"></i></span>
                             </label>
                         </div>
@@ -62,7 +63,7 @@
                     <div class="col-sm-10">
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" id="is_important" name="is_important" value="1" {{ old('is_important') ? 'checked' : '' }}>
+                                <input type="checkbox" id="is_important" name="is_important" value="1" {{ old('is_important', $post->is_important) ? 'checked' : '' }}>
                                 <span class="cr"><i class="cr-icon fas fa-check"></i></span>
                             </label>
                         </div>
@@ -84,7 +85,7 @@
                     <label for="post_type">Post Type</label>
                     <select class="form-control" id="post_type" name="post_type">
                         @foreach ($postTypes as $type => $value)
-                            <option value="{{ $value }}" {{ old('post_type') == $value ? 'selected' : '' }}>
+                            <option value="{{ $value }}" {{ old('post_type', $post->post_type) == $value ? 'selected' : '' }}>
                                 {{ ucfirst(str_replace('_', ' ', $type)) }}
                             </option>
                         @endforeach
@@ -96,13 +97,13 @@
 
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <textarea class="form-control" id="content" name="content">{{ old('content') }}</textarea>
+                    <textarea class="form-control" id="content" name="content">{{ old('content', $post->content) }}</textarea>
                     @error('content')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
     </div>

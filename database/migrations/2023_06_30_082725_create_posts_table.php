@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('user_id')->nullable();
             $table->integer('category_id')->nullable();
             $table->string('description')->nullable();
-            $table->string('content')->nullable();
+            $table->longText('content')->nullable();
             $table->boolean('is_hide')->default(false);
             $table->boolean('is_important')->default(false);
             $table->string('image')->nullable();

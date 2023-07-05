@@ -14,10 +14,8 @@
                     <thead>
                         <tr>
                             <th>Title</th>
-                            <th>User ID</th>
-                            <th>Category ID</th>
+                            <th>Category</th> <!-- Change from Category ID to Category -->
                             <th>Description</th>
-                            <th>Content</th>
                             <th>Is Hide</th>
                             <th>Is Important</th>
                             <th>Image</th>
@@ -29,18 +27,21 @@
                         @foreach ($posts as $post)
                             <tr>
                                 <td>{{ $post->title }}</td>
-                                <td>{{ $post->user_id }}</td>
-                                <td>{{ $post->category_id }}</td>
+                                <td>{{ optional($post->category)->name }}</td>
                                 <td>{{ $post->description }}</td>
-                                <td>{{ $post->content }}</td>
                                 <td>{{ $post->is_hide ? 'Yes' : 'No' }}</td>
                                 <td>{{ $post->is_important ? 'Yes' : 'No' }}</td>
-                                <td>{{ $post->image }}</td>
+                                <td>
+                                    @if($post->image)
+                                        <img src="/{{ $post->image }}" alt="{{ $post->title }}" style="width: 50px; height: 50px;"> <!-- Display Image -->
+                                    @else
+                                        No Image
+                                    @endif
+                                </td>
                                 <td>{{ $post->post_type }}</td>
                                 <td>
-                                    <a href="{{ route('admin.posts.show', $post) }}" class="btn btn-sm btn-primary">View</a>
                                     <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-sm btn-warning">Edit</a>
-                                    <form action="{{ route('admin.posts.destroy', $post) }}" method="POST" style="display: inline-block;">
+                                    <form action="{{ route('admin.posts.destroy', $post) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this post?');">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
