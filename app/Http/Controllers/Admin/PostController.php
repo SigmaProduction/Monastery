@@ -9,15 +9,27 @@ use App\Models\PostImage;
 use App\Models\Menu;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $posts = Post::all();
-        return view('admin.posts.index', compact('posts'));
+        $query = Post::query();
+
+        if ($request->get('search')) {
+            $query->where('title', 'like', '%' . $request->get('search') . '%');
+        }
+
+        if ($request->get('category_id')) {
+            $query->where('category_id', $request->get('category_id'));
+        }
+
+        $query->orderBy('created_at', 'desc');
+        $posts = $query->paginate(10);
+        $categories = Category::all();
+        return view('admin.posts.index', compact('posts', 'categories'));
     }
 
     public function create()
@@ -31,7 +43,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
             'title' => 'nullable|string',
             'user_id' => 'nullable|integer',
             'category_id' => 'nullable|integer',
@@ -39,10 +51,15 @@ class PostController extends Controller
             'content' => 'nullable|string',
             'is_hide' => 'nullable|boolean',
             'is_important' => 'nullable|boolean',
-            'image' => 'nullable|file',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'post_type' => 'nullable|integer',
         ]);
 
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $validatedData = $validator->validated();
         $post = new Post($validatedData);
         $post->user_id = Auth::id();
 
@@ -87,7 +104,7 @@ class PostController extends Controller
             'content' => 'nullable|string',
             'is_hide' => 'nullable|boolean',
             'is_important' => 'nullable|boolean',
-            'image' => 'nullable|file',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'post_type' => 'nullable|integer',
         ]);
 

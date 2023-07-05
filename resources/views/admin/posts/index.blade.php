@@ -3,6 +3,32 @@
 @section('content')
     <div class="card">
         <div class="card-header">
+            <h3 class="card-title">Search Posts</h3>
+        </div>
+        <div class="card-body">
+            <form action="{{ route('admin.posts.index') }}" method="get">
+                <div class="input-group mb-3">
+                    <input type="text" name="search" class="form-control" placeholder="Search by title..." value="{{ request('search') }}">
+
+                    <!-- Dropdown for category_id -->
+                    <select name="category_id" class="form-control">
+                        <option value="">Select Category</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}" {{ (request('category_id') == $category->id) ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
             <h3 class="card-title">All Posts</h3>
             <div class="card-tools">
                 <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">Create New Post</a>
@@ -10,7 +36,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered table-hover">
+                <table class="table table-bordered">
                     <thead>
                         <tr>
                             <th>Title</th>
@@ -24,7 +50,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($posts as $post)
+                        @forelse ($posts as $post)
                             <tr>
                                 <td>{{ $post->title }}</td>
                                 <td>{{ optional($post->category)->name }}</td>
@@ -48,9 +74,14 @@
                                     </form>
                                 </td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td colspan="8">No results found for the given filters.</td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
+                {{ $posts->appends(request()->query())->links('vendor.pagination.bootstrap-4') }}
             </div>
         </div>
     </div>
