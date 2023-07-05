@@ -38,7 +38,7 @@ class AdminAuthController extends Controller
 
         if (Auth::attempt($credentials, $remember)) {
             // Authentication passed
-            return redirect()->route('admin.index');
+            return redirect()->route('admin.menus.index');
         }
 
         // Authentication failed

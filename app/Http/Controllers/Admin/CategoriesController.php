@@ -23,6 +23,7 @@ class CategoriesController extends Controller
             $query->where('menu_id', $request->get('menu_id'));
         }
 
+        $query->orderBy('created_at', 'desc');
         $categories = $query->paginate(10);
         $menus = Menu::all();
         return view('admin.categories.index', compact('categories', 'menus'));
