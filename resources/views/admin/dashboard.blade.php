@@ -2,5 +2,5 @@
 
 @section('content')
     <!-- <h1 class="title-heading-dashboard">Welcome to the Admin Dashboard</h1> -->
-    <img src="/images/admin/background-nhadong.png" alt="background-nhadong" />
+    <img class="dashboard-img" src="/images/admin/background-nhadong.png" alt="background-nhadong" />
 @endsection
