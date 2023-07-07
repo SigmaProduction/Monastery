@@ -17,6 +17,8 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $query = Post::query();
+        $post = new Post();
+        $postTypes = $post->postTypes;
 
         if ($request->get('search')) {
             $query->where('title', 'like', '%' . $request->get('search') . '%');
@@ -26,10 +28,14 @@ class PostController extends Controller
             $query->where('category_id', $request->get('category_id'));
         }
 
+        if ($request->get('post_type') != null) {
+            $query->where('post_type', $request->get('post_type'));
+        }
+
         $query->orderBy('created_at', 'desc');
         $posts = $query->paginate(10);
         $categories = Category::all();
-        return view('admin.posts.index', compact('posts', 'categories'));
+        return view('admin.posts.index', compact('posts', 'categories', 'postTypes'));
     }
 
     public function create()
@@ -45,6 +51,7 @@ class PostController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'nullable|string',
+            'url' => 'nullable|string',
             'user_id' => 'nullable|integer',
             'category_id' => 'nullable|integer',
             'description' => 'nullable|string',
@@ -98,6 +105,7 @@ class PostController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'nullable|string',
+            'url' => 'nullable|string',
             'user_id' => 'nullable|integer',
             'category_id' => 'nullable|integer',
             'description' => 'nullable|string',

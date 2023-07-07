@@ -19,11 +19,14 @@ class Post extends Model
         'is_important',
         'image',
         'post_type',
+        'url'
     ];
 
     public $postTypes = [
         'default_post' => 0,
         'mega_post' => 1,
+        'video_post' => 2,
+        'postcard_post' => 3,
     ];
 
     public function user()
