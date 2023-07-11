@@ -7,7 +7,7 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\PostController;
-
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +20,10 @@ use App\Http\Controllers\Admin\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/gioi-thieu', [HomeController::class, 'introduce']);
+Route::get('/ho-tro', [HomeController::class, 'support']);
+Route::get('/quyen-gop', [HomeController::class, 'donate']);
 
 Route::get('admin/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
 Route::post('admin/login', [AdminAuthController::class, 'login'])->name('login.submit');
