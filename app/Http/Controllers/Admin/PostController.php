@@ -94,16 +94,18 @@ class PostController extends Controller
         return view('admin.posts.show', compact('post'));
     }
 
+
     public function edit(Post $post)
     {
         $categories = Category::pluck('name', 'id');
         $postTypes = $post->postTypes;
+
         return view('admin.posts.edit', compact('post', 'categories', 'postTypes'));
     }
 
     public function update(Request $request, Post $post)
     {
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
             'title' => 'nullable|string',
             'url' => 'nullable|string',
             'user_id' => 'nullable|integer',
@@ -115,6 +117,12 @@ class PostController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'post_type' => 'nullable|integer',
         ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $validatedData = $validator->validated();
 
         if($request->hasFile('image')) {
             $file = $request->file('image');
@@ -130,6 +138,7 @@ class PostController extends Controller
 
         return redirect()->route('admin.posts.index')->with('success', 'Post updated successfully.');
     }
+
 
     public function destroy(Post $post)
     {
