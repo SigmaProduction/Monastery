@@ -17,6 +17,8 @@ class PostController extends Controller
     public function index(Request $request)
     {
         $query = Post::query();
+        $post = new Post();
+        $postTypes = $post->postTypes;
 
         if ($request->get('search')) {
             $query->where('title', 'like', '%' . $request->get('search') . '%');
@@ -26,10 +28,14 @@ class PostController extends Controller
             $query->where('category_id', $request->get('category_id'));
         }
 
+        if ($request->get('post_type') != null) {
+            $query->where('post_type', $request->get('post_type'));
+        }
+
         $query->orderBy('created_at', 'desc');
         $posts = $query->paginate(10);
         $categories = Category::all();
-        return view('admin.posts.index', compact('posts', 'categories'));
+        return view('admin.posts.index', compact('posts', 'categories', 'postTypes'));
     }
 
     public function create()
@@ -45,6 +51,7 @@ class PostController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'title' => 'nullable|string',
+            'url' => 'nullable|string',
             'user_id' => 'nullable|integer',
             'category_id' => 'nullable|integer',
             'description' => 'nullable|string',
@@ -87,17 +94,20 @@ class PostController extends Controller
         return view('admin.posts.show', compact('post'));
     }
 
+
     public function edit(Post $post)
     {
         $categories = Category::pluck('name', 'id');
         $postTypes = $post->postTypes;
+
         return view('admin.posts.edit', compact('post', 'categories', 'postTypes'));
     }
 
     public function update(Request $request, Post $post)
     {
-        $validatedData = $request->validate([
+        $validator = Validator::make($request->all(), [
             'title' => 'nullable|string',
+            'url' => 'nullable|string',
             'user_id' => 'nullable|integer',
             'category_id' => 'nullable|integer',
             'description' => 'nullable|string',
@@ -107,6 +117,12 @@ class PostController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'post_type' => 'nullable|integer',
         ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $validatedData = $validator->validated();
 
         if($request->hasFile('image')) {
             $file = $request->file('image');
@@ -122,6 +138,7 @@ class PostController extends Controller
 
         return redirect()->route('admin.posts.index')->with('success', 'Post updated successfully.');
     }
+
 
     public function destroy(Post $post)
     {

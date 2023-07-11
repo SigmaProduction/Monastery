@@ -8,20 +8,43 @@
         <div class="card-body">
             <form action="{{ route('admin.posts.index') }}" method="get">
                 <div class="input-group mb-3">
-                    <input type="text" name="search" class="form-control" placeholder="Search by title..." value="{{ request('search') }}">
+                    <div class="col-md-2">
+                        <input type="text" name="search" class="form-control" placeholder="Search by title..." value="{{ request('search') }}">
+                    </div>
 
                     <!-- Dropdown for category_id -->
-                    <select name="category_id" class="form-control">
-                        <option value="">Select Category</option>
-                        @foreach($categories as $category)
-                            <option value="{{ $category->id }}" {{ (request('category_id') == $category->id) ? 'selected' : '' }}>
-                                {{ $category->name }}
-                            </option>
-                        @endforeach
-                    </select>
+                    <div class="col-md-4">
+                        <select name="category_id" class="form-control">
+                            <option value="">Select Category</option>
+                            @foreach($categories as $category)
+                                <option value="{{ $category->id }}" {{ (request('category_id') == $category->id) ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
 
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary">Search</button>
+                    <!-- Dropdown for post_type -->
+                    <div class="col-md-4">
+                        <select class="form-control" name="post_type">
+                            <option value="" {{ request('post_type') == null ? 'selected' : '' }}>Select Post type</option>
+                            @foreach ($postTypes as $type => $value)
+                                @if ($value == 0)
+                                    <option value="{{ $value }}" {{ request('post_type') != null && request('post_type') == $value ? 'selected' : '' }}>
+                                        {{ ucfirst(str_replace('_', ' ', $type)) }}
+                                    </option>
+                                @else
+                                    <option value="{{ $value }}" {{ request('post_type') == $value ? 'selected' : '' }}>
+                                        {{ ucfirst(str_replace('_', ' ', $type)) }}
+                                    </option>
+                                @endif
+                            @endforeach
+                        </select>
+                    </div>
+
+
+                    <div class="input-group col-md-2">
+                        <button type="submit" class="btn btn-primary form-control">Search</button>
                     </div>
                 </div>
             </form>
