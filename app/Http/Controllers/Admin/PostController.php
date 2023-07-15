@@ -73,9 +73,9 @@ class PostController extends Controller
         if($request->hasFile('image')) {
             $file = $request->file('image');
             $imageName = time().'.'.$file->extension();
-            $imagePath = 'public/image/post_images/' . $post->id . '/' . $imageName;
+            $imagePath = 'image/post_images/' . $post->id . '/' . $imageName;
 
-            $file->move(public_path('public/image/post_images/' . $post->id), $imageName);
+            $file->move(public_path('image/post_images/' . $post->id), $imageName);
 
             $postImage = new PostImage();
             $postImage->image_path = $imagePath;
@@ -127,9 +127,9 @@ class PostController extends Controller
         if($request->hasFile('image')) {
             $file = $request->file('image');
             $imageName = time().'.'.$file->extension();
-            $imagePath = 'public/image/post_images/' . $post->id . '/' . $imageName;
+            $imagePath = 'image/post_images/' . $post->id . '/' . $imageName;
 
-            $file->move(public_path('public/image/post_images/' . $post->id), $imageName);
+            $file->move(public_path('image/post_images/' . $post->id), $imageName);
 
             $validatedData['image'] = $imagePath;
         }
@@ -152,9 +152,9 @@ class PostController extends Controller
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             $imageName = time().'.'.$file->extension();
-            $imagePath = 'public/image/post_images/' . $imageName;
+            $imagePath = 'image/post_images/' . $imageName;
 
-            $file->move(public_path('public/image/post_images'), $imageName);
+            $file->move(public_path('image/post_images'), $imageName);
 
             return response()->json(['location' => asset($imagePath)], 200);
         } else {

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ImageSlidersController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -45,4 +46,5 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::post('/admin/about_us/upload_image', [AboutUsController::class, 'uploadImage'])->name('admin.about_us.upload_image');
     Route::resource('posts', PostController::class)->names('admin.posts');
     Route::post('admin/posts/upload', [PostController::class, 'uploadEditorImage'])->name('admin.posts.upload_image');
+    Route::resource('image_sliders', ImageSlidersController::class);
 });
