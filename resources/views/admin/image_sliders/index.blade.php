@@ -58,7 +58,7 @@
                         <td><img src="{{ asset($slider->url) }}" height="50px" width="50px" /></td>
                         <td>{{ $slider->image_type }}</td>
                         <td>
-                            <a href="{{ route('image_sliders.edit', $slider->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{ route('image_sliders.edit', $slider->id) }}" class="btn btn-sm btn-warning">Edit</a>
                             <form action="{{ route('image_sliders.destroy', $slider->id) }}" method="POST" style="display: inline-block;">
                                 @csrf
                                 @method('DELETE')

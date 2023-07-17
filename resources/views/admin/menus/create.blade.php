@@ -20,7 +20,10 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a href="{{ route('admin.menus.index') }}" class="btn btn-default">Back</a>
+                </div>
             </form>
         </div>
     </div>
