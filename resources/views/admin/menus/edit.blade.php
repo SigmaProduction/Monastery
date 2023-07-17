@@ -31,12 +31,18 @@
                     <table id="sortable" class="table table-bordered table-hover">
                         <thead>
                             <tr>
+                                <th></th>
                                 <th>Name</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($categories as $category)
                                 <tr data-id="{{ $category->id }}">
+                                    <td style="width: 2px;">
+                                        <span class="handle ui-sortable-handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                    </td>
                                     <td>{{ $category->name }}</td>
                                 </tr>
                             @endforeach
@@ -44,7 +50,10 @@
                     </table>
                 </div>
                 <input type="hidden" name="category_order" id="categoryOrderInput">
-                <button type="submit" class="btn btn-primary">Update</button>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a href="{{ route('admin.menus.index') }}" class="btn btn-default">Back</a>
+                </div>
             </form>
         </div>
     </div>

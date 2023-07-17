@@ -60,35 +60,20 @@
                     @enderror
                 </div>
 
-                <div class="form-group row">
-                    <div class="col-sm-2">
-                        <label for="is_hide" id="is_hide_label">Is Hide</label>
-                    </div>
-                    <div class="col-sm-10">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" id="is_hide" name="is_hide" value="1" {{ old('is_hide') ? 'checked' : '' }}>
-                                <span class="cr"><i class="cr-icon fas fa-check"></i></span>
-                            </label>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="is_hide" id="is_hide_label" class="form-group">Is Hide
+                        <input type="checkbox" id="is_hide" name="is_hide" value="1" {{ old('is_hide') ? 'checked' : '' }}>
+                    </label>
+
                     @error('is_hide')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
 
-                <div class="form-group row">
-                    <div class="col-sm-2">
-                        <label for="is_important" id="is_important_label">Is Important</label>
-                    </div>
-                    <div class="col-sm-10">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" id="is_important" name="is_important" value="1" {{ old('is_important') ? 'checked' : '' }}>
-                                <span class="cr"><i class="cr-icon fas fa-check"></i></span>
-                            </label>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="is_important" id="is_important_label" class="form-group">Is Important
+                        <input type="checkbox" id="is_important" name="is_important" value="1" {{ old('is_important') ? 'checked' : '' }}>
+                    </label>
                     @error('is_important')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -110,7 +95,10 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <a href="{{ route('admin.posts.index') }}" class="btn btn-default">Back</a>
+                </div>
             </form>
         </div>
     </div>
@@ -119,7 +107,7 @@
     <script>
         $(document).ready(function() {
             function toggleFields(postTypeVal) {
-                if (postTypeVal.includes('2') || postTypeVal.includes('3')) {
+                if (postTypeVal.includes('2') || postTypeVal.includes('3') || postTypeVal.includes('4')) {
                     $('#title, #title_label, #url, #url_label').show(); // Show title and url and their labels
                     // Hide other fields and their labels
                     $('#category_id, #category_id_label, #description, #description_label, #is_hide, #is_hide_label, #is_important, #is_important_label, #image, #image_label, #content_label').hide();
