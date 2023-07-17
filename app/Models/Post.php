@@ -27,6 +27,7 @@ class Post extends Model
         'mega_post' => 1,
         'video_post' => 2,
         'postcard_post' => 3,
+        'pdf_post' => 4,
     ];
 
     public function user()
