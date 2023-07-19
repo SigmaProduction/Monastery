@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\CategoriesController;
 use App\Http\Controllers\Admin\AboutUsController;
 use App\Http\Controllers\Admin\MonetaryInformationController;
+use App\Http\Controllers\Admin\SalediengMonthController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImageSlidersController;
 use App\Http\Controllers\HomeController;
@@ -50,4 +51,5 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::resource('image_sliders', ImageSlidersController::class);
     Route::get('/monetary_information', [MonetaryInformationController::class, 'edit'])->name('admin.monetary_information.edit');
     Route::post('/monetary_information', [MonetaryInformationController::class, 'update'])->name('admin.monetary_information.update');
+    Route::resource('/saledieng_months', SalediengMonthController::class)->names('admin.saledieng_months');
 });
