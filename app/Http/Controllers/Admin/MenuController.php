@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +16,9 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::orderBy('order')->get();
-        return view('admin.menus.index', compact('menus'));
+        return view('admin.menus.index', [
+            "menus" => $menus
+        ]);
     }
 
     public function create()
@@ -49,7 +52,12 @@ class MenuController extends Controller
     public function edit($id)
     {
         $menu = Menu::findOrFail($id);
-        return view('admin.menus.edit', compact('menu'));
+        $categories = $menu->categories()->orderBy('order')->get();
+
+        return view('admin.menus.edit',  [
+            "menu" => $menu,
+            "categories" => $categories
+        ]);
     }
 
     public function update(Request $request, $id)
@@ -67,6 +75,19 @@ class MenuController extends Controller
         $menu->name = $request->input('name');
 
         if ($menu->save()) {
+            // Update the order of categories
+            $categoryOrder = json_decode($request->input('category_order'));
+
+            if (!empty($categoryOrder)) {
+                foreach ($categoryOrder as $index => $categoryId) {
+                    $category = Category::find($categoryId);
+                    if ($category) {
+                        $category->order = $index + 1; // Assuming the order starts from 1
+                        $category->save();
+                    }
+                }
+            }
+
             return redirect('/admin/menus')->with('success', 'Menu updated successfully.');
         } else {
             return redirect()->back()->with('error', 'Failed to update menu.')->withInput();
@@ -76,6 +97,11 @@ class MenuController extends Controller
     public function destroy($id)
     {
         $menu = Menu::findOrFail($id);
+
+        if ($menu->categories()->count() > 0) {
+            return redirect('/admin/menus')->with('error', 'Cannot delete menu that has categories.');
+        }
+
         $menu->delete();
 
         return redirect('/admin/menus')->with('success', 'Menu deleted successfully.');

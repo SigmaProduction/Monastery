@@ -1,6 +1,6 @@
 @extends('layouts.application')
 
-@section('title', 'My Welcome Title')
+@section('title', 'My Support Title')
 
 @section('content')
     <h1>Welcome to my website</h1>

@@ -18,7 +18,7 @@
             <table class="table table-bordered sortable table-hover">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th></th>
                         <th>Name</th>
                         <th>Actions</th>
                     </tr>
@@ -26,10 +26,16 @@
                 <tbody>
                     @foreach($menus as $menu)
                         <tr data-menu-id="{{ $menu->id }}">
-                            <td>{{ $menu->id }}</td>
-                            <td>{{ $menu->name }}</td>
+                            <td style="width: 2px;">
+                                <span class="handle ui-sortable-handle">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </span>
+                            </td>
                             <td>
-                                <a href="{{ url('/admin/menus/' . $menu->id . '/edit') }}" class="btn btn-sm btn-primary">Edit</a>
+                                {{ $menu->name }}
+                            </td>
+                            <td>
+                                <a href="{{ url('/admin/menus/' . $menu->id . '/edit') }}" class="btn btn-sm btn-warning">Edit</a>
                                 <form action="{{ url('/admin/menus/' . $menu->id) }}" method="POST" style="display: inline;">
                                     @csrf
                                     @method('DELETE')
