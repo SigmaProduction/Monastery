@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->string('name')->nullable();
-            $table->string('date')->nullable();
+            $table->string('birth_date')->nullable();
+            $table->string('death_date')->nullable();
+            $table->text('description')->nullable();
+            $table->bigInteger('saledieng_month_id');
             $table->timestamps();
         });
     }
