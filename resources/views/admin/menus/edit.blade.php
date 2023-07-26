@@ -51,8 +51,8 @@
                 </div>
                 <input type="hidden" name="category_order" id="categoryOrderInput">
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Update</button>
                     <a href="{{ route('admin.menus.index') }}" class="btn btn-default">Back</a>
+                    <button type="submit" class="btn btn-primary">Update</button>
                 </div>
             </form>
         </div>

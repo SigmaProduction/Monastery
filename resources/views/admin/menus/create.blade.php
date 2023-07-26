@@ -21,8 +21,8 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Create</button>
                     <a href="{{ route('admin.menus.index') }}" class="btn btn-default">Back</a>
+                    <button type="submit" class="btn btn-primary">Create</button>
                 </div>
             </form>
         </div>
