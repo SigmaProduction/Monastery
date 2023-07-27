@@ -13,7 +13,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="url">Upload Image</label>
-                    <input type="file" name="url" accept="image/*" id="url" class="form-control">
+                    <input type="file" name="url" accept="image/*" id="url" class="form-control @error('url') is-invalid @enderror">
                     @error('url')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group">
                     <label for="thumb">Thumbnail</label>
-                    <input type="text" name="thumb" id="thumb" class="form-control" placeholder="Thumbnail">
+                    <input required type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="Thumbnail" value="{{ old('thumb') }}">
                     @error('thumb')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror

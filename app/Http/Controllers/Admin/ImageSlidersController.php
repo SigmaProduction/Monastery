@@ -48,7 +48,7 @@ class ImageSlidersController extends Controller
         $validator = Validator::make($request->all(), [
             'url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_type' => 'required|integer',
-            'thumb' => 'required|string',
+            'thumb' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -82,7 +82,7 @@ class ImageSlidersController extends Controller
         $validator = Validator::make($request->all(), [
             'url' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_type' => 'required|integer',
-            'thumb' => 'required|string',
+            'thumb' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {

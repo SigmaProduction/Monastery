@@ -18,11 +18,17 @@
 
                 <div class="form-group">
                     <label for="month">Month</label>
-                    <input readonly type="text" name="month" id="month" class="form-control" value="{{ old('month', $saledieng_month->month) }}">
+                    <input readonly type="text" name="month" id="month" class="form-control @error('month') is-invalid @enderror" value="{{ old('month', $saledieng_month->month) }}">
+                    @error('month')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <input  type="text" name="content" id="content" class="form-control" value="{{ old('content', $saledieng_month->content) }}">
+                    <input type="text" name="content" id="content" class="form-control @error('content') is-invalid @enderror" value="{{ old('content', $saledieng_month->content) }}">
+                    @error('content')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">

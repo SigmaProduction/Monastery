@@ -50,15 +50,15 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'nullable|string',
-            'url' => 'nullable|string',
+            'title' => 'nullable|string|max:255',
+            'url' => 'nullable|string|max:255',
             'user_id' => 'nullable|integer',
             'category_id' => 'nullable|integer',
-            'description' => 'nullable|string',
-            'content' => 'nullable|string',
+            'description' => 'nullable|string|max:255',
+            'content' => 'nullable|string|max:255',
             'is_hide' => 'nullable|boolean',
             'is_important' => 'nullable|boolean',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'post_type' => 'nullable|integer',
         ]);
 
@@ -106,15 +106,15 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'nullable|string',
-            'url' => 'nullable|string',
+            'title' => 'nullable|string|max:255',
+            'url' => 'nullable|string|max:255',
             'user_id' => 'nullable|integer',
             'category_id' => 'nullable|integer',
-            'description' => 'nullable|string',
+            'description' => 'nullable|string|max:255',
             'content' => 'nullable|string',
             'is_hide' => 'nullable|boolean',
             'is_important' => 'nullable|boolean',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1024',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'post_type' => 'nullable|integer',
         ]);
 
