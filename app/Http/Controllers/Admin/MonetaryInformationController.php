@@ -21,10 +21,10 @@ class MonetaryInformationController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'bank_account_name' => 'required|string|max:255',
-            'bank_account_number' => 'required|string|max:255',
-            'bank_name' => 'required|string|max:255',
-            'bank_branch_name' => 'required|string|max:255',
+            'bank_account_name' => 'nullable|string|max:255',
+            'bank_account_number' => 'nullable|string|max:255',
+            'bank_name' => 'nullable|string|max:255',
+            'bank_branch_name' => 'nullable|string|max:255',
         ]);
 
         $monetary_info = MonetaryInformation::first();
