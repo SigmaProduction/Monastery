@@ -23,7 +23,10 @@ class SalediengMonthController extends Controller
 
     public function update(Request $request, SalediengMonth $saledieng_month)
     {
-        $saledieng_month->update($request->all('content'));
+        $validatedData = $request->validate([
+            'content' => 'nullable|string|max:255'
+        ]);
+        $saledieng_month->update($validatedData);
         return redirect()->route('admin.saledieng_months.edit', $saledieng_month->id)->with('success', 'Updated successfully');
     }
 }

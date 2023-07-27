@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/3.1.0/css/adminlte.min.css">
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/summernote/summernote-bs4.min.css">
 
+    <!-- Sweetalert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.min.css">
+
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -26,7 +29,18 @@
     <!-- Summernote JS -->
     <script src="https://adminlte.io/themes/v3/plugins/summernote/summernote-bs4.min.js"></script>
 
+    <!-- Sweetalert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js"></script>
+
     <script>
+        window.alertError = function(msg) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: msg
+            })
+        }
+
         $(document).ready(function() {
             // Auto fadeout the success alert after 1 seconds (1000 milliseconds)
             $('.alert-success,.alert-danger').delay(1000).fadeOut('slow');
