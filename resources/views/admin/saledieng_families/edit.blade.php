@@ -12,7 +12,7 @@
 
                 <div class="form-group">
                     <label for="saledieng_month_id">Saledieng Month</label>
-                    <select class="form-control" id="saledieng_month_id" name="saledieng_month_id">
+                    <select class="form-control @error('saledieng_month_id') is-invalid @enderror" id="saledieng_month_id" name="saledieng_month_id">
                         <option value="">Select a Saledieng Month</option>
                         @foreach ($saledieng_months as $saledieng_month)
                             <option value="{{ $saledieng_month->id }}" {{ old('saledieng_month_id', $salediengFamily->saledieng_month_id) == $saledieng_month->id ? 'selected' : '' }}>
@@ -27,7 +27,7 @@
 
                 <div class="form-group">
                     <label for="name" id="title_label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $salediengFamily->name) }}">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $salediengFamily->name) }}">
                     @error('name')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -35,7 +35,7 @@
 
                 <div class="form-group">
                     <label for="birth_date" id="title_label">Date of Birth</label>
-                    <input type="text" class="form-control" id="birth_date" name="birth_date" value="{{ old('birth_date', $salediengFamily->birth_date) }}">
+                    <input type="text" class="form-control @error('birth_date') is-invalid @enderror" id="birth_date" name="birth_date" value="{{ old('birth_date', $salediengFamily->birth_date) }}">
                     @error('birth_date')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -43,7 +43,7 @@
 
                 <div class="form-group">
                     <label for="death_date" id="title_label">Date of Death</label>
-                    <input type="text" class="form-control" id="death_date" name="death_date" value="{{ old('death_date', $salediengFamily->death_date) }}">
+                    <input type="text" class="form-control @error('death_date') is-invalid @enderror" id="death_date" name="death_date" value="{{ old('death_date', $salediengFamily->death_date) }}">
                     @error('death_date')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -51,7 +51,7 @@
 
                 <div class="form-group">
                     <label for="image" id="image_label">Image</label>
-                    <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+                    <input type="file" class="form-control-file @error('image') is-invalid @enderror" id="image" name="image" accept="image/*">
                     @error('image')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror
@@ -63,7 +63,7 @@
 
                 <div class="form-group">
                     <label for="description" id="title_label">Description</label>
-                    <textarea type="text" class="form-control" id="description" name="description">{{ old('description', $salediengFamily->description) }}</textarea>
+                    <textarea type="text" class="form-control @error('description') is-invalid @enderror" id="description" name="description">{{ old('description', $salediengFamily->description) }}</textarea>
                     @error('description')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror

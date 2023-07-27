@@ -14,7 +14,7 @@
 
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter menu name" required>
+                    <input type="text" name="name" id="name" class="form-control @error('menu') is-invalid @enderror" placeholder="Enter menu name" required>
                     @error('name')
                         <span class="text-danger">{{ $message }}</span>
                     @enderror

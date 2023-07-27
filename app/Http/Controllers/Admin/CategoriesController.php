@@ -40,6 +40,8 @@ class CategoriesController extends Controller
         $validator = validator($request->all(), [
             'name' => [
                 'required',
+                'string',
+                'max:255',
                 function ($attribute, $value, $fail) use ($request) {
                     $menuId = $request->input('menu_id');
 
@@ -53,7 +55,7 @@ class CategoriesController extends Controller
                 },
             ],
             'menu_id' => 'required|exists:menus,id',
-            'meta_content' => 'required',
+            'meta_content' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
@@ -83,6 +85,8 @@ class CategoriesController extends Controller
         $validator = validator($request->all(), [
             'name' => [
                 'required',
+                'string',
+                'max:255',
                 function ($attribute, $value, $fail) use ($request, $id) {
                     $menuId = $request->input('menu_id');
 
@@ -97,7 +101,7 @@ class CategoriesController extends Controller
                 },
             ],
             'menu_id' => 'required|exists:menus,id',
-            'meta_content' => 'required',
+            'meta_content' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
