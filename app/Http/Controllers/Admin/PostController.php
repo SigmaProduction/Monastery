@@ -61,7 +61,7 @@ class PostController extends Controller
 
     public function create()
     {
-        $categories = Category::pluck('name', 'id');
+        $categories = Category::whereNotNull('menu_id')->pluck('name', 'id');
         $post = new Post();
         $postTypes = $post->postTypes;
 
@@ -118,7 +118,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        $categories = Category::pluck('name', 'id');
+        $categories = Category::whereNotNull('menu_id')->pluck('name', 'id');
         $postTypes = $post->postTypes;
 
         return view('admin.posts.edit', compact('post', 'categories', 'postTypes'));
@@ -130,7 +130,6 @@ class PostController extends Controller
             'title' => 'nullable|string|max:255',
             'url' => 'nullable|string|max:255',
             'category_id' => 'required|integer',
-            'category_id' => 'nullable|integer',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string|max:10000',
             'is_hide' => 'nullable|boolean',
