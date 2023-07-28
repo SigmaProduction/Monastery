@@ -3,7 +3,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Search Posts</h3>
+            <h3 class="card-title">Search Archived Posts</h3>
         </div>
         <div class="card-body">
             <form action="{{ route('admin.posts.index') }}" method="get">
@@ -40,10 +40,7 @@
     </div>
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">All Posts</h3>
-            <div class="card-tools">
-                <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">Create New Post</a>
-            </div>
+            <h3 class="card-title">All Archived Posts</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
