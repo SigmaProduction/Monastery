@@ -68,10 +68,10 @@
                             <td>{{ $category->name }}</td>
                             <td>
                                 <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                <form action="{{ route('admin.categories.archive', ['category' => $category->id]) }}" method="POST" style="display: inline-block;">
+                                <form action="{{ route('admin.categories.archive', ['category' => $category->id]) }}" method="POST" style="display: inline-block;" onsubmit="return handleSubmit(this, 'Are you sure you want to archive this category?')">
                                     @csrf
                                     @method('POST')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to archive this category?')">Archive</button>
+                                    <button type="submit" class="btn btn-sm btn-danger" >Archive</button>
                                 </form>
                             </td>
                         </tr>

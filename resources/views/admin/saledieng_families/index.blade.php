@@ -72,7 +72,7 @@
                             </td>
                             <td>
                                 <a href="{{ url('/admin/saledieng_families/' . $saledieng_family->id . '/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                                <form action="{{ route('admin.saledieng_families.destroy', $saledieng_family) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                                <form action="{{ route('admin.saledieng_families.destroy', $saledieng_family) }}" method="POST" style="display: inline-block;" onsubmit="return handleSubmit(this, 'Are you sure you want to delete this post?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>

@@ -36,10 +36,10 @@
                             </td>
                             <td>
                                 <a href="{{ url('/admin/menus/' . $menu->id . '/edit') }}" class="btn btn-sm btn-warning">Edit</a>
-                                <form action="{{ url('/admin/menus/' . $menu->id) }}" method="POST" style="display: inline;">
+                                <form action="{{ url('/admin/menus/' . $menu->id) }}" method="POST" style="display: inline;" onsubmit="return handleSubmit(this, 'Are you sure you want to delete this menu?')">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this menu?')">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
                             </td>
                         </tr>

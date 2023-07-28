@@ -22,7 +22,7 @@ class MonetaryInformationController extends Controller
     {
         $validatedData = $request->validate([
             'bank_account_name' => 'nullable|string|max:255',
-            'bank_account_number' => 'nullable|string|max:255',
+            'bank_account_number' => 'nullable|integer|max:20',
             'bank_name' => 'nullable|string|max:255',
             'bank_branch_name' => 'nullable|string|max:255',
         ]);

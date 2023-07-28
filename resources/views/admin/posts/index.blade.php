@@ -90,7 +90,7 @@
                                 <td>{{ $post->post_type }}</td>
                                 <td>
                                     <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-sm btn-warning">Edit</a>
-                                    <form action="{{ route('admin.posts.archive', $post) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to archive this post?');">
+                                    <form action="{{ route('admin.posts.archive', $post) }}" method="POST" style="display: inline-block;" onsubmit="return handleSubmit(this, 'Are you sure you want to archive this post?');">
                                         @csrf
                                         @method('POST')
                                         <button type="submit" class="btn btn-sm btn-danger">Archive</button>
