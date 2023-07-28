@@ -59,10 +59,10 @@
                         <td>{{ $slider->image_type }}</td>
                         <td>
                             <a href="{{ route('image_sliders.edit', $slider->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                            <form action="{{ route('image_sliders.destroy', $slider->id) }}" method="POST" style="display: inline-block;">
+                            <form action="{{ route('image_sliders.destroy', $slider->id) }}" method="POST" style="display: inline-block;" onsubmit="return handleSubmit(this, 'Are you sure you want to delete this slider?')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this slider?')">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                             </form>
                         </td>
                     </tr>

@@ -33,6 +33,30 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.20/dist/sweetalert2.all.min.js"></script>
 
     <script>
+        window.showConfirmation = function(message) {
+            return Swal.fire({
+                title: 'Are you sure?',
+                text: message,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes'
+            }).then((result) => {
+                return result.isConfirmed;
+            });
+        }
+
+        // Handle form submission
+        window.handleSubmit = function(form, message) {
+            showConfirmation(message).then((confirmed) => {
+            if (confirmed) {
+                form.submit();
+            }
+            });
+            return false; // Prevents the form from submitting automatically
+        }
+
         window.alertError = function(msg) {
             Swal.fire({
                 icon: 'error',
