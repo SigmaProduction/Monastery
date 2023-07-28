@@ -15,6 +15,8 @@ class CategoriesController extends Controller
     {
         $query = Category::query();
 
+        // Get categories have menu_id is not null. categories which have menu_id null in archived list
+        $query->whereNotNull('menu_id');
         if ($request->get('search')) {
             $query->where('name', 'like', '%' . $request->get('search') . '%');
         }
@@ -27,6 +29,23 @@ class CategoriesController extends Controller
         $categories = $query->paginate(10);
         $menus = Menu::all();
         return view('admin.categories.index', compact('categories', 'menus'));
+    }
+
+    public function archived_categories(Request $request)
+    {
+        $query = Category::query();
+
+        // Get categories have menu_id is null. categories which have menu_id not null in categories list
+        $query->where('menu_id', null);
+
+        if ($request->get('search')) {
+            $query->where('name', 'like', '%' . $request->get('search') . '%');
+        }
+
+        $query->orderBy('created_at', 'desc');
+        $categories = $query->paginate(10);
+        $menus = Menu::all();
+        return view('admin.categories.archived_categories', compact('categories', 'menus'));
     }
 
     public function create()
@@ -126,6 +145,15 @@ class CategoriesController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('categories.index')->with('success', 'Category deleted successfully.');
+        return redirect()->route('admin.categories.archived_categories')->with('success', 'Category deleted successfully.');
+    }
+
+    public function archive(Category $category)
+    {
+        // Set category_id to null for all associated posts
+        $category->update(['menu_id' => null]);
+        $category->posts()->update(['category_id' => null]);
+
+        return redirect()->route('admin.categories.archived_categories')->with('success', 'Category archived successfully.');
     }
 }
