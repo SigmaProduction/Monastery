@@ -74,7 +74,7 @@ class PostController extends Controller
             'title' => 'nullable|string|max:255',
             'url' => 'nullable|string|max:255',
             'user_id' => 'nullable|integer',
-            'category_id' => 'nullable|integer',
+            'category_id' => 'required|integer',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string|max:10000',
             'is_hide' => 'nullable|boolean',
@@ -129,7 +129,7 @@ class PostController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'nullable|string|max:255',
             'url' => 'nullable|string|max:255',
-            'user_id' => 'nullable|integer',
+            'category_id' => 'required|integer',
             'category_id' => 'nullable|integer',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string|max:10000',
