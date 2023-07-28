@@ -29,7 +29,7 @@
 
                             <div class="form-group">
                                 <label for="bank_account_number">Bank account number</label>
-                                <input type="text" class="form-control @error('bank_account_number') is-invalid @enderror" id="bank_account_number" name="bank_account_number" value="{{ old('bank_account_number', $monetary_info->bank_account_number) }}">
+                                <input type="number" class="form-control @error('bank_account_number') is-invalid @enderror" id="bank_account_number" name="bank_account_number" value="{{ old('bank_account_number', $monetary_info->bank_account_number) }}">
                                 @error('bank_account_number')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
