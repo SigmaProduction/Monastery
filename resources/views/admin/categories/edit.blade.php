@@ -21,6 +21,7 @@
                 <div class="form-group">
                     <label for="menu_id">Menu</label>
                     <select name="menu_id" id="menu_id" class="form-control{{ $errors->has('menu_id') ? ' is-invalid' : '' }}">
+                        <option value="" selected>Please select menu</option>
                         @foreach($menus as $menu)
                             <option value="{{ $menu->id }}" {{ old('menu_id', $category->menu_id) == $menu->id ? 'selected' : '' }}>{{ $menu->name }}</option>
                         @endforeach

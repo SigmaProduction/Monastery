@@ -11,28 +11,17 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Search Categories</h3>
+            <h3 class="card-title">Search Archived Categories</h3>
         </div>
         <div class="card-body">
-            <form action="{{ route('categories.index') }}" method="get">
+            <form action="{{ route('admin.categories.archived_categories') }}" method="get">
                 <div class="input-group mb-3">
                     <div class="container-fluit">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-8">
                                 <input type="text" name="search" class="form-control" placeholder="Search by name..." value="{{ request('search') }}">
                             </div>
-                            <div class="col-md-5">
-                                <!-- Dropdown for menu_id -->
-                                <select name="menu_id" class="form-control">
-                                    <option value="">Select Menu</option>
-                                    @foreach($menus as $menu)
-                                        <option value="{{ $menu->id }}" {{ (request('menu_id') == $menu->id) ? 'selected' : '' }}>
-                                            {{ $menu->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-primary">Search</button>
                                 </div>
@@ -47,10 +36,7 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Categories</h3>
-            <div class="card-tools">
-                <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Create Category</a>
-            </div>
+            <h3 class="card-title">Archived Categories</h3>
         </div>
         <div class="card-body">
             <table class="table">
@@ -68,10 +54,10 @@
                             <td>{{ $category->name }}</td>
                             <td>
                                 <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                <form action="{{ route('admin.categories.archive', ['category' => $category->id]) }}" method="POST" style="display: inline-block;">
+                                <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline-block;">
                                     @csrf
-                                    @method('POST')
-                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to archive this category?')">Archive</button>
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this category?')">Delete</button>
                                 </form>
                             </td>
                         </tr>

@@ -98,13 +98,16 @@ class MenuController extends Controller
     {
         $menu = Menu::findOrFail($id);
 
-        if ($menu->categories()->count() > 0) {
-            return redirect('/admin/menus')->with('error', 'Cannot delete menu that has categories.');
-        }
+        // Remove menu_id from categories association
+        $menu->categories()->update(['menu_id' => null]);
 
+        if ($menu->categories()->count() > 0) {
+            return redirect('/admin/menus')->with('error', 'Cannot archive menu that has categories.');
+        }
+        // Archive the menu
         $menu->delete();
 
-        return redirect('/admin/menus')->with('success', 'Menu deleted successfully.');
+        return redirect('/admin/menus')->with('success', 'Menu archived successfully.');
     }
 
     public function updateOrder(Request $request)
