@@ -10,7 +10,6 @@ use App\Models\Menu;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
 
 class PostController extends Controller
 {
@@ -19,6 +18,7 @@ class PostController extends Controller
         $query = Post::query();
         $post = new Post();
         $postTypes = $post->postTypes;
+        $query->whereNotNull('category_id');
 
         if ($request->get('search')) {
             $query->where('title', 'like', '%' . $request->get('search') . '%');
@@ -38,6 +38,27 @@ class PostController extends Controller
         return view('admin.posts.index', compact('posts', 'categories', 'postTypes'));
     }
 
+    public function archived_posts(Request $request)
+    {
+        $query = Post::query();
+        $post = new Post();
+        $postTypes = $post->postTypes;
+
+        $query->where('category_id', null);
+
+        if ($request->get('search')) {
+            $query->where('title', 'like', '%' . $request->get('search') . '%');
+        }
+
+        if ($request->get('post_type') != null) {
+            $query->where('post_type', $request->get('post_type'));
+        }
+
+        $query->orderBy('created_at', 'desc');
+        $posts = $query->paginate(10);
+        return view('admin.posts.archived_posts', compact('posts', 'postTypes'));
+    }
+
     public function create()
     {
         $categories = Category::pluck('name', 'id');
@@ -53,7 +74,7 @@ class PostController extends Controller
             'title' => 'nullable|string|max:255',
             'url' => 'nullable|string|max:255',
             'user_id' => 'nullable|integer',
-            'category_id' => 'nullable|integer',
+            'category_id' => 'required|integer',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string|max:10000',
             'is_hide' => 'nullable|boolean',
@@ -108,7 +129,7 @@ class PostController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'nullable|string|max:255',
             'url' => 'nullable|string|max:255',
-            'user_id' => 'nullable|integer',
+            'category_id' => 'required|integer',
             'category_id' => 'nullable|integer',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string|max:10000',
@@ -144,7 +165,15 @@ class PostController extends Controller
     {
         $post->delete();
 
-        return redirect()->route('admin.posts.index')->with('success', 'Post deleted successfully.');
+        return redirect()->route('admin.posts.archived_posts')->with('success', 'Post deleted successfully.');
+    }
+
+    public function archive(Post $post)
+    {
+        // Set category_id to null for all associated posts
+        $post->update(['category_id' => null]);
+
+        return redirect()->route('admin.posts.archived_posts')->with('success', 'Post archived successfully.');
     }
 
     public function uploadEditorImage(Request $request)
