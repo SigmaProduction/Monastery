@@ -49,6 +49,8 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/about_us', [AboutUsController::class, 'edit'])->name('admin.about_us.edit');
     Route::post('/about_us', [AboutUsController::class, 'update'])->name('admin.about_us.update');
     Route::post('/admin/about_us/upload_image', [AboutUsController::class, 'uploadImage'])->name('admin.about_us.upload_image');
+    Route::post('/posts/archive/{post}', [PostController::class, 'archive'])->name('admin.posts.archive');
+    Route::get('/posts/archived_posts', [PostController::class, 'archived_posts'])->name('admin.posts.archived_posts');
     Route::resource('posts', PostController::class)->names('admin.posts');
     Route::post('admin/posts/upload', [PostController::class, 'uploadEditorImage'])->name('admin.posts.upload_image');
     Route::resource('image_sliders', ImageSlidersController::class);

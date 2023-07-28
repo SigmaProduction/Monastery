@@ -12,18 +12,6 @@
                         <input type="text" name="search" class="form-control" placeholder="Search by title..." value="{{ request('search') }}">
                     </div>
 
-                    <!-- Dropdown for category_id -->
-                    <div class="col-md-4">
-                        <select name="category_id" class="form-control">
-                            <option value="">Select Category</option>
-                            @foreach($categories as $category)
-                                <option value="{{ $category->id }}" {{ (request('category_id') == $category->id) ? 'selected' : '' }}>
-                                    {{ $category->name }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-
                     <!-- Dropdown for post_type -->
                     <div class="col-md-4">
                         <select class="form-control" name="post_type">
@@ -90,10 +78,10 @@
                                 <td>{{ $post->post_type }}</td>
                                 <td>
                                     <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-sm btn-warning">Edit</a>
-                                    <form action="{{ route('admin.posts.archive', $post) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to archive this post?');">
+                                    <form action="{{ route('admin.posts.destroy', $post) }}" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to delete this post?');">
                                         @csrf
-                                        @method('POST')
-                                        <button type="submit" class="btn btn-sm btn-danger">Archive</button>
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                     </form>
                                 </td>
                             </tr>
