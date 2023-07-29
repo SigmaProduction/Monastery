@@ -106,6 +106,43 @@
 @section('js')
     <script>
         $(document).ready(function() {
+            const initSummernote = function(id) {
+                $(id).summernote({
+                    callbacks: {
+                        onImageUpload: function(files) {
+                            if (files.length > 1) {
+                                alertError('You can only upload one image at a time.');
+                                return;
+                            };
+                            const editor = $(this);
+                            const url = "{{ route('admin.posts.upload_image') }}";
+                            const formData = new FormData();
+                            formData.append('file', files[0]);
+                            $.ajax({
+                                url: url,
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                data: formData,
+                                type: "post",
+                                success: function(response) {
+                                    var image = $('<img>').attr('src', response.url);
+                                    $('#content').summernote("insertNode", image[0]);
+                                },
+                                error: function(data) {
+                                    var errorMessage = 'An error occurred during image upload.';
+                                    if (data && data.responseJSON && data.responseJSON.message) {
+                                        errorMessage = data.responseJSON.message;
+                                    }
+                                    // Display error message in a popup or any other desired way
+                                    alertError(errorMessage);
+                                }
+                            });
+                        }
+                    }
+                });
+            };
+
             function toggleFields(postTypeVal) {
                 if (postTypeVal.includes('2') || postTypeVal.includes('3') || postTypeVal.includes('4')) {
                     $('#title, #title_label, #url, #url_label').show(); // Show title and url and their labels
@@ -119,7 +156,7 @@
                     $('#title, #title_label, #url, #url_label, #category_id, #category_id_label, #description, #description_label, #is_hide, #is_hide_label, #is_important, #is_important_label, #image, #image_label, #content_label').show();
                     $('#url, #url_label').hide();
                     // Enable the Summernote editor
-                    $('#content').summernote('enable');
+                    initSummernote('#content');
                 }
             }
 
@@ -129,36 +166,6 @@
             // Update fields on change
             $('#post_type').change(function() {
                 toggleFields($(this).val());
-            });
-
-            $('#content').summernote({
-                callbacks: {
-                    onImageUpload: function(files) {
-                        if (files.length > 1) {
-                            alert('You can only upload one image at a time.');
-                            return;
-                        };
-                        var editor = $(this);
-                        var url = "{{ route('admin.posts.upload_image') }}";
-                        var formData = new FormData();
-                        formData.append('file', files[0]);
-                        fetch(url, {
-                            method: "POST",
-                            body: formData,
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            }
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.location) {
-                                editor.summernote('insertImage', data.location);
-                            } else {
-                                console.error('Image upload failed');
-                            }
-                        });
-                    }
-                }
             });
         });
     </script>

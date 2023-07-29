@@ -177,14 +177,19 @@ class PostController extends Controller
 
     public function uploadEditorImage(Request $request)
     {
+        $request->validate([
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             $imageName = time().'.'.$file->extension();
-            $imagePath = 'image/post_images/' . $imageName;
+            $imagePath = '/image/post_images/' . $imageName;
 
             $file->move(public_path('image/post_images'), $imageName);
 
-            return response()->json(['location' => asset($imagePath)], 200);
+            $imageUrl = asset($imagePath);
+            return response()->json(['url' => $imageUrl]);
         } else {
             return response()->json(['error' => 'No image uploaded'], 400);
         }
