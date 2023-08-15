@@ -147,13 +147,13 @@
                 if (postTypeVal.includes('2') || postTypeVal.includes('3') || postTypeVal.includes('4')) {
                     $('#title, #title_label, #url, #url_label').show(); // Show title and url and their labels
                     // Hide other fields and their labels
-                    $('#category_id, #category_id_label, #description, #description_label, #is_hide, #is_hide_label, #is_important, #is_important_label, #image, #image_label, #content_label').hide();
+                    $('#description, #description_label, #content_label').hide();
                     // Disable the Summernote editor
                     $('#content').summernote('destroy');
                     $('#content').hide();
                 } else {
                     // Show all fields and their labels
-                    $('#title, #title_label, #url, #url_label, #category_id, #category_id_label, #description, #description_label, #is_hide, #is_hide_label, #is_important, #is_important_label, #image, #image_label, #content_label').show();
+                    $('#title, #title_label, #url, #url_label, #description, #description_label, #content_label').show();
                     $('#url, #url_label').hide();
                     // Enable the Summernote editor
                     initSummernote('#content');
