@@ -15,7 +15,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8">
-                        <form action="{{ route('admin.about_us.update') }}" method="POST">
+                        <form action="{{ route('admin.about_us.update') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('POST')
 
@@ -34,6 +34,43 @@
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
+
+                            <!-- Top Image -->
+                            <div class="form-group">
+                                <label for="top_image">Top Image</label>
+                                <input type="file" class="form-control @error('top_image') is-invalid @enderror" id="top_image" name="top_image" accept="image/*">
+                                @if($aboutUs->top_image)
+                                    <img src="{{ asset($aboutUs->top_image) }}" alt="Top Image" width="100" height="100">
+                                @endif
+                                @error('top_image')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <!-- Dream 1 Image -->
+                            <div class="form-group">
+                                <label for="dream_1_image">Dream 1 Image</label>
+                                <input type="file" class="form-control @error('dream_1_image') is-invalid @enderror" id="dream_1_image" name="dream_1_image" accept="image/*">
+                                @if($aboutUs->dream_1_image)
+                                    <img src="{{ asset($aboutUs->dream_1_image) }}" alt="Dream 1 Image" width="100" height="100">
+                                @endif
+                                @error('dream_1_image')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
+                            <!-- Dream 2 Image -->
+                            <div class="form-group">
+                                <label for="dream_2_image">Dream 2 Image</label>
+                                <input type="file" class="form-control @error('dream_2_image') is-invalid @enderror" id="dream_2_image" name="dream_2_image" accept="image/*">
+                                @if($aboutUs->dream_2_image)
+                                    <img src="{{ asset($aboutUs->dream_2_image) }}" alt="Dream 2 Image" width="100" height="100">
+                                @endif
+                                @error('dream_2_image')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+
 
                             <div class="form-group">
                                 <label for="description">Description</label>
