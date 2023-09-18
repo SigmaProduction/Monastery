@@ -29,14 +29,30 @@ class AboutUsController extends Controller
         $request->validate([
             'subtitle' => 'nullable|string|max:255',
             'title' => 'nullable|string|max:255',
-            'description' => 'nullable|string|max:1000'
+            'description' => 'nullable|string|max:1000',
+            'top_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'dream_1_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'dream_2_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $aboutUs = AboutUs::first();
+        $data = $request->all();
+        $aboutUsId = $aboutUs->id ?? null; // Default id if $aboutUs is null
+
+        foreach (['top_image', 'dream_1_image', 'dream_2_image'] as $imageField) {
+            if ($request->hasFile($imageField)) {
+                $file = $request->file($imageField);
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $imagePath = 'images/about_us/' . $aboutUsId . '/' . $filename;
+                // Move the image to the specified directory
+                $file->move(public_path('images/about_us/' . $aboutUsId), $filename);
+                $data[$imageField] = $imagePath;
+            }
+        }
         if ($aboutUs) {
-            $aboutUs->update($request->all());
+            $aboutUs->update($data);
         } else {
-            AboutUs::create($request->all());
+            AboutUs::create($data);
 
         }
         return redirect()->route('admin.about_us.edit')->with('success', 'Updated successfully');
