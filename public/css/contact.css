@@ -1,0 +1,61 @@
+.contact-post {
+  width: 100%;
+  padding: 80px 0px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .contact-post {
+    padding: 40px 0px;
+  }
+}
+.contact-post .contact__title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 46px;
+  text-transform: uppercase;
+  color: #052664;
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .contact-post .contact__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    margin-bottom: 20px;
+  }
+}
+.contact-post .conact__info .conact__info--title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .contact-post .conact__info .conact__info--title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 29px;
+    margin-bottom: 16px;
+  }
+}
+.contact-post .conact__info .conact__info--description {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+}
+.contact-post .contact__img {
+  width: 100%;
+  height: 362px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.contact-post .contact__img > img {
+  width: 100%;
+  height: 362px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .contact-post .conact__info--qr {
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=contact.css.map */

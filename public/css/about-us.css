@@ -1,0 +1,180 @@
+.mega-about {
+  /* Full height */
+  height: 100%;
+  /* The image used */
+  background-image: url("../img/images/bg-about-us.png");
+  /* Create the parallax scrolling effect */
+  background-position: top;
+  background-repeat: repeat-y;
+  background-size: cover;
+  overflow: hidden;
+  margin-bottom: 140px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about {
+    margin-bottom: 40px;
+  }
+}
+.mega-about .description--flying {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .description--flying {
+    padding: 40px 0;
+  }
+}
+.mega-about .description--flying .flying--left {
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .description--flying .flying--left {
+    left: -280px;
+    overflow-x: hidden;
+  }
+}
+.mega-about .description--flying .flying--right {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .description--flying .flying--right {
+    right: -280px;
+    overflow-x: hidden;
+  }
+}
+.mega-about .limited {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .limited {
+    padding: 40px 0;
+  }
+}
+.mega-about .limited .limited--left {
+  position: absolute;
+  left: 0;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .limited .limited--left {
+    left: -350px;
+    overflow-x: hidden;
+  }
+}
+.mega-about .limited .limited--right {
+  position: absolute;
+  right: 0;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .limited .limited--right {
+    right: -350px;
+    overflow-x: hidden;
+  }
+}
+.mega-about .mega-about__description {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.mega-about .mega-about__description .description__img {
+  height: 468px;
+  overflow: hidden;
+  margin: auto;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .mega-about__description .description__img {
+    height: 268px;
+  }
+}
+.mega-about .mega-about__description .description__img > img {
+  height: 468px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .mega-about__description .description__img > img {
+    height: 268px;
+  }
+}
+.mega-about .mega-about__description .description__sub {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  color: #2974B8;
+  text-align: center;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .mega-about__description .description__sub {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+  }
+}
+.mega-about .mega-about__description .description__title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 52px;
+  color: #070E12;
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .mega-about__description .description__title {
+    width: 100%;
+    font-size: 38px;
+    line-height: 46px;
+    font-weight: 600;
+    padding: 0 10px;
+  }
+}
+.mega-about .mega-about__description .description__content {
+  width: 50%;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 38px;
+  color: #070E12;
+  text-align: justify;
+  margin: auto;
+  margin-bottom: 80px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .mega-about__description .description__content {
+    width: 80%;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 38px;
+    margin-bottom: 40px;
+  }
+}
+.mega-about .mega-about__content {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 80px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .mega-about__content {
+    margin-bottom: 40px;
+  }
+}
+.mega-about .mega-about__content > p {
+  text-align: justify;
+  padding: 10px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .mega-about .mega-about__content > p {
+    width: 80% !important;
+  }
+}/*# sourceMappingURL=about-us.css.map */
