@@ -30,12 +30,12 @@
             <div class="header-wrap__share">
                 <a href="#">
                 <div class="share--link">
-                    <img src="/images/icon/youtube.svg" alt="youtube" /> 
+                    <img src="/assets/images/icon/youtube.svg" alt="youtube" /> 
                 </div>
                 </a>
                 <a href="#">
                 <div class="share--link">
-                    <img src="/images/icon/facebook.svg" alt="facebook" /> 
+                    <img src="/assets/images/icon/facebook.svg" alt="facebook" /> 
                 </div>
                 </a>
             </div>
@@ -45,7 +45,7 @@
                     <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
                         <a class="navbar-brand navbar-custom__logo" href="/">
-                        <img src="/images/logo/logo-white.svg" alt="logo"/>
+                        <img src="/assets/images/logo/logo-white.svg" alt="logo"/>
                         </a><!-- /.logo -->
 
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -143,7 +143,7 @@
 
                             <li class="nav-item search">
                             <a class="btn-custom btn-custom__hotline" href="#">
-                                <img src="/images/icon/search.svg" alt="phone" />
+                                <img src="/assets/images/icon/search.svg" alt="phone" />
                             </a>
                             </li>
                         </ul>
@@ -171,7 +171,7 @@
                     <!-- address -->
                     <div class="col-md-3">
                     <a class="footer__logo" href="#">
-                        <img src="/images/logo/logo-white.svg" alt="logo"/>
+                        <img src="/assets/images/logo/logo-white.svg" alt="logo"/>
                     </a>
 
                     <div class="footer__list footer__list--address">
@@ -179,7 +179,7 @@
                         <li class="item">
                             <a href="#">
                             <span class="item__icon">
-                                <img src="/images/icon/location.svg" alt="location" />
+                                <img src="/assets/images/icon/location.svg" alt="location" />
                             </span>
                             <div class="item__content">99 Đường Nguyễn Công Trứ, 
                                 Phường Nguyễn Thái Bình, Quận 1,  TP.Hồ Chí Minh.</div>
@@ -188,7 +188,7 @@
                         <li class="item">
                             <a href="#">
                             <span class="item__icon">
-                                <img src="/images/icon/email.svg" alt="email" />
+                                <img src="/assets/images/icon/email.svg" alt="email" />
                             </span>
                             <div class="item__content">dcdmph@gmail.com</div>
                             </a>
@@ -243,12 +243,12 @@
                     <div class="col-md-3">
                     <div class="footer__title">Liên Kết Flick</div>
                     <a href="#" class="footer__img-flick">
-                        <img src="/images/img/img-flick.png" alt="flick" />
+                        <img src="/assets/images/img/img-flick.png" alt="flick" />
                     </a>
                     </div>
                     <!-- facebook share -->
                     <div class="col-md-3">
-                    <img src="/images/img/link-fb.png" alt="links-fb" />
+                    <img src="/assets/images/img/link-fb.png" alt="links-fb" />
                     </div>
 
                 </div>

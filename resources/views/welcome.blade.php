@@ -9,13 +9,13 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                 <div class="swiper-zoom-container">
-                    <img src="/images/img/slide-1.png" alt="slide-1" />
+                    <img src="/assets/images/img/slide-1.png" alt="slide-1" />
                 </div>
                 </div>
 
                 <div class="swiper-slide">
                 <div class="swiper-zoom-container">
-                    <img src="/images/img/slide-1.png" alt="slide-2" />
+                    <img src="/assets/images/img/slide-1.png" alt="slide-2" />
                 </div>
                 </div>
             </div>
@@ -36,16 +36,16 @@
     <div class="about-wrap__cloud--bottom"></div><!-- /.Cloud- -->
 
     <div class="about-wrap__dream-1" data-aos="fade-left" data-aos-duration="5000">
-        <img src="/images/img/dream-1.png" alt="don-bosco" />
+        <img src="/assets/images/img/dream-1.png" alt="don-bosco" />
     </div>
 
     <div class="about-wrap__dream-2" data-aos="fade-right" data-aos-duration="5000">
-        <img src="/images/img/dream-2.png" alt="mazzelo" />
+        <img src="/assets/images/img/dream-2.png" alt="mazzelo" />
     </div><!-- /.Dream- -->
 
     <div class="about-wrap__content">
         <div class="about-wrap__content--img-top" data-aos="fade-up">
-        <img src="/images/img/marywithchild.png" alt="marywithchild" />
+        <img src="/assets/images/img/marywithchild.png" alt="marywithchild" />
         </div><!-- /.Maria component- -->
 
         <div class="about-wrap__content--title" data-aos="fade-up">
@@ -62,7 +62,7 @@
     </div>
 
     <div class="about-wrap__creators" data-aos="fade-in">
-        <img src="/images/img/creators.png" alt="creators" />
+        <img src="/assets/images/img/creators.png" alt="creators" />
     </div><!-- /.creators- -->
     </div>
 </section>
@@ -79,7 +79,7 @@
             <a href="/Monastery_UI/news-details.html">
             <div class="post__cart">
                 <div class="post__cart--img">
-                <img src="/images/img/IMG-1.png" alt="post" />
+                <img src="/assets/images/img/IMG-1.png" alt="post" />
                 </div>
                 <div class="post__cart--tag">news</div>
                 <p class="post__cart--content">Tuyệt tác Santorini mang hơi thở Địa Trung Hải của Léman ngay trên cung đường đẹp nhất rung tâm thành phố Vũng Tàu.</p>
@@ -92,7 +92,7 @@
                 <a href="/Monastery_UI/news-details.html">
                     <div class="item-cart">
                     <div class="item-cart__img">
-                        <img src="/images/img/IMG-1.png" alt="list-img" />
+                        <img src="/assets/images/img/IMG-1.png" alt="list-img" />
                     </div>
 
                     <div class="item-cart__content">
@@ -107,7 +107,7 @@
                 <a href="/Monastery_UI/news-details.html">
                     <div class="item-cart">
                     <div class="item-cart__img">
-                        <img src="/images/img/IMG-1.png" alt="list-img" />
+                        <img src="/assets/images/img/IMG-1.png" alt="list-img" />
                     </div>
 
                     <div class="item-cart__content">
@@ -122,7 +122,7 @@
                 <a href="/Monastery_UI/news-details.html">
                     <div class="item-cart">
                     <div class="item-cart__img">
-                        <img src="/images/img/IMG-1.png" alt="list-img" />
+                        <img src="/assets/images/img/IMG-1.png" alt="list-img" />
                     </div>
 
                     <div class="item-cart__content">
@@ -137,7 +137,7 @@
                 <a href="/Monastery_UI/news-details.html">
                     <div class="item-cart">
                     <div class="item-cart__img">
-                        <img src="/images/img/IMG-1.png" alt="list-img" />
+                        <img src="/assets/images/img/IMG-1.png" alt="list-img" />
                     </div>
 
                     <div class="item-cart__content">
@@ -161,7 +161,7 @@
             <a href="/Monastery_UI/news-details.html">
             <div class="post__cart post__cart--mega">
                 <div class="post__cart--img">
-                <img src="/images/img/IMG-1.png" alt="post" />
+                <img src="/assets/images/img/IMG-1.png" alt="post" />
                 </div>
                 <div class="post__cart--tag">Mega Post</div>
                 <p class="post__cart--content">Tuyệt tác Santorini mang hơi thở Địa Trung Hải của Léman ngay trên cung đường đẹp nhất rung tâm thành phố Vũng Tàu.</p>
@@ -171,7 +171,7 @@
             <a href="/Monastery_UI/news-details.html">
             <div class="post__cart post__cart--mega">
                 <div class="post__cart--img">
-                <img src="/images/img/IMG-1.png" alt="post" />
+                <img src="/assets/images/img/IMG-1.png" alt="post" />
                 </div>
                 <div class="post__cart--tag">Mega Post</div>
                 <p class="post__cart--content">Tuyệt tác Santorini mang hơi thở Địa Trung Hải của Léman ngay trên cung đường đẹp nhất rung tâm thành phố Vũng Tàu.</p>
@@ -199,7 +199,7 @@
             <a href="#">
             <div class="post__cart">
                 <div class="post__cart--img">
-                <!-- <img src="/images/img/IMG-1.png" alt="post" /> -->
+                <!-- <img src="/assets/images/img/IMG-1.png" alt="post" /> -->
                 <iframe width="100%" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                 </iframe>
                 </div>
@@ -213,7 +213,7 @@
                 <a href="#">
                 <div class="post__cart">
                     <div class="post__cart--img media__cart--img">
-                    <!-- <img src="/images/img/IMG-1.png" alt="post" /> -->
+                    <!-- <img src="/assets/images/img/IMG-1.png" alt="post" /> -->
                     <iframe width="100%" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                     </iframe>
                     </div>
@@ -225,7 +225,7 @@
                 <a href="#">
                 <div class="post__cart">
                     <div class="post__cart--img media__cart--img">
-                    <!-- <img src="/images/img/IMG-1.png" alt="post" /> -->
+                    <!-- <img src="/assets/images/img/IMG-1.png" alt="post" /> -->
                     <iframe width="100%" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                     </iframe>
                     </div>
@@ -237,7 +237,7 @@
                 <a href="#">
                 <div class="post__cart">
                     <div class="post__cart--img media__cart--img">
-                    <!-- <img src="/images/img/IMG-1.png" alt="post" /> -->
+                    <!-- <img src="/assets/images/img/IMG-1.png" alt="post" /> -->
                     <iframe width="100%" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                     </iframe>
                     </div>
@@ -253,7 +253,7 @@
             <a href="#">
             <div class="post__cart">
                 <div class="post__cart--img podcast__post--img">
-                <img src="/images/img/IMG-1.png" alt="post" />
+                <img src="/assets/images/img/IMG-1.png" alt="post" />
                 </div>
                 <div class="post__cart--content podcast__cart--content">
                 <img src="./img/icon/podcast.svg" alt="podcast" />
@@ -265,7 +265,7 @@
             <a href="#">
             <div class="post__cart">
                 <div class="post__cart--img podcast__post--img">
-                <img src="/images/img/IMG-1.png" alt="post" />
+                <img src="/assets/images/img/IMG-1.png" alt="post" />
                 </div>
                 <div class="post__cart--content podcast__cart--content">
                 <img src="./img/icon/podcast.svg" alt="podcast" />
@@ -297,7 +297,7 @@
                         <a href="#">
                         <div class="categories__cart--post">
                             <div class="post__img">
-                            <img src="/images/img/IMG-1.png" alt="img" />
+                            <img src="/assets/images/img/IMG-1.png" alt="img" />
                             </div>
                             <p class="post__content">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
@@ -315,7 +315,7 @@
                     <a href="#">
                         <div class="categories__cart--post">
                         <div class="post__img">
-                            <img src="/images/img/IMG-1.png" alt="img" />
+                            <img src="/assets/images/img/IMG-1.png" alt="img" />
                         </div>
                         <p class="post__content">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
@@ -333,7 +333,7 @@
                     <a href="#">
                         <div class="categories__cart--post">
                         <div class="post__img">
-                            <img src="/images/img/IMG-1.png" alt="img" />
+                            <img src="/assets/images/img/IMG-1.png" alt="img" />
                         </div>
                         <p class="post__content">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
@@ -351,7 +351,7 @@
                     <a href="#">
                         <div class="categories__cart--post">
                         <div class="post__img">
-                            <img src="/images/img/IMG-1.png" alt="img" />
+                            <img src="/assets/images/img/IMG-1.png" alt="img" />
                         </div>
                         <p class="post__content">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
@@ -369,7 +369,7 @@
                     <a href="#">
                         <div class="categories__cart--post">
                         <div class="post__img">
-                            <img src="/images/img/IMG-1.png" alt="img" />
+                            <img src="/assets/images/img/IMG-1.png" alt="img" />
                         </div>
                         <p class="post__content">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
@@ -387,7 +387,7 @@
                     <a href="#">
                         <div class="categories__cart--post">
                         <div class="post__img">
-                            <img src="/images/img/IMG-1.png" alt="img" />
+                            <img src="/assets/images/img/IMG-1.png" alt="img" />
                         </div>
                         <p class="post__content">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
@@ -405,7 +405,7 @@
                     <a href="#">
                         <div class="categories__cart--post">
                         <div class="post__img">
-                            <img src="/images/img/IMG-1.png" alt="img" />
+                            <img src="/assets/images/img/IMG-1.png" alt="img" />
                         </div>
                         <p class="post__content">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
@@ -436,12 +436,12 @@
             <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <div class="gallery-img">
-                <img src="/images/img/IMG-2.png" alt="slide-vertical-2" />
+                <img src="/assets/images/img/IMG-2.png" alt="slide-vertical-2" />
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="gallery-img">
-                <img src="/images/img/IMG-2.png" alt="slide-vertical-2" />
+                <img src="/assets/images/img/IMG-2.png" alt="slide-vertical-2" />
                 </div>
             </div>
             </div>
@@ -523,7 +523,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/Donbosco.png" alt="donbosco" />
+                                <img src="/assets/images/img/Donbosco.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Thánh Gioan Bosco</div>
@@ -535,7 +535,7 @@
                         <a href="#" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/Titozeman.png" alt="donbosco" />
+                                <img src="/assets/images/img/Titozeman.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Chân Phước Ti-tô Zeman</div>
@@ -547,7 +547,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/luyVariana.png" alt="donbosco" />
+                                <img src="/assets/images/img/luyVariana.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Chân Phước Lu-y Variara</div>
@@ -559,7 +559,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/Lauravicuna.png" alt="donbosco" />
+                                <img src="/assets/images/img/Lauravicuna.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Chân Phước Laura Vicuna</div>
@@ -571,7 +571,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/Lauravicuna.png" alt="donbosco" />
+                                <img src="/assets/images/img/Lauravicuna.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Chân Phước Laura Vicuna</div>
@@ -583,7 +583,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/Donbosco.png" alt="donbosco" />
+                                <img src="/assets/images/img/Donbosco.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Chân Phước 
@@ -596,7 +596,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/phanxicosale.png" alt="donbosco" />
+                                <img src="/assets/images/img/phanxicosale.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Chân Phước 
@@ -609,7 +609,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/Lauravicuna.png" alt="donbosco" />
+                                <img src="/assets/images/img/Lauravicuna.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Chân Phước Laura Vicuna</div>
@@ -621,7 +621,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/phanxico.png" alt="donbosco" />
+                                <img src="/assets/images/img/phanxico.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Chân Phước 
@@ -634,7 +634,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/Donbosco.png" alt="donbosco" />
+                                <img src="/assets/images/img/Donbosco.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Thánh Gioan Bosco</div>
@@ -646,7 +646,7 @@
                         <a href="#">
                             <div class="saints-sub__card">
                             <div class="saints-sub__card--img">
-                                <img src="/images/img/Donbosco.png" alt="donbosco" />
+                                <img src="/assets/images/img/Donbosco.png" alt="donbosco" />
                             </div>
 
                             <div class="saints-sub__card--title">Thánh Gioan Bosco</div>
