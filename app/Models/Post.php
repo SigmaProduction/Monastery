@@ -23,11 +23,11 @@ class Post extends Model
     ];
 
     public $postTypes = [
-        'default_post' => 0,
-        'mega_post' => 1,
-        'video_post' => 2,
-        'postcard_post' => 3,
-        'pdf_post' => 4,
+        'Bài viết' => 0,
+        'Mega story' => 1,
+        'Video' => 2,
+        'Postcard' => 3,
+        'Tài liệu' => 4,
     ];
 
     public function user()

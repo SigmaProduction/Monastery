@@ -20,12 +20,14 @@ class ImageSlidersController extends Controller
         $query = ImageSlider::query();
         $image_slider = new ImageSlider();
         $imageTypes = $image_slider->imageTypes;
+
         if ($request->get('image_type') != null) {
             $query->where('image_type', $request->get('image_type'));
         }
 
         $query->orderBy('created_at', 'desc');
         $image_sliders = $query->paginate(10);
+
         return view('admin.image_sliders.index', compact('image_sliders', 'imageTypes'));
     }
 
@@ -46,7 +48,7 @@ class ImageSlidersController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'url' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3000',
             'image_type' => 'required|integer',
             'thumb' => 'required|string|max:255',
         ]);
@@ -80,7 +82,7 @@ class ImageSlidersController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'url' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'url' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3000',
             'image_type' => 'required|integer',
             'thumb' => 'required|string|max:255',
         ]);
