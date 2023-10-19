@@ -12,6 +12,7 @@ class Post extends Model
     protected $fillable = [
         'title',
         'user_id',
+        'menu_id',
         'category_id',
         'description',
         'content',
@@ -33,6 +34,11 @@ class Post extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class);
     }
 
     public function category()
