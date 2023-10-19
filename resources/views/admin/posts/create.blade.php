@@ -40,11 +40,26 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="menu_id" id="menu_id_label">Menu ID</label>
+                    <select class="form-control" id="menu_id" name="menu_id">
+                        <option value="">Select Menu</option>
+                        @foreach ($menus as $id => $name)
+                            <option value="{{ $id }}" >{{ $name }}</option>
+                        @endforeach
+                    </select>
+                    @error('menu_id')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="category_id" id="category_id_label">Category ID</label>
                     <select class="form-control" id="category_id" name="category_id">
                         <option value="">Select Category</option>
-                        @foreach ($categories as $id => $name)
-                            <option value="{{ $id }}">{{ $name }}</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" data-menu-id="{{ $category->menu_id }}">
+                                {{ $category->name }}
+                            </option>
                         @endforeach
                     </select>
                     @error('category_id')
@@ -166,6 +181,26 @@
             // Update fields on change
             $('#post_type').change(function() {
                 toggleFields($(this).val());
+            });
+
+            // Initialize functions when menus select is changed category select's options will filter according to selected menu.
+            // Category select's options will store menu_id data attribute. This data attribute will be used to filter category select's options.
+            // Reset option select's options will be shown when menus select is changed.
+            // the <option value="">Select Category</option> should keep in category select.
+            $('#menu_id').change(function() {
+                const menuId = $(this).val();
+                $('#category_id option').each(function() {
+                    if ($(this).data('menu-id') == menuId) {
+                        $(this).show();
+                    } else {
+                        if ($(this).val() == '') {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    }
+                });
+                $('#category_id').val('');
             });
         });
     </script>

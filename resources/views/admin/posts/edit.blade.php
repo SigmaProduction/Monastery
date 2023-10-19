@@ -41,11 +41,26 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="menu_id" id="menu_id_label">Menu ID</label>
+                    <select class="form-control" id="menu_id" name="menu_id">
+                        <option value="">Select Menu</option>
+                        @foreach ($menus as $id => $name)
+                            <option value="{{ $id }}" {{ $post->menu_id == $id ? 'selected' : '' }}>{{ $name }}</option>
+                        @endforeach
+                    </select>
+                    @error('menu_id')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label id="category_id_label" for="category_id">Category ID</label>
                     <select class="form-control" id="category_id" name="category_id">
                         <option value="">Select Category</option>
-                        @foreach ($categories as $id => $name)
-                            <option value="{{ $id }}" {{ $post->category_id == $id ? 'selected' : '' }}>{{ $name }}</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" data-menu-id="{{ $category->menu_id }}" {{ $post->menu_id == $category->id ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
                         @endforeach
                     </select>
                     @error('category_id')
@@ -107,6 +122,43 @@
 @section('js')
     <script>
         $(document).ready(function() {
+            const initSummernote = function(id) {
+                $(id).summernote({
+                    callbacks: {
+                        onImageUpload: function(files) {
+                            if (files.length > 1) {
+                                alertError('You can only upload one image at a time.');
+                                return;
+                            };
+                            const editor = $(this);
+                            const url = "{{ route('admin.posts.upload_image') }}";
+                            const formData = new FormData();
+                            formData.append('file', files[0]);
+                            $.ajax({
+                                url: url,
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                data: formData,
+                                type: "post",
+                                success: function(response) {
+                                    var image = $('<img>').attr('src', response.url);
+                                    $('#content').summernote("insertNode", image[0]);
+                                },
+                                error: function(data) {
+                                    var errorMessage = 'An error occurred during image upload.';
+                                    if (data && data.responseJSON && data.responseJSON.message) {
+                                        errorMessage = data.responseJSON.message;
+                                    }
+                                    // Display error message in a popup or any other desired way
+                                    alertError(errorMessage);
+                                }
+                            });
+                        }
+                    }
+                });
+            };
+
             $('#content').summernote({
                 callbacks: {
                     onImageUpload: function(files) {
@@ -160,6 +212,22 @@
             // Update fields on change
             $('#post_type').change(function() {
                 toggleFields($(this).val());
+            });
+
+            $('#menu_id').change(function() {
+                const menuId = $(this).val();
+                $('#category_id option').each(function() {
+                    if ($(this).data('menu-id') == menuId) {
+                        $(this).show();
+                    } else {
+                        if ($(this).val() == '') {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    }
+                });
+                $('#category_id').val('');
             });
         });
     </script>

@@ -18,7 +18,7 @@ class PostController extends Controller
         $query = Post::query();
         $post = new Post();
         $postTypes = $post->postTypes;
-        $query->whereNotNull('category_id');
+        $query->whereNotNull('category_id')->orWhereNotNull('menu_id');
 
         if ($request->get('search')) {
             $query->where('title', 'like', '%' . $request->get('search') . '%');
@@ -44,7 +44,7 @@ class PostController extends Controller
         $post = new Post();
         $postTypes = $post->postTypes;
 
-        $query->where('category_id', null);
+        $query->where('category_id', null)->where('menu_id', null);
 
         if ($request->get('search')) {
             $query->where('title', 'like', '%' . $request->get('search') . '%');
@@ -61,11 +61,12 @@ class PostController extends Controller
 
     public function create()
     {
-        $categories = Category::whereNotNull('menu_id')->pluck('name', 'id');
+        $categories = Category::whereNotNull('menu_id')->select(['id', 'name', 'menu_id'])->get();
+        $menus = Menu::all()->pluck('name', 'id');
         $post = new Post();
         $postTypes = $post->postTypes;
 
-        return view('admin.posts.create', compact('categories', 'postTypes'));
+        return view('admin.posts.create', compact('categories', 'postTypes', 'menus'));
     }
 
     public function store(Request $request)
@@ -74,7 +75,8 @@ class PostController extends Controller
             'title' => 'nullable|string|max:255',
             'url' => 'nullable|string|max:255',
             'user_id' => 'nullable|integer',
-            'category_id' => 'required|integer',
+            'category_id' => 'nullable|integer',
+            'menu_id' => 'nullable|integer',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string|max:10000',
             'is_hide' => 'nullable|boolean',
@@ -118,10 +120,11 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        $categories = Category::whereNotNull('menu_id')->pluck('name', 'id');
+        $categories = Category::whereNotNull('menu_id')->select(['id', 'name', 'menu_id'])->get();
+        $menus = Menu::all()->pluck('name', 'id');
         $postTypes = $post->postTypes;
 
-        return view('admin.posts.edit', compact('post', 'categories', 'postTypes'));
+        return view('admin.posts.edit', compact('post', 'categories', 'postTypes', 'menus'));
     }
 
     public function update(Request $request, Post $post)
@@ -129,7 +132,8 @@ class PostController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'nullable|string|max:255',
             'url' => 'nullable|string|max:255',
-            'category_id' => 'required|integer',
+            'category_id' => 'nullable|integer',
+            'menu_id' => 'nullable|integer',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string|max:10000',
             'is_hide' => 'nullable|boolean',
@@ -170,7 +174,7 @@ class PostController extends Controller
     public function archive(Post $post)
     {
         // Set category_id to null for all associated posts
-        $post->update(['category_id' => null]);
+        $post->update(['category_id' => null, 'menu_id' => null]);
 
         return redirect()->route('admin.posts.archived_posts')->with('success', 'Post archived successfully.');
     }
