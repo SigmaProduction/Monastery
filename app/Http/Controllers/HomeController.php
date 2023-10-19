@@ -4,10 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\ImageSlider;
 use App\Models\Post;
-use App\Models\PostImage;
 use App\Models\AboutUs;
-use App\Models\AboutUsImage;
-use App\Models\SalediengFamily;
 use App\Models\SalediengMonth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -18,15 +15,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $image_sliders = DB::table('image_sliders')
-                        ->where('image_type', 1)
+        $image_sliders = ImageSlider::where('image_type', 1)
                         ->get();
 
-        $image_galleries = DB::table('image_sliders')
-                        ->where('image_type', 2)
+        $image_galleries = ImageSlider::where('image_type', 2)
                         ->get();
         
-        $about_us = AboutUs::all();
+        $about_us = AboutUs::limit(1)->get();
 
         $first_post = Post::orderBy('created_at', 'desc')
                         ->where('post_type', 0)
