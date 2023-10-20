@@ -11,4 +11,9 @@ class SalediengMonth extends Model
     protected $fillable = [
         'month', 'content',
     ];
+
+    public function saledieng_families()
+    {
+        return $this->hasMany(SalediengFamily::class);
+    }
 }

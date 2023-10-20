@@ -20,12 +20,14 @@ class ImageSlidersController extends Controller
         $query = ImageSlider::query();
         $image_slider = new ImageSlider();
         $imageTypes = $image_slider->imageTypes;
+
         if ($request->get('image_type') != null) {
             $query->where('image_type', $request->get('image_type'));
         }
 
         $query->orderBy('created_at', 'desc');
         $image_sliders = $query->paginate(10);
+
         return view('admin.image_sliders.index', compact('image_sliders', 'imageTypes'));
     }
 

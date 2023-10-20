@@ -156,6 +156,16 @@
   background-color: #052664;
   color: #ffffff;
 }
+.header-wrap .swiper {
+  width: 100%;
+  height: 1182px;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .header-wrap .swiper {
+    width: 100%;
+    height: auto;
+  }
+}
 .header-wrap .swiper-container .swiper-zoom-container > img {
   width: 100%;
   height: auto;
@@ -637,6 +647,7 @@ hr.hr-limited {
   }
 }
 .post__list .item-cart {
+  width: 100%;
   display: flex;
   align-items: center;
 }
@@ -663,6 +674,7 @@ hr.hr-limited {
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .post__list .item-cart .item-cart__img {
+    width: 100%;
     height: 66px;
   }
 }
@@ -688,6 +700,7 @@ hr.hr-limited {
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
   margin-bottom: 10px;
@@ -988,7 +1001,6 @@ hr.hr-limited {
   position: relative;
   width: 100%;
   height: 570px;
-  background-image: url("/assets/images/img/Donbosco.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1033,6 +1045,27 @@ hr.hr-limited {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+.saints .saints__card--default {
+  width: 100%;
+  height: 714px;
+  overflow: hidden;
+}
+.saints .saints__card--default > img {
+  width: 100%;
+  height: 714px;
+  object-fit: cover;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .saints .saints__card--default {
+    width: 100%;
+    height: 414px;
+  }
+  .saints .saints__card--default > img {
+    width: 100%;
+    height: 414px;
+    object-fit: cover;
+  }
 }
 .saints .saints-sub__card {
   width: 100%;

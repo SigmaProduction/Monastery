@@ -55,4 +55,17 @@ class Post extends Model
     {
         return array_search($value, $this->postTypes);
     }
+
+    public $postTypeTranslations = [
+        'default_post' => 'Bài viết',
+        'mega_post' => 'Mega story',
+        'video_post' => 'Video',
+        'postcard_post' => 'Postcard',
+        'pdf_post' => 'PDF',
+    ];
+
+    public function getTranslatedPostType()
+    {
+        return $this->postTypeTranslations[$this->post_type] ?? null;
+    }
 }

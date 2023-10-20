@@ -39,6 +39,7 @@
                 </div>
                 </a>
             </div>
+
             <div class="header-wrap__heading">
                 <div class="container">
                 <div class="row">
@@ -55,91 +56,20 @@
                         <div class="collapse navbar-collapse navbar-custom__collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <div class="nav-link" href="/Monastery_UI/news.html">Trang chủ</div>
+                                <div class="nav-link" href="/Monastery_UI/news.html">Trang chủ</div>
                             </li>
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Hội Dòng
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Mục Vụ - Giáo Dục
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/Monastery_UI/news.html" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Gia Đình SALÊDIÊNG
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/Monastery_UI/news.html" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Giáo Hội
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Đức Tin
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Thư Viện
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
+                            @foreach($menus as $menu)
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    {{$menu->name}}
+                                </a>
+                                <div class="dropdown-menu">
+                                    @foreach($menu->categories as $category)
+                                        <a class="dropdown-item" href="{{$menu->name}}/{{$category->name}}">{{$category->name}}</a>
+                                    @endforeach
+                                </div>
+                                </li>
+                            @endforeach
 
                             <li class="nav-item search">
                             <a class="btn-custom btn-custom__hotline" href="#">
@@ -166,93 +96,92 @@
         <footer>
             <div class="footer">
                 <div class="footer__scence" data-aos="fade-up" data-aos-duration="1000000"></div>
-                <div class="container" data-aos="fade-up">
-                <div class="row">
-                    <!-- address -->
-                    <div class="col-md-3">
-                    <a class="footer__logo" href="#">
-                        <img src="/assets/images/logo/logo-white.svg" alt="logo"/>
-                    </a>
+                    <div class="container" data-aos="fade-up">
+                        <div class="row">
+                            <!-- address -->
+                            <div class="col-md-3">
+                                <a class="footer__logo" href="#">
+                                    <img src="/assets/images/logo/logo-white.svg" alt="logo"/>
+                                </a>
 
-                    <div class="footer__list footer__list--address">
-                        <ul>
-                        <li class="item">
-                            <a href="#">
-                            <span class="item__icon">
-                                <img src="/assets/images/icon/location.svg" alt="location" />
-                            </span>
-                            <div class="item__content">99 Đường Nguyễn Công Trứ, 
-                                Phường Nguyễn Thái Bình, Quận 1,  TP.Hồ Chí Minh.</div>
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#">
-                            <span class="item__icon">
-                                <img src="/assets/images/icon/email.svg" alt="email" />
-                            </span>
-                            <div class="item__content">dcdmph@gmail.com</div>
-                            </a>
-                        </li>
-                        </ul>
-                    </div>
+                                <div class="footer__list footer__list--address">
+                                    <ul>
+                                        <li class="item">
+                                            <a href="#">
+                                                <span class="item__icon">
+                                                    <img src="/assets/images/icon/location.svg" alt="location" />
+                                                </span>
+                                                <div class="item__content">57 Đường số 4, P. Tam Phú, TP. Thủ Đức, TP. Hồ Chí Minh.</div>
+                                            </a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="#">
+                                                <span class="item__icon">
+                                                    <img src="/assets/images/icon/email.svg" alt="email" />
+                                                </span>
+                                                <div class="item__content">truyenthong@fmavtn.org</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="footer__title">Lượt Truy Cập</div>
+                                    <div class="footer__list footer__list--access">
+                                        <ul>
+                                            <li class="item">
+                                            Số lượng truy cập trong ngày: 10
+                                            </li>
+                                            <li class="item">
+                                                Tổng số lượng truy cập: 100
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- related links -->
+                            <div class="col-md-3">
+                            <div class="mb-20">
+                                <div class="footer__title">Liên Kết</div>
+                                <div class="footer__list footer__list--content">
+                                    <ul>
+                                        <li class="item">
+                                            <a href="https://www.cgfmanet.org/">Instituto Figlie di Maria Ausiliatrice</a>
+                                        </li>
 
-                    </div>
-                    <!-- related links -->
-                    <div class="col-md-3">
-                    <div class="mb-20">
-                        <div class="footer__title">Liên Kết</div>
-                        <div class="footer__list footer__list--content">
-                        <ul>
-                            <li class="item">
-                            <a href="#">Website trung ương</a>
-                            </li>
-                            <li class="item">
-                            <a href="#">
-                                dcdmph@gmail.com
-                            </a>
-                            </li>
-                            <li class="item">
-                            <a href="#">
-                                dcdmph@gmail.com
-                            </a>
-                            </li>
-                            <li class="item">
-                            <a href="#">
-                                dcdmph@gmail.com
-                            </a>
-                            </li>
-                        </ul>
+                                        <li class="item">
+                                            <a href="https://www.sdb.org/">Salesians Don Bosco</a>
+                                        </li>
+
+                                        <li class="item">
+                                            <a href="https://sdb.vn/">Tỉnh Dòng Sa-lê-diêng Don Bosco</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="https://hdgmvietnam.com/">Hội đồng Giám mục Việt Nam</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="https://phungvusaledieng.org/">Phụng Vụ Sa-lê-diêng</a>
+                                        </li>
+                                        <li class="item">
+                                            <a href="https://ktcgkpv.org/">Các Giờ Kinh Phụng Vụ </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            </div>
+                            <!-- Flick link -->
+                            <div class="col-md-3">
+                                <div class="footer__title">Liên Kết Flick</div>
+                                <a href="https://www.flickr.com/photos/fmavtn/albums" class="footer__img-flick">
+                                    <img src="/assets/images/img/img-flick.png" alt="flick" />
+                                </a>
+                            </div>
+                            <!-- facebook share -->
+                            <div class="col-md-3">
+                                <img src="/assets/images/img/link-fb.png" alt="links-fb" />
+                            </div>
+
                         </div>
                     </div>
-
-                    <div>
-                        <div class="footer__title">Lượt Truy Cập</div>
-                        <div class="footer__list footer__list--access">
-                        <ul>
-                            <li class="item">
-                            Số lượng truy cập trong ngày: 10
-                            </li>
-                            <li class="item">
-                                Tổng số lượng truy cập: 100
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                    </div>
-                    <!-- Flick link -->
-                    <div class="col-md-3">
-                    <div class="footer__title">Liên Kết Flick</div>
-                    <a href="#" class="footer__img-flick">
-                        <img src="/assets/images/img/img-flick.png" alt="flick" />
-                    </a>
-                    </div>
-                    <!-- facebook share -->
-                    <div class="col-md-3">
-                    <img src="/assets/images/img/link-fb.png" alt="links-fb" />
-                    </div>
-
-                </div>
-                </div>
                 <hr class="limited-footer" />
                 <div class="footer-copyright">Copyright © 2023 Dòng Con Đức Mẹ Phù Hộ</div>
             </div>
