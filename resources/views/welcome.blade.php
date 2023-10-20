@@ -64,7 +64,7 @@
                 {{$about_us[0]->description}}
             </div>
 
-            <a class="about-wrap__content--more btn-more" href="/Monastery_UI/about-us.html" data-aos="fade-up">
+            <a class="about-wrap__content--more btn-more" href="{{ url('introduce') }}" data-aos="fade-up">
             Xem Thêm
             </a>
         </div>
@@ -90,7 +90,7 @@
                                 <div class="post__cart--img">
                                     <img src="{{ asset($first_post[0]->image) }}" alt="post" />
                                 </div>
-                                <div class="post__cart--tag">{{ $first_post[0]->post_type; }}</div>
+                                <div class="post__cart--tag">{{ $first_post[0]->getTranslatedPostType() }}</div>
                                 <p class="post__cart--content">{{ $first_post[0]->description; }}</p>
                             </div>
                         </a>
@@ -107,7 +107,7 @@
                                             </div>
 
                                             <div class="item-cart__content">
-                                                <div class="item-cart__content--tag">{{ $new_post->post_type; }}</div>
+                                                <div class="item-cart__content--tag">{{ $new_post->getTranslatedPostType() }}</div>
                                                 <p>{{ $new_post->description; }}</p>
                                             </div>
                                         </div>
@@ -130,7 +130,7 @@
                                 <div class="post__cart--img">
                                     <img src="{{ asset($mega_post->image) }}" alt="post" />
                                 </div>
-                                <div class="post__cart--tag">{{$mega_post->post_type;}}</div>
+                                <div class="post__cart--tag">{{$mega_post->getTranslatedPostType();}}</div>
                                 <p class="post__cart--content">{{ $mega_post->description; }}</p>
                             </div>
                         </a>
@@ -159,7 +159,7 @@
                                 <div class="post__cart--img">
                                     <iframe width="100%" height="345" src="{{ $first_video_post[0]->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
-                                <div class="post__cart--tag">{{ $first_video_post[0]->post_type; }}</div>
+                                <div class="post__cart--tag">{{ $first_video_post[0]->getTranslatedPostType(); }}</div>
                                 <p class="post__cart--content">{{ $first_video_post[0]->title; }}</p>
                             </div>
                         </a>
@@ -401,11 +401,10 @@
                                 <!-- content -->
                                 <div class="row align-items-center">
                                 <div class="col-md-4">
-                                    <div class="saints__card" id="#thanh1">
+                                    <div class="saints__card" id="thanh" style="background-image: url('/assets/images/img/Donbosco.png')">
                                         <div class="saints__card--content">
-                                            <div class="content--date">Match 8</div>
-                                            <div class="content--title">Thánh Gioan Bosco</div>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                                            <div id="thanh-date" class="content--date">Match 8</div>
+                                            <div  id="thanh-title"class="content--title">Thánh Gioan Bosco</div>
                                         </div>
                                     </div>
                                 </div>
@@ -420,7 +419,7 @@
                                             <div class="swiper-wrapper">
                                                 @foreach($saledieng_month->saledieng_families as $saledieng_family)
                                                     <div class="swiper-slide">
-                                                        <a href="#thanh{{$saledieng_family->id}}" data-toggle="collapse" data-target="#thanh{{$saledieng_family->id}}" aria-expanded="false" aria-controls="thanh{{$saledieng_family->id}}">
+                                                        <a onclick="changeImg('{{ asset($saledieng_family->image) }}', '{{ $saledieng_family->name }}', '{{ $saledieng_family->death_date }}')" href="#thanh{{$saledieng_family->id}}" data-toggle="collapse" data-target="#thanh{{$saledieng_family->id}}" aria-expanded="false" aria-controls="thanh{{$saledieng_family->id}}">
                                                             <div class="saints-sub__card">
                                                                 <div class="saints-sub__card--img">
                                                                     <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />

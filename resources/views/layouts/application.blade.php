@@ -39,6 +39,7 @@
                 </div>
                 </a>
             </div>
+
             <div class="header-wrap__heading">
                 <div class="container">
                 <div class="row">
@@ -55,91 +56,20 @@
                         <div class="collapse navbar-collapse navbar-custom__collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <div class="nav-link" href="/Monastery_UI/news.html">Trang chủ</div>
+                                <div class="nav-link" href="/Monastery_UI/news.html">Trang chủ</div>
                             </li>
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Hội Dòng
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Mục Vụ - Giáo Dục
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/Monastery_UI/news.html" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Gia Đình SALÊDIÊNG
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/Monastery_UI/news.html" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Giáo Hội
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Đức Tin
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
-
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Thư Viện
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Giới thiệu Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Don Bosco</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tin Hội Dòng</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Mẹ Mazzarello</a>
-                                <a class="dropdown-item" href="/Monastery_UI/news.html">Tư liệu Hội Dòng</a>
-                            </div>
-                            </li>
+                            @foreach($menus as $menu)
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    {{$menu->name}}
+                                </a>
+                                <div class="dropdown-menu">
+                                    @foreach($menu->categories as $category)
+                                        <a class="dropdown-item" href="{{$menu->name}}/{{$category->name}}">{{$category->name}}</a>
+                                    @endforeach
+                                </div>
+                                </li>
+                            @endforeach
 
                             <li class="nav-item search">
                             <a class="btn-custom btn-custom__hotline" href="#">

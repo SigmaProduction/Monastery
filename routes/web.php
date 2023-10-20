@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\SalediengMonthController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImageSlidersController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoriePostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/gioi-thieu', [HomeController::class, 'introduce']);
 Route::get('/ho-tro', [HomeController::class, 'support']);
 Route::get('/quyen-gop', [HomeController::class, 'donate']);
+Route::get('{menu?}/{categories?}', [CategoriePostController::class, 'index'])->where('menu','.*');
 
 Route::get('admin/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
 Route::post('admin/login', [AdminAuthController::class, 'login'])->name('login.submit');

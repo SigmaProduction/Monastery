@@ -667,7 +667,7 @@ hr.hr-limited {
   color: #2974B8;
 }
 .post__list .item-cart .item-cart__img {
-  width: 50%;
+  width: 100%;
   height: 86px;
   overflow: hidden;
   margin-right: 16px;
@@ -1001,7 +1001,6 @@ hr.hr-limited {
   position: relative;
   width: 100%;
   height: 570px;
-  background-image: url("/assets/images/img/Donbosco.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

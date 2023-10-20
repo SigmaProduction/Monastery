@@ -65,6 +65,14 @@ if ($(window).scrollTop() > 300) {
 });
 
 btn.on('click', function(e) {
-e.preventDefault();
-$('html, body').animate({scrollTop:0}, '300');
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
 });
+
+// ======= Change Data Saledieng ========
+function changeImg(src, text1, text2) {
+  $('#thanh').removeAttr("style");
+  $('#thanh').css('background-image', 'url(' + src + ')');
+  $('#thanh-date').html(text1);
+  $('#thanh-title').html(text2);
+};
