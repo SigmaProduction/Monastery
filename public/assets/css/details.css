@@ -2,7 +2,7 @@
   /* Full height */
   height: 100%;
   /* The image used */
-  background-image: url("../img/images/background-paralax.png");
+  background-image: url("/assets/images/img/background-paralax.png");
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: bottom;
@@ -198,13 +198,13 @@
   }
 }
 .post-detail .post-detail__content .categories-card .categories-card__tag {
-  width: 94px;
+  width: 110px;
   height: 26px;
   font-size: 18px;
   line-height: 18px;
   font-weight: 600;
   text-align: center;
-  white-space: no-wrap;
+  white-space: nowrap;
   color: #ffffff;
   display: flex;
   justify-content: center;

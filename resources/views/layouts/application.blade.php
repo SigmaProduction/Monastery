@@ -65,7 +65,7 @@
                                 </a>
                                 <div class="dropdown-menu">
                                     @foreach($menu->categories as $category)
-                                        <a class="dropdown-item" href="{{$menu->name}}/{{$category->name}}">{{$category->name}}</a>
+                                        <a class="dropdown-item" href="{{ route('list.categories', ['menu' => $menu->name, 'category' => $category->name]) }}">{{$category->name}}</a>
                                     @endforeach
                                 </div>
                                 </li>

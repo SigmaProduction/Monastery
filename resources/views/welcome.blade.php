@@ -85,7 +85,7 @@
                 <!-- news -->
                 <div class="col-md-6" data-aos="fade-up">
                     @if(!empty($first_post[0]))
-                        <a href="/Monastery_UI/news-details.html">
+                        <a href="{{ route('detail.post', ['id' => $first_post[0]->id, 'title' => $first_post[0]->title]) }}">
                             <div class="post__cart">
                                 <div class="post__cart--img">
                                     <img src="{{ asset($first_post[0]->image) }}" alt="post" />
@@ -100,7 +100,7 @@
                         <ul>
                             @foreach($new_posts as $new_post)
                                 <li class="post__list--item">
-                                    <a href="/Monastery_UI/news-details.html">
+                                    <a href="{{ route('detail.post', ['id' => $new_post->id, 'title' => $new_post->title]) }}">
                                         <div class="item-cart">
                                             <div class="item-cart__img">
                                                 <img src="{{ asset($new_post->image) }}" alt="list-img" />
@@ -117,7 +117,7 @@
                         </ul>
                     </div>
 
-                    <a class="post__cart--more btn-more" href="/Monastery_UI/news.html" data-aos="fade-up">
+                    <a class="post__cart--more btn-more" href="#" data-aos="fade-up">
                     Xem Thêm
                     </a>
                 </div><!-- /.news- -->
@@ -135,8 +135,8 @@
                             </div>
                         </a>
                     @endforeach
-                    <a class="about-wrap__content--more btn-more mt-26" href="#" data-aos="fade-up">
-                    Xem Thêm
+                    <a class="about-wrap__content--more btn-more mt-26" href="{{ route('list.mega') }}" data-aos="fade-up">
+                        Xem Thêm
                     </a>
 
                 </div><!-- /.mega posts- -->
