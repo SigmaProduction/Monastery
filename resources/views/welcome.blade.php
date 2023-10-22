@@ -217,131 +217,28 @@
                     <!-- Swiper categories -->
                     <div class="swiper categories-swiper" data-aos="fade-right">
                         <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                                <a href="#">
-                                <div class="categories__cart--post">
-                                    <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                    </div>
-                                    <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                    </p>
-                                </div>
-                                </a>
-                                <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                                </a>
-                            </div>
-                        </div>
+                            @foreach($categories_important as $category_important)
+                            <div class="swiper-slide">
+                                <div class="categories__cart">
+                                    @if(!empty($category_important->posts[0]))
+                                        <a href="{{ route('detail.post', ['id' => $category_important->posts[0]->id, 'title' => $category_important->posts[0]->title]) }}">
+                                            <div class="categories__cart--post">
+                                                <div class="post__img">
+                                                    <img src="{{ asset($category_important->posts[0]->image) }}" alt="img" />
+                                                </div>
+                                                <p class="post__content">
+                                                    {{ $category_important->posts[0]->title }}
+                                                </p>
+                                            </div>
+                                        </a>
+                                    @endif
 
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
+                                    <a href="{{ route('list.categories', ['menu' => $category_important->menu->name, 'category' => $category_important->name]) }}" class="categories__cart--link">
+                                        {{$category_important->name}}
+                                    </a>
                                 </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
                             </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
+                            @endforeach
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>

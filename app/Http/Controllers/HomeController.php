@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\ImageSlider;
 use App\Models\Post;
 use App\Models\AboutUs;
+use App\Models\Category;
 use App\Models\SalediengMonth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -53,6 +54,8 @@ class HomeController extends Controller
                         ->get();
 
         $saledieng_months = SalediengMonth::all();
+
+        $categories_important = Category::where('is_important', 0)->get();
         
         return view('welcome',compact(
             'image_sliders', 
@@ -64,7 +67,8 @@ class HomeController extends Controller
             'video_posts',
             'podcast_posts',
             'about_us',
-            'saledieng_months'
+            'saledieng_months',
+            'categories_important'
         ));
     }
 

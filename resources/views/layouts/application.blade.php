@@ -47,7 +47,7 @@
                         <div class="collapse navbar-collapse navbar-custom__collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <div class="nav-link" href="/">Trang chủ</div>
+                                <a class="nav-link" href="/">Trang chủ</a>
                             </li>
                             @foreach($menus as $menu)
                                 <li class="nav-item dropdown">
