@@ -26,7 +26,7 @@ use App\Http\Controllers\CategoriePostController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/gioi-thieu', [HomeController::class, 'introduce']);
+Route::get('/gioi-thieu', [HomeController::class, 'introduce'])->name('introduce');
 Route::get('/ho-tro', [HomeController::class, 'support']);
 Route::get('/quyen-gop', [HomeController::class, 'donate']);
 

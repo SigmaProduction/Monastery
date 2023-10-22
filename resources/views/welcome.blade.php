@@ -64,8 +64,8 @@
                 {{$about_us[0]->description}}
             </div>
 
-            <a class="about-wrap__content--more btn-more" href="{{ url('introduce') }}" data-aos="fade-up">
-            Xem Thêm
+            <a class="about-wrap__content--more btn-more" href="{{ route('introduce') }}" data-aos="fade-up">
+                Xem Thêm
             </a>
         </div>
 

@@ -13,8 +13,7 @@ class CategoriePostController extends Controller
 {
     public function list_post_category($menu = null, $category = null) {
 
-        $list_category = Category::where('name', $category)->get();
-        $category_id = $list_category[0]->id;
+        $category_id = Category::where('name', $category)->first()->id;
 
         $first_post = Post::orderBy('created_at', 'desc')
             ->where('category_id', $category_id)

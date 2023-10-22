@@ -74,7 +74,8 @@ class HomeController extends Controller
 
     public function introduce()
     {
-        return view('introduce');
+        $about_us = $about_us = AboutUs::limit(1)->get();
+        return view('introduce',compact('about_us'));
     }
 
     public function support()
