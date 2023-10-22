@@ -78,6 +78,7 @@
 
                 <div class="form-group">
                     <label id="is_hide_label" for="is_hide" class='form-group'>Is Hide
+                        <input type="hidden" name="is_hide" value="0"> <!-- Hidden field with default value -->
                         <input type="checkbox" id="is_hide" name="is_hide" value="1" {{ old('is_hide', $post->is_hide) ? 'checked' : '' }}>
                     </label>
 
@@ -88,6 +89,7 @@
 
                 <div class="form-group">
                     <label id="is_important_label" for="is_important" class="form-group">Is Important
+                        <input type="hidden" name="is_important" value="0"> <!-- Hidden field with default value -->
                         <input type="checkbox" id="is_important" name="is_important" value="1" {{ old('is_important', $post->is_important) ? 'checked' : '' }}>
                     </label>
                     @error('is_important')
