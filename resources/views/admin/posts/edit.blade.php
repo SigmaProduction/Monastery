@@ -58,7 +58,7 @@
                     <select class="form-control" id="category_id" name="category_id">
                         <option value="">Select Category</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" data-menu-id="{{ $category->menu_id }}" {{ $post->menu_id == $category->id ? 'selected' : '' }}>
+                            <option value="{{ $category->id }}" data-menu-id="{{ $category->menu_id }}" {{ $post->category_id == $category->id ? 'selected' : '' }}>
                                 {{ $category->name }}
                             </option>
                         @endforeach
@@ -105,6 +105,7 @@
 
                 <div class="form-group">
                     <label id="content_label" for="content">Content</label>
+                    {{$post->content}}
                     <textarea class="form-control" id="content" name="content">{{ old('content', $post->content) }}</textarea>
                     @error('content')
                         <small class="text-danger">{{ $message }}</small>
@@ -179,8 +180,8 @@
                         })
                         .then(response => response.json())
                         .then(data => {
-                            if (data.location) {
-                                editor.summernote('insertImage', data.location);
+                            if (data.url) {
+                                editor.summernote('insertImage', data.url);
                             } else {
                                 console.error('Image upload failed');
                             }
