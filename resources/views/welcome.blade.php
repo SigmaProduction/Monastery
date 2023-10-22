@@ -154,7 +154,7 @@
                 <div class="col-md-8" data-aos="fade-up">
                     <h3 class="topic">Video</h3>
                     @if(!empty($first_video_post[0]))
-                        <a href="#">
+                        <a href="{{ route('detail.post', ['id' => $first_video_post[0]->id, 'title' => $first_video_post[0]->title]) }}">
                             <div class="post__cart">
                                 <div class="post__cart--img">
                                     <iframe width="100%" height="345" src="{{ $first_video_post[0]->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -168,7 +168,7 @@
                     <div class="row">
                         @foreach($video_posts as $video_post)
                             <div class="col-md-4">
-                                <a href="#">
+                                <a href="{{ route('detail.post', ['id' => $video_post->id, 'title' => $video_post->title]) }}">
                                 <div class="post__cart">
                                     <div class="post__cart--img media__cart--img">
                                         <iframe width="100%" height="145" src="{{ $video_post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>

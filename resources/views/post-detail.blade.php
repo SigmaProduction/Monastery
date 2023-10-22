@@ -6,9 +6,17 @@
 <!-- ================================= Content ================================= -->
 <section>
     <div class="post-detail">
-        <div class="post-detail__img" data-aos="fade-up">
-            <img src="{{ asset($post_detail->image) }}" alt="img-detail" />
-        </div>
+        @if($post_detail->post_type == 'default_post') 
+            <div class="post-detail__img" data-aos="fade-up">
+                <img src="{{ asset($post_detail->image) }}" alt="img-detail" />
+            </div>
+        @endif
+
+        @if($post_detail->post_type == 'video_post') {
+            <div class="post__cart--img" style="margin-top: 40px;">
+                <iframe width="100%" height="345" src="{{ $post_detail->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        @endif
 
         <div class="container post-detail__content" data-aos="fade-up">
             <div class="row">
