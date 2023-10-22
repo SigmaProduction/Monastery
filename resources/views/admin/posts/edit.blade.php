@@ -105,7 +105,6 @@
 
                 <div class="form-group">
                     <label id="content_label" for="content">Content</label>
-                    {{$post->content}}
                     <textarea class="form-control" id="content" name="content">{{ old('content', $post->content) }}</textarea>
                     @error('content')
                         <small class="text-danger">{{ $message }}</small>
