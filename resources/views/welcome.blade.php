@@ -64,8 +64,8 @@
                 {{$about_us[0]->description}}
             </div>
 
-            <a class="about-wrap__content--more btn-more" href="{{ url('introduce') }}" data-aos="fade-up">
-            Xem Thêm
+            <a class="about-wrap__content--more btn-more" href="{{ route('introduce') }}" data-aos="fade-up">
+                Xem Thêm
             </a>
         </div>
 
@@ -85,7 +85,7 @@
                 <!-- news -->
                 <div class="col-md-6" data-aos="fade-up">
                     @if(!empty($first_post[0]))
-                        <a href="/Monastery_UI/news-details.html">
+                        <a href="{{ route('detail.post', ['id' => $first_post[0]->id, 'title' => $first_post[0]->title]) }}">
                             <div class="post__cart">
                                 <div class="post__cart--img">
                                     <img src="{{ asset($first_post[0]->image) }}" alt="post" />
@@ -100,7 +100,7 @@
                         <ul>
                             @foreach($new_posts as $new_post)
                                 <li class="post__list--item">
-                                    <a href="/Monastery_UI/news-details.html">
+                                    <a href="{{ route('detail.post', ['id' => $new_post->id, 'title' => $new_post->title]) }}">
                                         <div class="item-cart">
                                             <div class="item-cart__img">
                                                 <img src="{{ asset($new_post->image) }}" alt="list-img" />
@@ -117,7 +117,7 @@
                         </ul>
                     </div>
 
-                    <a class="post__cart--more btn-more" href="/Monastery_UI/news.html" data-aos="fade-up">
+                    <a class="post__cart--more btn-more" href="#" data-aos="fade-up">
                     Xem Thêm
                     </a>
                 </div><!-- /.news- -->
@@ -125,7 +125,7 @@
                 <!-- mega posts -->
                 <div class="col-md-6" data-aos="fade-up">
                     @foreach($mega_posts as $mega_post)
-                        <a href="/Monastery_UI/news-details.html">
+                        <a href="{{ route('detail.mega', ['id' => $mega_post->id, 'title' => $mega_post->title]) }}">
                             <div class="post__cart post__cart--mega">
                                 <div class="post__cart--img">
                                     <img src="{{ asset($mega_post->image) }}" alt="post" />
@@ -135,8 +135,8 @@
                             </div>
                         </a>
                     @endforeach
-                    <a class="about-wrap__content--more btn-more mt-26" href="#" data-aos="fade-up">
-                    Xem Thêm
+                    <a class="about-wrap__content--more btn-more mt-26" href="{{ route('list.mega') }}" data-aos="fade-up">
+                        Xem Thêm
                     </a>
 
                 </div><!-- /.mega posts- -->
@@ -154,7 +154,7 @@
                 <div class="col-md-8" data-aos="fade-up">
                     <h3 class="topic">Video</h3>
                     @if(!empty($first_video_post[0]))
-                        <a href="#">
+                        <a href="{{ route('detail.post', ['id' => $first_video_post[0]->id, 'title' => $first_video_post[0]->title]) }}">
                             <div class="post__cart">
                                 <div class="post__cart--img">
                                     <iframe width="100%" height="345" src="{{ $first_video_post[0]->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -168,14 +168,14 @@
                     <div class="row">
                         @foreach($video_posts as $video_post)
                             <div class="col-md-4">
-                                <a href="#">
-                                <div class="post__cart">
-                                    <div class="post__cart--img media__cart--img">
-                                        <iframe width="100%" height="145" src="{{ $video_post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                                        </iframe>
+                                <a href="{{ route('detail.post', ['id' => $video_post->id, 'title' => $video_post->title]) }}">
+                                    <div class="post__cart">
+                                        <div class="post__cart--img media__cart--img">
+                                            <iframe width="100%" height="145" src="{{ $video_post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                                            </iframe>
+                                        </div>
+                                        <p class="post__cart--content media__cart--content">{{ $video_post->title; }}</p>
                                     </div>
-                                    <p class="post__cart--content media__cart--content">{{ $video_post->title; }}</p>
-                                </div>
                                 </a>
                             </div>
                         @endforeach
@@ -185,7 +185,7 @@
                 <div class="col-md-4" data-aos="fade-up">
                     <h3 class="topic">Podcast</h3>
                     @foreach($podcast_posts as $podcast_post)
-                        <a href="#">
+                        <a href="{{ route('detail.post', ['id' => $podcast_post->id, 'title' => $podcast_post->title]) }}">
                             <div class="post__cart">
                                 <div class="post__cart--img podcast__post--img">
                                     <img src="{{ asset($podcast_post->image) }}" alt="post" />
@@ -217,131 +217,28 @@
                     <!-- Swiper categories -->
                     <div class="swiper categories-swiper" data-aos="fade-right">
                         <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                                <a href="#">
-                                <div class="categories__cart--post">
-                                    <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                    </div>
-                                    <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                    </p>
-                                </div>
-                                </a>
-                                <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                                </a>
-                            </div>
-                        </div>
+                            @foreach($categories_important as $category_important)
+                            <div class="swiper-slide">
+                                <div class="categories__cart">
+                                    @if(!empty($category_important->posts[0]))
+                                        <a href="{{ route('detail.post', ['id' => $category_important->posts[0]->id, 'title' => $category_important->posts[0]->title]) }}">
+                                            <div class="categories__cart--post">
+                                                <div class="post__img">
+                                                    <img src="{{ asset($category_important->posts[0]->image) }}" alt="img" />
+                                                </div>
+                                                <p class="post__content">
+                                                    {{ $category_important->posts[0]->title }}
+                                                </p>
+                                            </div>
+                                        </a>
+                                    @endif
 
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
+                                    <a href="{{ route('list.categories', ['menu' => $category_important->menu->name, 'category' => $category_important->name]) }}" class="categories__cart--link">
+                                        {{$category_important->name}}
+                                    </a>
                                 </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
                             </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="categories__cart">
-                            <a href="#">
-                                <div class="categories__cart--post">
-                                <div class="post__img">
-                                    <img src="/assets/images/img/IMG-1.png" alt="img" />
-                                </div>
-                                <p class="post__content">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 
-                                </p>
-                                </div>
-                            </a>
-                            <a href="#" class="categories__cart--link">
-                                Truyền Giáo
-                            </a>
-                            </div>
-                        </div>
+                            @endforeach
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>

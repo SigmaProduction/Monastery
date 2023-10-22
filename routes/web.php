@@ -26,10 +26,15 @@ use App\Http\Controllers\CategoriePostController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/gioi-thieu', [HomeController::class, 'introduce']);
+Route::get('/gioi-thieu', [HomeController::class, 'introduce'])->name('introduce');
 Route::get('/ho-tro', [HomeController::class, 'support']);
 Route::get('/quyen-gop', [HomeController::class, 'donate']);
+
 Route::get('news/{menu?}/{category?}', [CategoriePostController::class, 'list_post_category'])->name('list.categories');
+Route::get('news-detail/{id}/{title?}', [CategoriePostController::class, 'detail_post'])->name('detail.post');
+
+Route::get('/mega', [CategoriePostController::class, 'list_mega_post'])->name('list.mega');
+Route::get('/mega/{id}/{title?}', [CategoriePostController::class, 'detail_mega'])->name('detail.mega');
 
 Route::get('admin/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
 Route::post('admin/login', [AdminAuthController::class, 'login'])->name('login.submit');

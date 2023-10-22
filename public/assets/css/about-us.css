@@ -2,7 +2,7 @@
   /* Full height */
   height: 100%;
   /* The image used */
-  background-image: url("../img/images/bg-about-us.png");
+  background-image: url("/assets/images/img/bg-about-us.png");
   /* Create the parallax scrolling effect */
   background-position: top;
   background-repeat: repeat-y;

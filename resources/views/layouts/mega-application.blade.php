@@ -30,63 +30,26 @@
     </a>
     <!-- ================================= Header ================================= -->
     <section>
-        <div class="header-wrap">
-            <div class="header-wrap__heading">
-                <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-                        <a class="navbar-brand navbar-custom__logo" href="/">
-                            <img src="/assets/images/logo/logo-white.svg" alt="logo"/>
-                        </a><!-- /.logo -->
-
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    
-                        <div class="collapse navbar-collapse navbar-custom__collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Trang chủ</a>
-                            </li>
-                            @foreach($menus as $menu)
-                                <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                                    {{$menu->name}}
-                                </a>
-                                <div class="dropdown-menu">
-                                    @foreach($menu->categories as $category)
-                                        <a class="dropdown-item" href="{{ route('list.categories', ['menu' => $menu->name, 'category' => $category->name]) }}">{{$category->name}}</a>
-                                    @endforeach
-                                </div>
-                                </li>
-                            @endforeach
-
-                            <li class="nav-item search">
-                                <a class="btn-custom btn-custom__hotline" href="#">
-                                    <img src="/assets/images/icon/search.svg" alt="phone" />
-                                </a>
-                            </li>
-                            <li class="nav-item search social">
-                                <a class="btn-custom btn-custom__hotline" href="https://www.youtube.com/@TruyenThongDongConDucMePhuHo">
-                                    <img src="/assets/images/icon/youtube.svg" alt="phone" />
-                                </a>
-                            </li>
-                            <li class="nav-item search social">
-                                <a class="btn-custom btn-custom__hotline" href="https://www.facebook.com/fmavtn">
-                                    <img src="/assets/images/icon/facebook.svg" alt="phone" />
-                                </a>
-                            </li>
-                        </ul>
-                        </div><!-- /.menu- -->
-                    </div>
-                </div>
-                </div>
-            </div><!-- /.navbar- -->
+      <div class="header-mega" data-aos="fade-up">
+        <div class="header-mega__back">
+          <a href="javascript: history.go(-1)">
+            <img src="/assets/images/icon/back-mega.svg" alt="back" />
+          </a>
         </div>
+
+        <div class="header-mega__logo">
+            <a href="/">
+            <img src="/assets/images/icon/logo.svg" alt="logo" />
+            </a>
+        </div>
+
+        <h1 class="header-mega__topic">MEGA STORY</h1>
+        <div class="detail__sub--shared">
+          <img src="/assets/images/share-face.png" alt="share" />
+        </div>
+      </div>
     </section>
     <!-- ================================= End - Header ================================= -->
-
     <main>
         <!-- Here's where the main content will go -->
         @yield('content')
@@ -101,7 +64,7 @@
                         <div class="row">
                             <!-- address -->
                             <div class="col-md-3">
-                                <a class="footer__logo" href="#">
+                                <a class="footer__logo" href="/">
                                     <img src="/assets/images/logo/logo-white.svg" alt="logo"/>
                                 </a>
 
