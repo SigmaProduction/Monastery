@@ -58,7 +58,7 @@
                     <select class="form-control" id="category_id" name="category_id">
                         <option value="">Select Category</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" data-menu-id="{{ $category->menu_id }}" {{ $post->menu_id == $category->id ? 'selected' : '' }}>
+                            <option value="{{ $category->id }}" data-menu-id="{{ $category->menu_id }}" {{ $post->category_id == $category->id ? 'selected' : '' }}>
                                 {{ $category->name }}
                             </option>
                         @endforeach
@@ -78,6 +78,7 @@
 
                 <div class="form-group">
                     <label id="is_hide_label" for="is_hide" class='form-group'>Is Hide
+                        <input type="hidden" name="is_hide" value="0"> <!-- Hidden field with default value -->
                         <input type="checkbox" id="is_hide" name="is_hide" value="1" {{ old('is_hide', $post->is_hide) ? 'checked' : '' }}>
                     </label>
 
@@ -88,6 +89,7 @@
 
                 <div class="form-group">
                     <label id="is_important_label" for="is_important" class="form-group">Is Important
+                        <input type="hidden" name="is_important" value="0"> <!-- Hidden field with default value -->
                         <input type="checkbox" id="is_important" name="is_important" value="1" {{ old('is_important', $post->is_important) ? 'checked' : '' }}>
                     </label>
                     @error('is_important')
@@ -179,8 +181,8 @@
                         })
                         .then(response => response.json())
                         .then(data => {
-                            if (data.location) {
-                                editor.summernote('insertImage', data.location);
+                            if (data.url) {
+                                editor.summernote('insertImage', data.url);
                             } else {
                                 console.error('Image upload failed');
                             }

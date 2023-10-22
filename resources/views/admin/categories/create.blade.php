@@ -47,6 +47,15 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="is_important" id="is_important_label" class="form-group">Is Important
+                                <input type="checkbox" id="is_important" name="is_important" value="1" {{ old('is_important') ? 'checked' : '' }}>
+                            </label>
+                            @error('is_important')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <a href="{{ route('categories.index') }}" class="btn btn-default">Back</a>
                             <button type="submit" class="btn btn-primary">Create</button>
                         </div>

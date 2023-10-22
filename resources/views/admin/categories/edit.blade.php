@@ -54,6 +54,16 @@
                 </div>
 
                 <div class="form-group">
+                    <label id="is_important_label" for="is_important" class="form-group">Is Important
+                        <input type="hidden" name="is_important" value="0"> <!-- Hidden field with default value -->
+                        <input type="checkbox" id="is_important" name="is_important" value="1" {{ old('is_important', $category->is_important) ? 'checked' : '' }}>
+                    </label>
+                    @error('is_important')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <a href="{{ route('categories.index') }}" class="btn btn-default">Back</a>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </div>
