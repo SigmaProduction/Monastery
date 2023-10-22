@@ -75,6 +75,7 @@ class CategoriesController extends Controller
             ],
             'menu_id' => 'required|exists:menus,id',
             'meta_content' => 'required|string|max:255',
+            'is_important' => 'nullable|boolean'
         ]);
 
         if ($validator->fails()) {
@@ -121,6 +122,7 @@ class CategoriesController extends Controller
             ],
             'menu_id' => 'required|exists:menus,id',
             'meta_content' => 'required|string|max:255',
+            'is_important' => 'nullable|boolean'
         ]);
 
         if ($validator->fails()) {
