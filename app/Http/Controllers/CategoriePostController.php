@@ -23,14 +23,14 @@ class CategoriePostController extends Controller
         $posts = Post::orderBy('created_at', 'desc')
                 ->where('category_id', $category_id)->offset(1)->paginate(10);
 
-        return view('post-categories', compact('first_post', 'posts', 'menu', 'category'));
+        return view('posts.post-categories', compact('first_post', 'posts', 'menu', 'category'));
     }
 
     public function detail_post($id, $title = null) {
         $post_detail = Post::find($id);
         $posts_relation = Post::inRandomOrder()->limit(6)->get();
 
-        return view('post-detail', compact('post_detail', 'posts_relation'));
+        return view('posts.post-detail', compact('post_detail', 'posts_relation'));
     }
 
     public function list_mega_post() {
@@ -39,6 +39,13 @@ class CategoriePostController extends Controller
 
         $mega_posts = Post::orderBy('created_at', 'desc')->where('post_type', 1)->paginate(10);
 
-        return view('mega', compact('first_mega_post', 'mega_posts'));
+        return view('posts.mega', compact('first_mega_post', 'mega_posts'));
+    }
+
+    public function detail_mega($id, $title = null) {
+        $mega_detail = Post::find($id);
+        $megas_relation = Post::inRandomOrder()->where('post_type', 1)->limit(6)->get();
+
+        return view('posts.mega-detail', compact('mega_detail', 'megas_relation'));
     }
 }

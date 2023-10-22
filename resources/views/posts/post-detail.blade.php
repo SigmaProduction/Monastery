@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        @if($post_detail->post_type == 'video_post') {
+        @if($post_detail->post_type == 'video_post' || $post_detail->post_type == 'pdf_post') {
             <div class="post__cart--img" style="margin-top: 40px;">
                 <iframe width="100%" height="345" src="{{ $post_detail->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>

@@ -125,7 +125,7 @@
                 <!-- mega posts -->
                 <div class="col-md-6" data-aos="fade-up">
                     @foreach($mega_posts as $mega_post)
-                        <a href="/Monastery_UI/news-details.html">
+                        <a href="{{ route('detail.mega', ['id' => $mega_post->id, 'title' => $mega_post->title]) }}">
                             <div class="post__cart post__cart--mega">
                                 <div class="post__cart--img">
                                     <img src="{{ asset($mega_post->image) }}" alt="post" />
@@ -169,13 +169,13 @@
                         @foreach($video_posts as $video_post)
                             <div class="col-md-4">
                                 <a href="{{ route('detail.post', ['id' => $video_post->id, 'title' => $video_post->title]) }}">
-                                <div class="post__cart">
-                                    <div class="post__cart--img media__cart--img">
-                                        <iframe width="100%" height="145" src="{{ $video_post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
-                                        </iframe>
+                                    <div class="post__cart">
+                                        <div class="post__cart--img media__cart--img">
+                                            <iframe width="100%" height="145" src="{{ $video_post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                                            </iframe>
+                                        </div>
+                                        <p class="post__cart--content media__cart--content">{{ $video_post->title; }}</p>
                                     </div>
-                                    <p class="post__cart--content media__cart--content">{{ $video_post->title; }}</p>
-                                </div>
                                 </a>
                             </div>
                         @endforeach
@@ -185,7 +185,7 @@
                 <div class="col-md-4" data-aos="fade-up">
                     <h3 class="topic">Podcast</h3>
                     @foreach($podcast_posts as $podcast_post)
-                        <a href="#">
+                        <a href="{{ route('detail.post', ['id' => $podcast_post->id, 'title' => $podcast_post->title]) }}">
                             <div class="post__cart">
                                 <div class="post__cart--img podcast__post--img">
                                     <img src="{{ asset($podcast_post->image) }}" alt="post" />

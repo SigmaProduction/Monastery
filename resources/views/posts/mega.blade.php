@@ -27,7 +27,7 @@
           <div class="row">
             <div class="col-md-12 post-categories__new">
                 @if(!empty($first_mega_post[0]))
-                    <a class="#">
+                    <a href="{{ route('detail.mega', ['id' => $first_mega_post[0]->id, 'title' => $first_mega_post[0]->title]) }}">
                         <div class="categories-card categories-card--large" data-aos="fade-up">
                             <div class="categories-card__img">
                                 <img src="{{ asset($first_mega_post[0]->image) }}" alt="img" />
@@ -44,7 +44,7 @@
           <div class="row" data-aos="fade-up">
             @foreach($mega_posts as $post)
                 <div class="col-md-3">
-                <a class="/Monastery_UI/news-details.html">
+                <a href="{{ route('detail.mega', ['id' => $post->id, 'title' => $post->title]) }}">
                     <div class="categories-card">
                         <div class="categories-card__img">
                             <img src="{{ asset($post->image) }}" alt="img" />
