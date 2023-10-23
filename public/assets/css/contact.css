@@ -61,6 +61,11 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.contact-post .conact__info--qr {
+  width: 110px;
+  width: 110px;
+  margin-bottom: 20px;
+}
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .contact-post .conact__info--qr {
     margin-bottom: 20px;
