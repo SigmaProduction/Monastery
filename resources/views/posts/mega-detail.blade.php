@@ -9,7 +9,11 @@
     <div class="container-fluit">
         <div class="row">
             <div class="mega-content__slide" data-aos="fade-up">
-                <img src="{{ asset($mega_detail->image) }}" alt="mega-slide" />
+                @if(empty($mega_detail->image))
+                    <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                @else
+                    <img src="{{ asset($mega_detail->image) }}" alt="mega-slide" />
+                @endif  
             </div>
         </div>
 
@@ -30,7 +34,11 @@
                     <a href="{{ route('detail.mega', ['id' => $mega_relation->id, 'title' => $mega_relation->title]) }}">
                         <div class="categories-card">
                             <div class="categories-card__img">
-                                <img src="{{ asset($mega_relation->image) }}" alt="img" />
+                                @if(empty($mega_relation->image))
+                                    <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                @else
+                                    <img src="{{ asset($mega_relation->image) }}" alt="img" />
+                                @endif
                             </div>
 
                             <div class="categories-card__title">{{$mega_relation->title}}</div>

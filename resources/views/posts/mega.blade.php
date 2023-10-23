@@ -30,7 +30,11 @@
                     <a href="{{ route('detail.mega', ['id' => $first_mega_post[0]->id, 'title' => $first_mega_post[0]->title]) }}">
                         <div class="categories-card categories-card--large" data-aos="fade-up">
                             <div class="categories-card__img">
-                                <img src="{{ asset($first_mega_post[0]->image) }}" alt="img" />
+                                @if(empty($first_mega_post[0]->image))
+                                    <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                @else
+                                    <img src="{{ asset($first_mega_post[0]->image) }}" alt="img" />
+                                @endif
                             </div>
 
                             <div class="categories-card__title">{{$first_mega_post[0]->title}}</div>
@@ -47,7 +51,11 @@
                 <a href="{{ route('detail.mega', ['id' => $post->id, 'title' => $post->title]) }}">
                     <div class="categories-card">
                         <div class="categories-card__img">
-                            <img src="{{ asset($post->image) }}" alt="img" />
+                            @if(empty($post->image))
+                                <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                            @else
+                                <img src="{{ asset($post->image) }}" alt="img" />
+                            @endif
                         </div>
 
                         <div class="categories-card__title">{{$post->title}}</div>

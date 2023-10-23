@@ -8,7 +8,11 @@
     <div class="post-detail">
         @if($post_detail->post_type == 'default_post') 
             <div class="post-detail__img" data-aos="fade-up">
-                <img src="{{ asset($post_detail->image) }}" alt="img-detail" />
+                @if(empty($post_detail->image))
+                    <img src="/assets/images/img/slider-default.jpg" alt="slider" />
+                @else
+                    <img src="{{ asset($post_detail->image) }}" alt="img-detail" />
+                @endif  
             </div>
         @endif
 
@@ -63,7 +67,11 @@
                         <a href="{{ route('detail.post', ['id' => $post_relation->id, 'title' => $post_relation->title]) }}">
                             <div class="categories-card">
                                 <div class="categories-card__img">
-                                    <img src="{{ asset($post_relation->image) }}" alt="img" />
+                                    @if(empty($post_relation->image))
+                                        <img src="/assets/images/img/slider-default.jpg" alt="slider" />
+                                    @else
+                                        <img src="{{ asset($post_relation->image) }}" alt="img" />
+                                    @endif
                                 </div>
 
                                 <div class="categories-card__title">{{$post_relation->title}}</div>

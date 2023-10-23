@@ -10,7 +10,11 @@
                 @foreach($image_sliders as $slider)
                     <div class="swiper-slide">
                         <div class="swiper-zoom-container">
-                            <img src="{{ asset($slider->url) }}" alt="{{ $slider->thumb }}" />
+                            @if(empty($slider->url))
+                                <img src="/assets/images/img/slider-default.jpg" alt="slider" />
+                            @else
+                                <img src="{{ asset($slider->url) }}" alt="{{ $slider->thumb }}" />
+                            @endif
                         </div>
                     </div>
                 @endforeach
@@ -88,7 +92,11 @@
                         <a href="{{ route('detail.post', ['id' => $first_post[0]->id, 'title' => $first_post[0]->title]) }}">
                             <div class="post__cart">
                                 <div class="post__cart--img">
-                                    <img src="{{ asset($first_post[0]->image) }}" alt="post" />
+                                    @if(empty($first_post[0]->image))
+                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                    @else
+                                        <img src="{{ asset($first_post[0]->image) }}" alt="post" />
+                                    @endif
                                 </div>
                                 <div class="post__cart--tag">{{ $first_post[0]->getTranslatedPostType() }}</div>
                                 <p class="post__cart--content">{{ $first_post[0]->description; }}</p>
@@ -103,7 +111,11 @@
                                     <a href="{{ route('detail.post', ['id' => $new_post->id, 'title' => $new_post->title]) }}">
                                         <div class="item-cart">
                                             <div class="item-cart__img">
-                                                <img src="{{ asset($new_post->image) }}" alt="list-img" />
+                                                @if(empty($new_post->image))
+                                                    <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                                @else
+                                                    <img src="{{ asset($new_post->image) }}" alt="post" />
+                                                @endif
                                             </div>
 
                                             <div class="item-cart__content">
@@ -118,7 +130,7 @@
                     </div>
 
                     <a class="post__cart--more btn-more" href="#" data-aos="fade-up">
-                    Xem Thêm
+                        Xem Thêm
                     </a>
                 </div><!-- /.news- -->
 
@@ -128,7 +140,11 @@
                         <a href="{{ route('detail.mega', ['id' => $mega_post->id, 'title' => $mega_post->title]) }}">
                             <div class="post__cart post__cart--mega">
                                 <div class="post__cart--img">
-                                    <img src="{{ asset($mega_post->image) }}" alt="post" />
+                                    @if(empty($mega_post->image))
+                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                    @else
+                                        <img src="{{ asset($mega_post->image) }}" alt="post" />
+                                    @endif
                                 </div>
                                 <div class="post__cart--tag">{{$mega_post->getTranslatedPostType();}}</div>
                                 <p class="post__cart--content">{{ $mega_post->description; }}</p>
@@ -188,7 +204,11 @@
                         <a href="{{ route('detail.post', ['id' => $podcast_post->id, 'title' => $podcast_post->title]) }}">
                             <div class="post__cart">
                                 <div class="post__cart--img podcast__post--img">
-                                    <img src="{{ asset($podcast_post->image) }}" alt="post" />
+                                    @if(empty($podcast_post->image))
+                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                    @else
+                                        <img src="{{ asset($podcast_post->image) }}" alt="post" />
+                                    @endif
                                 </div>
                                 <div class="post__cart--content podcast__cart--content">
                                     <img src="/assets/images/icon/podcast.svg" alt="podcast" />
@@ -224,7 +244,11 @@
                                         <a href="{{ route('detail.post', ['id' => $category_important->posts[0]->id, 'title' => $category_important->posts[0]->title]) }}">
                                             <div class="categories__cart--post">
                                                 <div class="post__img">
-                                                    <img src="{{ asset($category_important->posts[0]->image) }}" alt="img" />
+                                                    @if(empty($category_important->posts[0]->image))
+                                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                                    @else
+                                                        <img src="{{ asset($category_important->posts[0]->image) }}" alt="img" />
+                                                    @endif
                                                 </div>
                                                 <p class="post__content">
                                                     {{ $category_important->posts[0]->title }}
@@ -259,7 +283,11 @@
                         @foreach($image_galleries as $image_gallery)
                             <div class="swiper-slide">
                                 <div class="gallery-img">
-                                    <img src="{{ asset($image_gallery->url) }}" alt="slide-vertical-2" />
+                                    @if(empty($image_gallery->url))
+                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                    @else
+                                        <img src="{{ asset($image_gallery->url) }}" alt="slide-vertical-2" />
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
@@ -319,7 +347,11 @@
                                                         <a onclick="changeImg('{{ asset($saledieng_family->image) }}', '{{ $saledieng_family->name }}', '{{ $saledieng_family->death_date }}')" href="#thanh{{$saledieng_family->id}}" data-toggle="collapse" data-target="#thanh{{$saledieng_family->id}}" aria-expanded="false" aria-controls="thanh{{$saledieng_family->id}}">
                                                             <div class="saints-sub__card">
                                                                 <div class="saints-sub__card--img">
-                                                                    <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />
+                                                                    @if(empty($saledieng_family->image))
+                                                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                                                    @else
+                                                                        <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />
+                                                                    @endif
                                                                 </div>
 
                                                                 <div class="saints-sub__card--title">{{ $saledieng_family->name }}</div>

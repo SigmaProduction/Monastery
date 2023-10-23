@@ -169,7 +169,7 @@
 }
 .header-wrap .swiper {
   width: 100%;
-  height: 1182px;
+  height: 840px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .header-wrap .swiper {
@@ -260,7 +260,7 @@
   width: 100%;
   height: 362px;
   position: absolute;
-  top: -14%;
+  top: -18%;
   left: 0;
   z-index: 2;
   background-repeat: repeat-x;
@@ -269,8 +269,8 @@
   width: 100%;
   height: 362px;
   position: absolute;
-  top: -14%;
-  left: -10%;
+  top: -18%;
+  left: -12%;
   z-index: 2;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
@@ -669,7 +669,6 @@ hr.hr-limited {
 .post__list .item-cart .item-cart__img {
   width: 450px;
   height: 86px;
-  overflow-y: hidden;
   margin-right: 16px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
