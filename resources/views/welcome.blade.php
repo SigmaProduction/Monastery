@@ -80,7 +80,7 @@
 <section>
     <div class="new-post">
         <div class="container">
-            <h3 class="topic">Bài Mới</h3>
+            <h3 class="topic">Bài mới</h3>
             <div class="row">
                 <!-- news -->
                 <div class="col-md-6" data-aos="fade-up">

@@ -39,13 +39,13 @@
 
         <div class="header-mega__logo">
             <a href="/">
-            <img src="/assets/images/icon/logo.svg" alt="logo" />
+                <img src="/assets/images/icon/logo.svg" alt="logo" />
             </a>
         </div>
 
         <h1 class="header-mega__topic">MEGA STORY</h1>
         <div class="detail__sub--shared">
-          <img src="/assets/images/share-face.png" alt="share" />
+          <img src="/assets/images/img/share-face.png" alt="share" />
         </div>
       </div>
     </section>
@@ -64,7 +64,7 @@
                         <div class="row">
                             <!-- address -->
                             <div class="col-md-3">
-                                <a class="footer__logo" href="/">
+                                <a class="footer__logo" href="#">
                                     <img src="/assets/images/logo/logo-white.svg" alt="logo"/>
                                 </a>
 
@@ -84,6 +84,9 @@
                                                     <img src="/assets/images/icon/email.svg" alt="email" />
                                                 </span>
                                                 <div class="item__content">truyenthong@fmavtn.org</div>
+                                                <a href="{{ url('/ho-tro') }}" class="item__content"> 
+                                                    Liên hệ với chúng tôi
+                                                </a>
                                             </a>
                                         </li>
                                     </ul>
@@ -109,24 +112,24 @@
                                 <div class="footer__list footer__list--content">
                                     <ul>
                                         <li class="item">
-                                            <a href="https://www.cgfmanet.org/">Instituto Figlie di Maria Ausiliatrice</a>
+                                            <a href="https://www.cgfmanet.org/" target="_blank">Instituto Figlie di Maria Ausiliatrice</a>
                                         </li>
 
                                         <li class="item">
-                                            <a href="https://www.sdb.org/">Salesians Don Bosco</a>
+                                            <a href="https://www.sdb.org/" target="_blank">Salesians Don Bosco</a>
                                         </li>
 
                                         <li class="item">
-                                            <a href="https://sdb.vn/">Tỉnh Dòng Sa-lê-diêng Don Bosco</a>
+                                            <a href="https://sdb.vn/" target="_blank">Tỉnh Dòng Sa-lê-diêng Don Bosco</a>
                                         </li>
                                         <li class="item">
-                                            <a href="https://hdgmvietnam.com/">Hội đồng Giám mục Việt Nam</a>
+                                            <a href="https://hdgmvietnam.com/" target="_blank">Hội đồng Giám mục Việt Nam</a>
                                         </li>
                                         <li class="item">
-                                            <a href="https://phungvusaledieng.org/">Phụng Vụ Sa-lê-diêng</a>
+                                            <a href="https://phungvusaledieng.org/" target="_blank">Phụng Vụ Sa-lê-diêng</a>
                                         </li>
                                         <li class="item">
-                                            <a href="https://ktcgkpv.org/">Các Giờ Kinh Phụng Vụ </a>
+                                            <a href="https://ktcgkpv.org/" target="_blank">Các Giờ Kinh Phụng Vụ </a>
                                         </li>
                                     </ul>
                                 </div>
@@ -135,7 +138,7 @@
                             <!-- Flick link -->
                             <div class="col-md-3">
                                 <div class="footer__title">Liên Kết Flick</div>
-                                <a href="https://www.flickr.com/photos/fmavtn/albums" class="footer__img-flick">
+                                <a href="https://www.flickr.com/photos/fmavtn/albums" class="footer__img-flick" target="_blank">
                                     <img src="/assets/images/img/img-flick.png" alt="flick" />
                                 </a>
                             </div>

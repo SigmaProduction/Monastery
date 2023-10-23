@@ -24,8 +24,16 @@
                     <div class="detail">
                         <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Truyền Thông</li>
+                                <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                                @if(!empty($post_detail->category->menu->name))
+                                    <li class="breadcrumb-item active" aria-current="page">
+                                        {{$post_detail->category->menu->name}}
+                                    </li>
+                                @endif
+
+                                @if(!empty($post_detail->category->menu->name))
+                                    <li class="breadcrumb-item active" aria-current="page">{{$post_detail->category->name}}</li>
+                                @endif
                             </ol>
                         </nav>
 
@@ -48,7 +56,7 @@
                 </div>
             </div>
 
-            <h3 class="topic-related" data-aos="fade-up">Chuyên Mục</h3>
+            <h3 class="topic-related" data-aos="fade-up">Bài viết liên quan</h3>
             <div class="row" data-aos="fade-up">
                 @foreach($posts_relation as $post_relation)
                     <div class="col-md-4">

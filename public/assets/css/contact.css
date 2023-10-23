@@ -1,6 +1,7 @@
 .contact-post {
   width: 100%;
   padding: 80px 0px;
+  margin-bottom: 80px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .contact-post {
@@ -13,7 +14,9 @@
   line-height: 46px;
   text-transform: uppercase;
   color: #052664;
+  text-align: center;
   margin-bottom: 40px;
+  margin-top: 40px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .contact-post .contact__title {
@@ -23,17 +26,20 @@
     margin-bottom: 20px;
   }
 }
+.contact-post .conact__info {
+  margin-bottom: 20px;
+}
 .contact-post .conact__info .conact__info--title {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   line-height: normal;
   margin-bottom: 20px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .contact-post .conact__info .conact__info--title {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
-    line-height: 29px;
+    line-height: 26px;
     margin-bottom: 16px;
   }
 }
@@ -47,6 +53,7 @@
   height: 362px;
   overflow: hidden;
   border-radius: 20px;
+  margin-bottom: 40px;
 }
 .contact-post .contact__img > img {
   width: 100%;

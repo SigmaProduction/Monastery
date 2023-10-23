@@ -25,10 +25,12 @@ class HomeController extends Controller
         $about_us = AboutUs::limit(1)->get();
 
         $first_post = Post::orderBy('created_at', 'desc')
+                        ->whereNotNull('menu_id')
                         ->where('post_type', 0)
                         ->take(1)->get();
 
         $new_posts = Post::orderBy('created_at', 'desc')
+                        ->whereNotNull('menu_id')
                         ->where('post_type', 0)
                         ->offset(1)->limit(4)
                         ->get();

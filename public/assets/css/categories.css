@@ -1,7 +1,7 @@
 .post-categories {
   width: 100%;
   position: relative;
-  margin-bottom: 120px;
+  margin-bottom: 160px;
 }
 .post-categories .post-categories__new {
   margin-bottom: 40px;
@@ -93,10 +93,11 @@
   height: 178px;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-bottom: 10px;
 }
 .post-categories .categories-card .categories-card__title {
   font-size: 16px;
-  line-height: 26px;
+  line-height: 20px;
   font-weight: 600;
   color: #070E12;
   overflow: hidden;
