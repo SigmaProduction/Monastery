@@ -24,6 +24,10 @@ var swiper = new Swiper(".categories-swiper", {
       el: ".swiper-pagination",
       clickable: true,
   },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
 });
 
 // ======= Slider for (Thu Vien) ========
@@ -33,6 +37,10 @@ var swiper = new Swiper(".gallery-swiper", {
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
+  },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
   },
 });
 
