@@ -19,22 +19,22 @@
             </div>
 
             <div class="description__img" data-aos="fade-up">
-            @if(!empty($about_us[0]) && $about_us[0]->dream_2_image == null)
-                <img src="/assets/images/img/about-maria.svg" alt="logo-top" />
-            @else
-                <img src="{{ asset($about_us[0]->top_image) }}" alt="maria" />
-            @endif
+                @if(!empty($about_us[0]) && $about_us[0]->dream_2_image == null)
+                    <img src="/assets/images/img/about-maria.svg" alt="logo-top" />
+                @else
+                    <img src="{{ asset($about_us[0]->top_image) }}" alt="maria" />
+                @endif
             </div>
 
             <div class="description__sub" data-aos="fade-up">
-            {{$about_us[0]->subtitle}}
+                {{$about_us[0]->subtitle}}
             </div>
 
             <h1 class="description__title" data-aos="fade-up">
-            {{$about_us[0]->title}}
+                {{$about_us[0]->title}}
             </h1>
             <p class="description__content" data-aos="fade-up">
-            {{$about_us[0]->description}}
+                {{$about_us[0]->description}}
             </p>
         </div>
         
@@ -51,7 +51,7 @@
         <div class="row">
         <div class="col-md-12">
             <div class="mega-about__content" data-aos="fade-up">
-            {!! $about_us[0]->content !!}
+                {!! $about_us[0]->content !!}
             </div>
         </div>
         </div>
