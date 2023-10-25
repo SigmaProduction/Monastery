@@ -1,6 +1,6 @@
 @extends('layouts.application')
 
-@section('title', 'My Donate Title')
+@section('title', 'Mega story')
 
 @section('content')
 <section>

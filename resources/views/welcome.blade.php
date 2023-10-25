@@ -1,6 +1,6 @@
 @extends('layouts.application')
 
-@section('title', 'My Welcome Title')
+@section('title', 'Trang chủ')
 
 @section('content')
 <div class="header-wrap">
@@ -129,7 +129,7 @@
                         </ul>
                     </div>
 
-                    <a class="post__cart--more btn-more" href="#" data-aos="fade-up">
+                    <a class="post__cart--more btn-more" href="{{ route('post_all') }}" data-aos="fade-up">
                         Xem Thêm
                     </a>
                 </div><!-- /.news- -->

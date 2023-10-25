@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
+use App\Models\Menu;
 use App\Models\Category;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -11,6 +12,30 @@ use Illuminate\Http\Request;
 
 class CategoriePostController extends Controller
 {
+    public function list_post_all() {
+        $first_post = Post::orderBy('created_at', 'desc')
+            ->take(1)->get();
+
+        $posts = Post::orderBy('created_at', 'desc')
+                ->offset(1)->paginate(10);
+
+        return view('posts.post-all', compact('first_post', 'posts'));
+    }
+
+    public function list_post_menu($menu = null) {
+
+        $menu_id = Menu::where('name', $menu)->first()->id;
+
+        $first_post = Post::orderBy('created_at', 'desc')
+            ->where('menu_id', $menu_id)
+            ->take(1)->get();
+
+        $posts = Post::orderBy('created_at', 'desc')
+                ->where('category_id', $menu_id)->offset(1)->paginate(10);
+
+        return view('posts.post-menus', compact('first_post', 'posts', 'menu'));
+    }
+
     public function list_post_category($menu = null, $category = null) {
 
         $category_id = Category::where('name', $category)->first()->id;

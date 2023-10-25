@@ -51,7 +51,7 @@
                             </li>
                             @foreach($menus as $menu)
                                 <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="{{ route('list.menus', ['menu' => $menu->name]) }}">
                                     {{$menu->name}}
                                 </a>
                                 <div class="dropdown-menu">

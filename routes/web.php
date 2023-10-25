@@ -30,6 +30,8 @@ Route::get('/gioi-thieu', [HomeController::class, 'introduce'])->name('introduce
 Route::get('/ho-tro', [HomeController::class, 'support']);
 Route::get('/quyen-gop', [HomeController::class, 'donate']);
 
+Route::get('/news', [CategoriePostController::class, 'list_post_all'])->name('post_all');
+Route::get('news/{menu?}', [CategoriePostController::class, 'list_post_menu'])->name('list.menus');
 Route::get('news/{menu?}/{category?}', [CategoriePostController::class, 'list_post_category'])->name('list.categories');
 Route::get('news-detail/{id}/{title?}', [CategoriePostController::class, 'detail_post'])->name('detail.post');
 
