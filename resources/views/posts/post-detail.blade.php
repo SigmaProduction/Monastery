@@ -1,6 +1,6 @@
 @extends('layouts.application')
 
-@section('title', 'My Donate Title')
+@section('title', 'Bài viết chi tiết')
 
 @section('content')
 <!-- ================================= Content ================================= -->

@@ -1,6 +1,6 @@
 @extends('layouts.mega-application')
 
-@section('title', 'My Donate Title')
+@section('title', 'Mega story chi tiết')
 
 @section('content')
 <!-- ================================= Content ================================= -->

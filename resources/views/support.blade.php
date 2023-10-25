@@ -1,6 +1,6 @@
 @extends('layouts.application')
 
-@section('title', 'My Support Title')
+@section('title', 'Liên hệ')
 
 @section('content')
 <!-- ================================= Content ================================= -->
