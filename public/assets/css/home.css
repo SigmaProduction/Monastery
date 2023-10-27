@@ -493,7 +493,7 @@ hr.hr-limited {
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .post__cart .post__cart--img {
@@ -604,7 +604,7 @@ hr.hr-limited {
 }
 .post__cart .post__cart--content.media__cart--content {
   font-size: 16px;
-  line-height: 18px;
+  line-height: 22px;
   font-weight: 600;
   color: #070E12;
   overflow: hidden;
