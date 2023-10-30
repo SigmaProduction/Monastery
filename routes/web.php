@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImageSlidersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoriePostController;
+use App\Http\Controllers\SearchPostController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,8 @@ Route::get('news-detail/{id}/{title?}', [CategoriePostController::class, 'detail
 
 Route::get('/mega', [CategoriePostController::class, 'list_mega_post'])->name('list.mega');
 Route::get('/mega/{id}/{title?}', [CategoriePostController::class, 'detail_mega'])->name('detail.mega');
+
+Route::get('/search', [SearchPostController::class, 'search_post'])->name('search.post');
 
 Route::get('admin/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
 Route::post('admin/login', [AdminAuthController::class, 'login'])->name('login.submit');
