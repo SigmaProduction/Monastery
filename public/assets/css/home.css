@@ -58,6 +58,18 @@
   line-height: auto;
   color: #052664;
 }
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .header-wrap .heading__post .heading__post--img > h1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: auto;
+    color: #052664;
+  }
+}
 .header-wrap .heading__post .heading__post--img .heading__post--breadcrumb {
   position: absolute;
   top: 65%;
@@ -78,9 +90,24 @@
 .header-wrap .heading__post .heading__post--img .heading__post--breadcrumb .breadcrumb > li.active {
   color: #052664;
 }
+.header-wrap .heading__post .heading__post--search {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .header-wrap .heading__post .heading__post--search {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+}
 .header-wrap .navbar-custom {
   width: 100%;
-  background-color: #052664;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -91,6 +118,33 @@
     padding: 10px 0px;
   }
 }
+.header-wrap .heading__post .heading__post--search .navbar-custom > .form-control__custom {
+    border-radius: 25px;
+    border: 2px solid #052664;
+    padding: 20px; 
+    width: 350px;
+    height: 50px;  
+}
+@media screen and (min-width: 310px) and (max-width: 768px) {
+  .header-wrap .heading__post .heading__post--search .navbar-custom > .form-control__custom {
+    border-radius: 25px;
+    border: 2px solid #052664;
+    padding: 20px; 
+    width: 250px;
+    height: 25px;  
+  }
+}
+
+.header-wrap .heading__post .heading__post--search .navbar-custom > .btn-search {
+  border-radius: 25px;
+  background: #052664;
+  width: 150px;
+  height: 50px;
+  font-size: 22px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
 .header-wrap .navbar-custom .navbar-custom__logo {
   height: 40px;
   -o-object-fit: cover;

@@ -63,7 +63,7 @@
                             @endforeach
 
                             <li class="nav-item search">
-                                <a class="btn-custom btn-custom__hotline" href="#">
+                                <a class="btn-custom btn-custom__hotline" href="{{ route('search.post') }}">
                                     <img src="/assets/images/icon/search.svg" alt="phone" />
                                 </a>
                             </li>
