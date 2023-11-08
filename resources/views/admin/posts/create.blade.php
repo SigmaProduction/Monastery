@@ -68,6 +68,34 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="saledieng_months_id" id="saledieng_months_id_label">Saledieng Months</label>
+                    <select class="form-control" id="saledieng_months_id" name="saledieng_months_id">
+                        <option value="">Select Saledieng Months</option>
+                        @foreach ($saledieng_months as $id => $month)
+                            <option value="{{ $id }}" >Tháng {{ $month }}</option>
+                        @endforeach
+                    </select>
+                    @error('saledieng_months_id')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="saledieng_family_id" id="saledieng_family_id_label">Saledieng Family</label>
+                    <select class="form-control" id="saledieng_family_id" name="saledieng_family_id">
+                        <option value="">Select Saledieng Family</option>
+                        @foreach ($saledieng_families as $saledieng_family)
+                            <option value="{{ $saledieng_family->id }}" data-saledieng-id="{{ $saledieng_family->saledieng_month_id }}">
+                                {{ $saledieng_family->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('saledieng_family_id')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label for="description" id="description_label">Description</label>
                     <input type="text" class="form-control" id="description" name="description" value="{{ old('description') }}">
                     @error('description')
@@ -201,6 +229,22 @@
                     }
                 });
                 $('#category_id').val('');
+            });
+
+            $('#saledieng_months_id').change(function() {
+                const salediengMonthsId = $(this).val();
+                $('#saledieng_family_id option').each(function() {
+                    if ($(this).data('saledieng-id') == salediengMonthsId) {
+                        $(this).show();
+                    } else {
+                        if ($(this).val() == '') {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    }
+                });
+                $('#saledieng_family_id').val('');
             });
         });
     </script>

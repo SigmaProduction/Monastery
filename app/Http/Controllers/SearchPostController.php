@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
-use App\Models\Menu;
-use App\Models\Category;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
 
