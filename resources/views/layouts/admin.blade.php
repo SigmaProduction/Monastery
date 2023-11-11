@@ -200,6 +200,12 @@
                                             <p>Saledieng families</p>
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link {{ Request::is('admin/posts/saledieng_posts') ? 'active' : '' }}" href="{{ route('admin.posts.saledieng_posts') }}">
+                                            <i class="ml-3 far fa-circle nav-icon"></i>
+                                            <p>Saledieng Posts</p>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="nav-item">

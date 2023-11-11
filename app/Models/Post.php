@@ -14,6 +14,8 @@ class Post extends Model
         'user_id',
         'menu_id',
         'category_id',
+        'saledieng_months_id',
+        'saledieng_family_id',
         'description',
         'content',
         'is_hide',
@@ -44,6 +46,16 @@ class Post extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function saledieng_month()
+    {
+        return $this->belongsTo(SalediengMonth::class);
+    }
+
+    public function saledieng_family()
+    {
+        return $this->belongsTo(SalediengFamily::class);
     }
 
     public function images()

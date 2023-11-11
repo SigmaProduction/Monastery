@@ -22,4 +22,9 @@ class SalediengFamily extends Model
     {
         return $this->belongsTo(SalediengMonth::class);
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

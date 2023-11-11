@@ -326,12 +326,14 @@
                                 <!-- content -->
                                 <div class="row align-items-center">
                                 <div class="col-md-4">
-                                    <div class="saints__card" id="thanh" style="background-image: url('/assets/images/img/Donbosco.png')">
-                                        <div class="saints__card--content">
-                                            <div id="thanh-date" class="content--date">Match 8</div>
-                                            <div  id="thanh-title"class="content--title">Thánh Gioan Bosco</div>
+                                    <a id="link-thanh" href="#">
+                                        <div class="saints__card" id="thanh" style="background-image: url('/assets/images/img/Donbosco.png')">
+                                            <div class="saints__card--content">
+                                                <div id="thanh-date" class="content--date">Match 8</div>
+                                                <div  id="thanh-title"class="content--title">Thánh Gioan Bosco</div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-8">
                                     @if(empty($saledieng_month->saledieng_families[0]))
@@ -344,20 +346,23 @@
                                             <div class="swiper-wrapper">
                                                 @foreach($saledieng_month->saledieng_families as $saledieng_family)
                                                     <div class="swiper-slide">
-                                                        <a onclick="changeImg('{{ asset($saledieng_family->image) }}', '{{ $saledieng_family->name }}', '{{ $saledieng_family->death_date }}')" href="#thanh{{$saledieng_family->id}}" data-toggle="collapse" data-target="#thanh{{$saledieng_family->id}}" aria-expanded="false" aria-controls="thanh{{$saledieng_family->id}}">
+                                                        
                                                             <div class="saints-sub__card">
-                                                                <div class="saints-sub__card--img">
-                                                                    @if(empty($saledieng_family->image))
-                                                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
-                                                                    @else
-                                                                        <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />
-                                                                    @endif
-                                                                </div>
-
-                                                                <div class="saints-sub__card--title">{{ $saledieng_family->name }}</div>
-                                                                <div class="saints-sub__card--date">{{ $saledieng_family->death_date }}</div>
+                                                                <a onclick="changeImg('{{ asset($saledieng_family->image) }}', '{{ $saledieng_family->name }}', '{{ $saledieng_family->death_date }}', '{{ $saledieng_family->id }}')" href="#" data-toggle="collapse" data-target="#thanh{{$saledieng_family->id}}" aria-expanded="false" aria-controls="thanh{{$saledieng_family->id}}">
+                                                                    <div class="saints-sub__card--img">
+                                                                        @if(empty($saledieng_family->image))
+                                                                            <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                                                        @else
+                                                                            <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />
+                                                                        @endif
+                                                                    </div>
+                                                                </a>
+                                                                <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
+                                                                    <div class="saints-sub__card--title">{{ $saledieng_family->name }}</div>
+                                                                    <div class="saints-sub__card--date">{{ $saledieng_family->death_date }}</div>
+                                                                </a>
                                                             </div>
-                                                        </a>
+                                                        
                                                     </div>
                                                 @endforeach
                                             </div>

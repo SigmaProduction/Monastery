@@ -57,7 +57,9 @@ class HomeController extends Controller
 
         $saledieng_months = SalediengMonth::all();
 
-        $categories_important = Category::where('is_important', 1)->get();
+        $categories_important = Category::whereNotNull('menu_id')
+                                        ->where('is_important', 1)
+                                        ->get();
         
         return view('welcome',compact(
             'image_sliders', 
