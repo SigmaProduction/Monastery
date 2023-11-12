@@ -21,6 +21,7 @@
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   position: fixed;
+  top: 0;
   z-index: 10;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
@@ -38,6 +39,7 @@
   background-size: cover;
   background-position: center;
   overflow-y: hidden;
+  margin-top: 70px;
 }
 .header-wrap .heading__post .heading__post--img .heading__post--component {
   width: 100%;
@@ -59,6 +61,9 @@
   color: #052664;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
+  .header-wrap .heading__post .heading__post--img {
+    margin-top: 40px;
+  }
   .header-wrap .heading__post .heading__post--img > h1 {
     position: absolute;
     top: 40%;
@@ -224,11 +229,13 @@
 .header-wrap .swiper {
   width: 100%;
   height: 840px;
+  margin-top: 70px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .header-wrap .swiper {
     width: 100%;
     height: auto;
+    margin-top: 60px;
   }
 }
 .header-wrap .swiper-container .swiper-zoom-container > img {
@@ -346,7 +353,7 @@
   position: absolute;
   width: 100%;
   height: 362px;
-  bottom: -9%;
+  bottom: -10%;
   left: 0;
   background-image: url("/assets/images/img/Clouds-float.png");
   background-size: contain;
@@ -450,8 +457,8 @@
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .about-wrap .about-wrap__content--title {
-    font-size: 30px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 32px;
     font-weight: 700;
   }
 }
@@ -549,8 +556,16 @@ hr.hr-limited {
   overflow: hidden;
   margin-bottom: 8px;
 }
+.post__cart .post__cart--video {
+  width: 100%;
+  height: 410px;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
 @media screen and (min-width: 310px) and (max-width: 768px) {
-  .post__cart .post__cart--img {
+  .post__cart .post__cart--img, .post__cart .post__cart--video {
     height: 246px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -657,8 +672,8 @@ hr.hr-limited {
   }
 }
 .post__cart .post__cart--content.media__cart--content {
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 24px;
   font-weight: 600;
   color: #070E12;
   overflow: hidden;
@@ -898,6 +913,7 @@ hr.hr-limited {
   width: 100%;
   height: 230px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .categories .categories__cart .categories__cart--post .post__img {
@@ -918,6 +934,7 @@ hr.hr-limited {
   }
 }
 .categories .categories__cart .categories__cart--post .post__content {
+  height: 56px;
   font-size: 22px;
   line-height: 28px;
   font-weight: 500;
@@ -930,6 +947,7 @@ hr.hr-limited {
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .categories .categories__cart .categories__cart--post .post__content {
+    height: auto;
     font-size: 16px;
     line-height: 20px;
     font-weight: 500;
@@ -1072,6 +1090,7 @@ hr.hr-limited {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 20px;
+  margin-bottom: 60px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .saints .saints__card {
@@ -1208,12 +1227,12 @@ footer {
   position: relative;
   background-color: #052664;
   color: #ffffff;
-  padding: 60px 0px;
+  padding-top: 40px;
   margin-top: 0px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   footer {
-    padding: 40px 0px;
+    padding: 0px;
   }
 }
 footer hr.limited-footer {
@@ -1226,6 +1245,7 @@ footer .footer-copyright {
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
+  padding-bottom: 16px;
   margin: 0px auto;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
@@ -1288,8 +1308,8 @@ footer .footer .footer__list ul {
 footer .footer .footer__list ul li.item > a {
   display: flex;
   align-items: baseline;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 28px;
   font-weight: 400;
   color: #ffffff;
   margin-bottom: 12px;
@@ -1300,7 +1320,7 @@ footer .footer .footer__list ul li.item > a .item__icon {
   margin-right: 10px;
 }
 footer .footer .footer__title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 30px;
   color: #ffffff;

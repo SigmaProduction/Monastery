@@ -42,8 +42,9 @@
                 <img src="/assets/images/icon/logo.svg" alt="logo" />
             </a>
         </div>
-
-        <h1 class="header-mega__topic">MEGA STORY</h1>
+        <a class="header-mega__topic" href="{{ route('list.mega') }}">
+            <h1>MEGA STORY</h1>
+        </a>
         <div class="detail__sub--shared">
           <img src="/assets/images/img/share-face.png" alt="share" />
         </div>
