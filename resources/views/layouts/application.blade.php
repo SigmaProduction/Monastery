@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Default Title')</title>
-
+    <meta name="description" content="Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam">
+    <title>@yield('title', 'Dòng con đức mẹ phù hộ Việt Nam')</title>
     <!-- CSS assets -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 

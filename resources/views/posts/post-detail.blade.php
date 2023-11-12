@@ -16,9 +16,9 @@
             </div>
         @endif
 
-        @if($post_detail->post_type == 'video_post' || $post_detail->post_type == 'pdf_post') {
+        @if($post_detail->post_type == 'video_post' || $post_detail->post_type == 'pdf_post')
             <div class="post__cart--img" style="margin-top: 40px;">
-                <iframe width="100%" height="345" src="{{ $post_detail->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="100%" height="810" src="{{ $post_detail->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         @endif
 
@@ -44,7 +44,7 @@
                         <div class="detail__sub">
                             <div class="detail__sub--date">
                                 <img src="/assets/images/icon/Calendar.svg" alt="calendar"/>
-                                {{$post_detail->created_at}}
+                                {{date('d/m/Y', strtotime($post_detail->created_at));}}
                             </div>
                             <div class="detail__sub--shared">
                                 <img src="/assets/images/img/share-face.png" alt="share" />
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <h3 class="topic-related" data-aos="fade-up">Bài viết liên quan</h3>
+            <h3 class="topic-related" data-aos="fade-up">Bài liên quan</h3>
             <div class="row" data-aos="fade-up">
                 @foreach($posts_relation as $post_relation)
                     <div class="col-md-4">

@@ -69,7 +69,7 @@ class Post extends Model
     }
 
     public $postTypeTranslations = [
-        'default_post' => 'Bài viết',
+        'default_post' => 'News',
         'mega_post' => 'Mega story',
         'video_post' => 'Video',
         'postcard_post' => 'Postcard',
