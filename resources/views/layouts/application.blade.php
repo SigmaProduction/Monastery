@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam">
-    <title>@yield('title', 'Dòng con đức mẹ phù hộ Việt Nam')</title>
+    <meta property="og:url"           content="http://fmavtn.org/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam" />
+    <meta property="og:description"   content="Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam" />
+    <!-- <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" /> -->
+    <title>@yield('title', 'Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam')</title>
     <!-- CSS assets -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -181,7 +186,8 @@
                             </div>
                             <!-- facebook share -->
                             <div class="col-md-3">
-                                <img src="/assets/images/img/link-fb.png" alt="links-fb" />
+                                <div class="fb-page" data-href="https://www.facebook.com/fmavtn" data-tabs="" data-width="311" data-height="290" data-show-posts="true" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/fmavtn" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/fmavtn">Dòng Con Đức Mẹ Phù Hộ Việt Nam</a></blockquote></div>
+                                <!-- <img src="/assets/images/img/link-fb.png" alt="links-fb" /> -->
                             </div>
 
                         </div>
@@ -192,6 +198,8 @@
         </footer>
     </section>
 
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0&appId=234792643829801" nonce="ZDsa5Twx"></script>
     <!--jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

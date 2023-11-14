@@ -47,7 +47,8 @@
                                 {{date('d/m/Y', strtotime($post_detail->created_at));}}
                             </div>
                             <div class="detail__sub--shared">
-                                <img src="/assets/images/img/share-face.png" alt="share" />
+                                <div class="fb-like" data-href="'{{Request::url()}}'" data-width="100px" data-layout="" data-action="" data-size="" data-share="true"></div>
+                                <!-- <img src="/assets/images/img/share-face.png" alt="share" /> -->
                             </div>
                         </div>
 
