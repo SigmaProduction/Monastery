@@ -55,6 +55,9 @@
                                 {{ $saledieng_family->saledieng_month ? $saledieng_family->saledieng_month->month : '' }}
                             </td>
                             <td>
+                                {{ $saledieng_family->subname }}
+                            </td>
+                            <td>
                                 {{ $saledieng_family->name }}
                             </td>
                             <td>

@@ -24,6 +24,14 @@
                     @enderror
                 </div>
 
+                <div class="form-group">
+                    <label for="name" id="title_label">Sub Name</label>
+                    <input type="text" class="form-control @error('subname') is-invalid @enderror" id="subname" name="subname" value="{{ old('subname') }}">
+                    @error('subname')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
 
                 <div class="form-group">
                     <label for="name" id="title_label">Name</label>

@@ -59,6 +59,7 @@ class SalediengFamiliesController extends Controller
         $validationRules = [
             'saledieng_month_id' => 'required|integer',
             'name' => 'required|string|max:255',
+            'subname' => 'required|string|max:255',
             'birth_date' => 'nullable|string|max:255',
             'death_date' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
@@ -91,6 +92,7 @@ class SalediengFamiliesController extends Controller
     {
         $validationRules = [
             'name' => 'required|string|max:255',
+            'subname' => 'required|string|max:255',
             'birth_date' => 'nullable|string|max:255',
             'death_date' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
