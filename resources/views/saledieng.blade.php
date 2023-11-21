@@ -8,7 +8,7 @@
         <!--  master heading news -->
         <div class="heading__post">
             <div class="heading__post--img" style="background-image: url('/assets/images/img/IMG-3.png');">
-            <h1>{{$saledieng_family_name}}</h1>
+            <h1>{{$saledieng_family_subname}} {{$saledieng_family_name}}</h1>
             <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>

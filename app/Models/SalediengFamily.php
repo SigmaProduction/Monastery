@@ -12,6 +12,7 @@ class SalediengFamily extends Model
     protected $fillable = [
         'image',
         'name',
+        'subname',
         'birth_date',
         'death_date',
         'description',

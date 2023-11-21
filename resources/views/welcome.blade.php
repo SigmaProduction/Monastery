@@ -325,17 +325,19 @@
                                 <!-- content -->
                                 <div class="row align-items-center">
                                 <div class="col-md-4">
-                                    <a id="link-thanh" href="#">
-                                        <div class="saints__card" id="thanh" style="background-image: url('/assets/images/img/Donbosco.png')">
-                                            <div class="saints__card--content">
-                                                <div id="thanh-date" class="content--date">Match 8</div>
-                                                <div  id="thanh-title"class="content--title">Thánh Gioan Bosco</div>
+                                    @if(!empty($saledieng_month->saledieng_families->first()))
+                                        <a id="link-thanh" href="{{ route('saledieng.index', ['id' => $saledieng_month->saledieng_families->first()->id]) }}">
+                                            <div class="saints__card" id="thanh" style="background-image: url({{asset($saledieng_month->saledieng_families->first()->image)}})">
+                                                <div class="saints__card--content">
+                                                    <div id="thanh-date" class="content--date">{{ $saledieng_month->saledieng_families->first()->death_date}}</div>
+                                                    <div  id="thanh-title"class="content--title">{{ $saledieng_month->saledieng_families->first()->name}}</div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    @endif
                                 </div>
                                 <div class="col-md-8">
-                                    @if(empty($saledieng_month->saledieng_families[0]))
+                                    @if(empty($saledieng_month->saledieng_families))
                                         <div class="saints__card--default">
                                             <img src="/assets/images/img/default-salefieng.jpg" alt="donbosco" />
                                         </div>
@@ -345,23 +347,21 @@
                                             <div class="swiper-wrapper">
                                                 @foreach($saledieng_month->saledieng_families as $saledieng_family)
                                                     <div class="swiper-slide">
-                                                        
-                                                            <div class="saints-sub__card">
-                                                                <a onclick="changeImg('{{ asset($saledieng_family->image) }}', '{{ $saledieng_family->name }}', '{{ $saledieng_family->death_date }}', '{{ $saledieng_family->id }}')" href="#" data-toggle="collapse" data-target="#thanh{{$saledieng_family->id}}" aria-expanded="false" aria-controls="thanh{{$saledieng_family->id}}">
-                                                                    <div class="saints-sub__card--img">
-                                                                        @if(empty($saledieng_family->image))
-                                                                            <img src="/assets/images/img/img-default.jpg" alt="slider" />
-                                                                        @else
-                                                                            <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />
-                                                                        @endif
-                                                                    </div>
-                                                                </a>
-                                                                <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
-                                                                    <div class="saints-sub__card--title">{{ $saledieng_family->name }}</div>
-                                                                    <div class="saints-sub__card--date">{{ $saledieng_family->death_date }}</div>
-                                                                </a>
-                                                            </div>
-                                                        
+                                                        <div class="saints-sub__card">
+                                                            <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
+                                                                <div class="saints-sub__card--img">
+                                                                    @if(empty($saledieng_family->image))
+                                                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                                                    @else
+                                                                        <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />
+                                                                    @endif
+                                                                </div>
+                                                            </a>
+                                                            <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
+                                                                <div class="saints-sub__card--title">{{$saledieng_family->subname}}<br/>{{ $saledieng_family->name }}</div>
+                                                                <div class="saints-sub__card--date">{{ $saledieng_family->death_date }}</div>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 @endforeach
                                             </div>

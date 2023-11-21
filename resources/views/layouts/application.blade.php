@@ -6,10 +6,10 @@
     <meta name="description" content="Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam">
     <meta property="og:url"           content="http://fmavtn.org/" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam" />
+    <meta property="og:title"         content="DÒNG CON ĐỨC MẸ PHÙ HỘ" />
     <meta property="og:description"   content="Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam" />
     <!-- <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" /> -->
-    <title>@yield('title', 'Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam')</title>
+    <title>@yield('title', 'DÒNG CON ĐỨC MẸ PHÙ HỘ')</title>
     <!-- CSS assets -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
