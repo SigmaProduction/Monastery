@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Menu;
+use App\Models\MenuImage;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
+use File;
 
 
 
@@ -35,15 +37,31 @@ class MenuController extends Controller
                 'max:255',
                 Rule::unique('menus')->ignore($request->id),
             ],
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         }
+        
+        $validatedData = $validator->validated();
+        $menu = new Menu($validatedData);
 
-        $menu = new Menu();
-        $menu->name = $request->input('name');
         $menu->order = Menu::max('order') + 1; // Assign the last order value + 1
+
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $imageName = time().'.'.$file->extension();
+            $imagePath = 'image/menu_images/' . $imageName;
+
+            $file->move(public_path('image/menu_images/'), $imageName);
+            
+            $menuImage = new MenuImage();
+            $menuImage->image_path = $imagePath;
+            $menuImage->menu_id = $menu->id;
+            $menuImage->save();
+            $menu->image = $imagePath;
+        }
         $menu->save();
 
         return redirect('/admin/menus')->with('success', 'Menu created successfully.');
@@ -62,17 +80,35 @@ class MenuController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => [
                 'required',
                 'string',
                 'max:255',
                 Rule::unique('menus')->ignore($request->id),
             ],
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        $validatedData = $validator->validated();
+
         $menu = Menu::findOrFail($id);
-        $menu->name = $request->input('name');
+
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $imageName = time().'.'.$file->extension();
+            $imagePath = 'image/menu_images/' . $imageName;
+
+            $file->move(public_path('image/menu_images/'), $imageName);
+
+            $validatedData['image'] = $imagePath;
+        }
+
+        $menu->update($validatedData);
 
         if ($menu->save()) {
             // Update the order of categories
@@ -104,6 +140,8 @@ class MenuController extends Controller
         if ($menu->categories()->count() > 0) {
             return redirect('/admin/menus')->with('error', 'Cannot archive menu that has categories.');
         }
+
+        File::delete(public_path($menu->image));
         // Archive the menu
         $menu->delete();
 
@@ -121,5 +159,30 @@ class MenuController extends Controller
         }
 
         return response()->json(['success' => true]);
+    }
+
+    public function uploadImage(Request $request)
+    {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'menu_id' => 'required|integer|exists:about_us,id',
+        ]);
+
+        $menuId = $request->menu_id;
+        $imageName = time().'.'.$request->image->extension();
+        $imagePath = 'images/menu/' . $menuId . '/' . $imageName;
+
+        $request->image->move(public_path('images/menu/' . $menuId), $imageName);
+
+        // Store image details in the database
+        $menuImage = MenuImage::create([
+            'menu_id' => $menuId,
+            'image_path' => $imagePath,
+        ]);
+
+        // Return the image URL with the 'public' segment
+        $imageUrl = asset($menuImage->image_path);
+
+        return response()->json(['url' => $imageUrl]);
     }
 }

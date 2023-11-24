@@ -9,7 +9,7 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="{{ url('/admin/menus') }}" method="POST">
+            <form action="{{ url('/admin/menus') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="form-group">
@@ -17,6 +17,14 @@
                     <input type="text" name="name" id="name" class="form-control @error('menu') is-invalid @enderror" placeholder="Enter menu name" required>
                     @error('name')
                         <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="image" id="image_label">Image</label>
+                    <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+                    @error('image')
+                        <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
 
