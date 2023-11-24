@@ -7,16 +7,29 @@
     <div class="header-wrap">
         <!--  master heading news -->
         <div class="heading__post">
-            <div class="heading__post--img" style="background-image: url('/assets/images/img/IMG-3.png');">
-                <h1>{{$menu}}</h1>
-                <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">{{$menu}}</li>
-                    </ol>
-                </nav>
-                <div class="heading__post--component"></div>
-            </div>
+            @if(!empty($first_post[0]->category->menu->image))
+                <div class="heading__post--img" style="background-image: url({{asset($first_post[0]->category->menu->image)}})">
+                    <h1 class="heading--white">{{$menu}}</h1>
+                    <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                            <li class="breadcrumb-item active active--white" aria-current="page">{{$menu}}</li>
+                        </ol>
+                    </nav>
+                    <div class="heading__post--component"></div>
+                </div>
+            @else
+                <div class="heading__post--img" style="background-image: url('/assets/images/img/IMG-3.png');">
+                    <h1>{{$menu}}</h1>
+                    <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">{{$menu}}</li>
+                        </ol>
+                    </nav>
+                    <div class="heading__post--component"></div>
+                </div>
+            @endif
         </div>
     </div>
 </section>

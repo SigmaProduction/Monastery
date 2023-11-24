@@ -58,6 +58,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::patch('/menus/{id}', [MenuController::class, 'update']);
     Route::delete('/menus/{id}', [MenuController::class, 'destroy']);
     Route::post('/menu/update-order', [MenuController::class, 'updateOrder'])->name('menu.updateOrder');
+    Route::post('/admin/menu/upload_image', [MenuController::class, 'uploadImage'])->name('admin.menus.upload_image');
     Route::post('/categories/archive/{category}', [CategoriesController::class, 'archive'])->name('admin.categories.archive');
     Route::get('/categories/archived_categories', [CategoriesController::class, 'archived_categories'])->name('admin.categories.archived_categories');
     Route::resource('categories', CategoriesController::class);
