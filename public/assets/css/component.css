@@ -92,18 +92,18 @@ body {
   }
   
   .btn-more {
-    width: 150px;
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 24px;
     line-height: auto;
     font-weight: 500;
     color: #ffffff;
     background-color: #2974B8;
     border-radius: 20px;
-    padding: 8px;
+    padding: 8px 20px;
     margin: auto;
   }
   @media screen and (min-width: 310px) and (max-width: 768px) {

@@ -8,7 +8,6 @@
   background-position: bottom;
   background-repeat: repeat-y;
   background-size: cover;
-  margin-top: 70px;
 }
 .post-detail .post-detail__img {
   width: 100%;
@@ -181,7 +180,6 @@
      object-fit: cover;
 }
 .post-detail .post-detail__content .categories-card .categories-card__title {
-  height: 44px;
   font-size: 18px;
   line-height: 22px;
   font-weight: 600;
