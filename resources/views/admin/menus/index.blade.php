@@ -35,6 +35,13 @@
                                 {{ $menu->name }}
                             </td>
                             <td>
+                                @if($menu->image)
+                                    <img src="/{{ $menu->image }}" alt="{{ $menu->title }}" style="height: 50px;"> <!-- Display Image -->
+                                @else
+                                    No Image
+                                @endif
+                            </td>
+                            <td>
                                 <a href="{{ url('/admin/menus/' . $menu->id . '/edit') }}" class="btn btn-sm btn-warning">Edit</a>
                                 <form action="{{ url('/admin/menus/' . $menu->id) }}" method="POST" style="display: inline;" onsubmit="return handleSubmit(this, 'Are you sure you want to delete this menu?')">
                                     @csrf

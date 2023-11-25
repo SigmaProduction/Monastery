@@ -96,6 +96,7 @@
   margin-bottom: 10px;
 }
 .post-categories .categories-card .categories-card__title {
+  height: 40px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 600;
@@ -109,6 +110,7 @@
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .post-categories .categories-card .categories-card__title {
+    height: auto;
     font-size: 17px;
     line-height: 20px;
     font-weight: 600;

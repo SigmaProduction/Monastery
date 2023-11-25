@@ -78,9 +78,10 @@ btn.on('click', function(e) {
 });
 
 // ======= Change Data Saledieng ========
-function changeImg(src, text1, text2) {
+function changeImg(src, text1, text2, id) {
   $('#thanh').removeAttr("style");
   $('#thanh').css('background-image', 'url(' + src + ')');
   $('#thanh-date').html(text1);
   $('#thanh-title').html(text2);
+  $("#link-thanh").attr("href", "/saledieng/" + id);
 };

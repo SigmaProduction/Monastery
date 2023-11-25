@@ -13,6 +13,9 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImageSlidersController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoriePostController;
+use App\Http\Controllers\SearchPostController;
+use App\Http\Controllers\SalediengController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +41,9 @@ Route::get('news-detail/{id}/{title?}', [CategoriePostController::class, 'detail
 Route::get('/mega', [CategoriePostController::class, 'list_mega_post'])->name('list.mega');
 Route::get('/mega/{id}/{title?}', [CategoriePostController::class, 'detail_mega'])->name('detail.mega');
 
+Route::get('/search', [SearchPostController::class, 'search_post'])->name('search.post');
+Route::get('/saledieng/{id}', [SalediengController::class, 'index'])->name('saledieng.index');
+
 Route::get('admin/login', [AdminAuthController::class, 'showLoginForm'])->name('login');
 Route::post('admin/login', [AdminAuthController::class, 'login'])->name('login.submit');
 
@@ -52,6 +58,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::patch('/menus/{id}', [MenuController::class, 'update']);
     Route::delete('/menus/{id}', [MenuController::class, 'destroy']);
     Route::post('/menu/update-order', [MenuController::class, 'updateOrder'])->name('menu.updateOrder');
+    Route::post('/admin/menu/upload_image', [MenuController::class, 'uploadImage'])->name('admin.menus.upload_image');
     Route::post('/categories/archive/{category}', [CategoriesController::class, 'archive'])->name('admin.categories.archive');
     Route::get('/categories/archived_categories', [CategoriesController::class, 'archived_categories'])->name('admin.categories.archived_categories');
     Route::resource('categories', CategoriesController::class);
@@ -60,6 +67,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::post('/admin/about_us/upload_image', [AboutUsController::class, 'uploadImage'])->name('admin.about_us.upload_image');
     Route::post('/posts/archive/{post}', [PostController::class, 'archive'])->name('admin.posts.archive');
     Route::get('/posts/archived_posts', [PostController::class, 'archived_posts'])->name('admin.posts.archived_posts');
+    Route::get('/posts/saledieng_posts', [PostController::class, 'saledieng_posts'])->name('admin.posts.saledieng_posts');
     Route::resource('posts', PostController::class)->names('admin.posts');
     Route::post('admin/posts/upload', [PostController::class, 'uploadEditorImage'])->name('admin.posts.upload_image');
     Route::resource('image_sliders', ImageSlidersController::class);

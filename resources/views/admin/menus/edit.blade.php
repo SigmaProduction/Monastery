@@ -12,7 +12,7 @@
             <h3 class="card-title">Edit Menu</h3>
         </div>
         <div class="card-body">
-            <form action="{{ url('/admin/menus/' . $menu->id) }}" method="POST">
+            <form action="{{ url('/admin/menus/' . $menu->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
 
@@ -21,6 +21,13 @@
                     <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $menu->name) }}" required>
                     @error('name')
                         <span class="text-danger">{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="image" id="image_label">Image</label>
+                    <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+                    @error('image')
+                        <small class="text-danger">{{ $message }}</small>
                     @enderror
                 </div>
                 <div class="form-group">

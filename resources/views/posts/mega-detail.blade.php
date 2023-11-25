@@ -27,7 +27,7 @@
     </div>
 
     <div class="container">
-        <h3 class="topic-related" data-aos="fade-up">Chuyên Mục</h3>
+        <h3 class="topic-related" data-aos="fade-up">Bài liên quan</h3>
         <div class="row" data-aos="fade-up">
             @foreach($megas_relation as $mega_relation)
                 <div class="col-md-4">

@@ -69,7 +69,7 @@
             </div>
 
             <a class="about-wrap__content--more btn-more" href="{{ route('introduce') }}" data-aos="fade-up">
-                Xem Thêm
+                Xem thêm
             </a>
         </div>
 
@@ -130,7 +130,7 @@
                     </div>
 
                     <a class="post__cart--more btn-more" href="{{ route('post_all') }}" data-aos="fade-up">
-                        Xem Thêm
+                        Xem thêm
                     </a>
                 </div><!-- /.news- -->
 
@@ -152,7 +152,7 @@
                         </a>
                     @endforeach
                     <a class="about-wrap__content--more btn-more mt-26" href="{{ route('list.mega') }}" data-aos="fade-up">
-                        Xem Thêm
+                        Xem thêm
                     </a>
 
                 </div><!-- /.mega posts- -->
@@ -172,10 +172,9 @@
                     @if(!empty($first_video_post[0]))
                         <a href="{{ route('detail.post', ['id' => $first_video_post[0]->id, 'title' => $first_video_post[0]->title]) }}">
                             <div class="post__cart">
-                                <div class="post__cart--img">
-                                    <iframe width="100%" height="345" src="{{ $first_video_post[0]->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <div class="post__cart--video">
+                                    <iframe width="100%" src="{{ $first_video_post[0]->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
-                                <div class="post__cart--tag">{{ $first_video_post[0]->getTranslatedPostType(); }}</div>
                                 <p class="post__cart--content">{{ $first_video_post[0]->title; }}</p>
                             </div>
                         </a>
@@ -187,7 +186,7 @@
                                 <a href="{{ route('detail.post', ['id' => $video_post->id, 'title' => $video_post->title]) }}">
                                     <div class="post__cart">
                                         <div class="post__cart--img media__cart--img">
-                                            <iframe width="100%" height="145" src="{{ $video_post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                                            <iframe width="100%" src="{{ $video_post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
                                             </iframe>
                                         </div>
                                         <p class="post__cart--content media__cart--content">{{ $video_post->title; }}</p>
@@ -232,7 +231,7 @@
 
         <div class="container-fluit">
             <div class="row">
-                <h3 class="topic topic--white categories--topic" data-aos="fade-up">Chuyên Mục</h3>
+                <h3 class="topic topic--white categories--topic">Chuyên mục</h3>
                 <div class="col-md-12">
                     <!-- Swiper categories -->
                     <div class="swiper categories-swiper" data-aos="fade-right">
@@ -326,15 +325,19 @@
                                 <!-- content -->
                                 <div class="row align-items-center">
                                 <div class="col-md-4">
-                                    <div class="saints__card" id="thanh" style="background-image: url('/assets/images/img/Donbosco.png')">
-                                        <div class="saints__card--content">
-                                            <div id="thanh-date" class="content--date">Match 8</div>
-                                            <div  id="thanh-title"class="content--title">Thánh Gioan Bosco</div>
-                                        </div>
-                                    </div>
+                                    @if(!empty($saledieng_month->saledieng_families->first()))
+                                        <a id="link-thanh" href="{{ route('saledieng.index', ['id' => $saledieng_month->saledieng_families->first()->id]) }}">
+                                            <div class="saints__card" id="thanh" style="background-image: url({{asset($saledieng_month->saledieng_families->first()->image)}})">
+                                                <div class="saints__card--content">
+                                                    <div id="thanh-date" class="content--date">{{ $saledieng_month->saledieng_families->first()->death_date}}</div>
+                                                    <div  id="thanh-title"class="content--title">{{ $saledieng_month->saledieng_families->first()->name}}</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    @endif
                                 </div>
                                 <div class="col-md-8">
-                                    @if(empty($saledieng_month->saledieng_families[0]))
+                                    @if(empty($saledieng_month->saledieng_families))
                                         <div class="saints__card--default">
                                             <img src="/assets/images/img/default-salefieng.jpg" alt="donbosco" />
                                         </div>
@@ -344,8 +347,8 @@
                                             <div class="swiper-wrapper">
                                                 @foreach($saledieng_month->saledieng_families as $saledieng_family)
                                                     <div class="swiper-slide">
-                                                        <a onclick="changeImg('{{ asset($saledieng_family->image) }}', '{{ $saledieng_family->name }}', '{{ $saledieng_family->death_date }}')" href="#thanh{{$saledieng_family->id}}" data-toggle="collapse" data-target="#thanh{{$saledieng_family->id}}" aria-expanded="false" aria-controls="thanh{{$saledieng_family->id}}">
-                                                            <div class="saints-sub__card">
+                                                        <div class="saints-sub__card">
+                                                            <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
                                                                 <div class="saints-sub__card--img">
                                                                     @if(empty($saledieng_family->image))
                                                                         <img src="/assets/images/img/img-default.jpg" alt="slider" />
@@ -353,11 +356,12 @@
                                                                         <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />
                                                                     @endif
                                                                 </div>
-
-                                                                <div class="saints-sub__card--title">{{ $saledieng_family->name }}</div>
+                                                            </a>
+                                                            <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
+                                                                <div class="saints-sub__card--title">{{$saledieng_family->subname}}<br/>{{ $saledieng_family->name }}</div>
                                                                 <div class="saints-sub__card--date">{{ $saledieng_family->death_date }}</div>
-                                                            </div>
-                                                        </a>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 @endforeach
                                             </div>

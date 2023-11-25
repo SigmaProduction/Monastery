@@ -12,6 +12,7 @@ class SalediengFamily extends Model
     protected $fillable = [
         'image',
         'name',
+        'subname',
         'birth_date',
         'death_date',
         'description',
@@ -21,5 +22,10 @@ class SalediengFamily extends Model
     public function saledieng_month()
     {
         return $this->belongsTo(SalediengMonth::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
     }
 }

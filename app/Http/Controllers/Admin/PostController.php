@@ -8,6 +8,8 @@ use App\Models\Post;
 use App\Models\PostImage;
 use App\Models\Menu;
 use App\Models\Category;
+use App\Models\SalediengMonth;
+use App\Models\SalediengFamily;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -38,6 +40,31 @@ class PostController extends Controller
         return view('admin.posts.index', compact('posts', 'categories', 'postTypes'));
     }
 
+    public function saledieng_posts(Request $request)
+    {
+        $query = Post::query();
+        $post = new Post();
+        $postTypes = $post->postTypes;
+        $query->whereNotNull('saledieng_months_id');
+
+        if ($request->get('search')) {
+            $query->where('title', 'like', '%' . $request->get('search') . '%');
+        }
+        
+        if ($request->get('saledieng_months_id')) {
+            $query->where('saledieng_months_id', $request->get('saledieng_months_id'));
+        }
+
+        if ($request->get('post_type') != null) {
+            $query->where('post_type', $request->get('post_type'));
+        }
+
+        $query->orderBy('created_at', 'desc');
+        $posts = $query->paginate(10);
+        $saledieng_months = SalediengMonth::all();
+        return view('admin.posts.saledieng_posts', compact('posts', 'saledieng_months', 'postTypes'));
+    }
+
     public function archived_posts(Request $request)
     {
         $query = Post::query();
@@ -63,10 +90,12 @@ class PostController extends Controller
     {
         $categories = Category::whereNotNull('menu_id')->select(['id', 'name', 'menu_id'])->get();
         $menus = Menu::all()->pluck('name', 'id');
+        $saledieng_months = SalediengMonth::all()->pluck('month', 'id');
+        $saledieng_families = SalediengFamily::whereNotNull('saledieng_month_id')->select(['id', 'name', 'saledieng_month_id'])->get();
         $post = new Post();
         $postTypes = $post->postTypes;
 
-        return view('admin.posts.create', compact('categories', 'postTypes', 'menus'));
+        return view('admin.posts.create', compact('categories', 'postTypes', 'menus','saledieng_months','saledieng_families'));
     }
 
     public function store(Request $request)
@@ -77,6 +106,8 @@ class PostController extends Controller
             'user_id' => 'nullable|integer',
             'category_id' => 'nullable|integer',
             'menu_id' => 'nullable|integer',
+            'saledieng_months_id' => 'nullable|integer',
+            'saledieng_family_id' => 'nullable|integer',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string|max:10000',
             'is_hide' => 'nullable|boolean',

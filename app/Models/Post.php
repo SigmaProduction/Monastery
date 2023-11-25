@@ -14,6 +14,8 @@ class Post extends Model
         'user_id',
         'menu_id',
         'category_id',
+        'saledieng_months_id',
+        'saledieng_family_id',
         'description',
         'content',
         'is_hide',
@@ -46,6 +48,16 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function saledieng_month()
+    {
+        return $this->belongsTo(SalediengMonth::class);
+    }
+
+    public function saledieng_family()
+    {
+        return $this->belongsTo(SalediengFamily::class);
+    }
+
     public function images()
     {
         return $this->hasMany(PostImage::class);
@@ -57,7 +69,7 @@ class Post extends Model
     }
 
     public $postTypeTranslations = [
-        'default_post' => 'Bài viết',
+        'default_post' => 'News',
         'mega_post' => 'Mega story',
         'video_post' => 'Video',
         'postcard_post' => 'Postcard',
