@@ -173,7 +173,7 @@
                         <a href="{{ route('detail.post', ['id' => $first_video_post[0]->id, 'title' => $first_video_post[0]->title]) }}">
                             <div class="post__cart">
                                 <div class="post__cart--video">
-                                    <iframe width="100%" height="410" src="{{ $first_video_post[0]->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="100%" src="{{ $first_video_post[0]->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 </div>
                                 <p class="post__cart--content">{{ $first_video_post[0]->title; }}</p>
                             </div>
@@ -186,7 +186,7 @@
                                 <a href="{{ route('detail.post', ['id' => $video_post->id, 'title' => $video_post->title]) }}">
                                     <div class="post__cart">
                                         <div class="post__cart--img media__cart--img">
-                                            <iframe width="100%" height="145" src="{{ $video_post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                                            <iframe width="100%" src="{{ $video_post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
                                             </iframe>
                                         </div>
                                         <p class="post__cart--content media__cart--content">{{ $video_post->title; }}</p>
@@ -231,7 +231,7 @@
 
         <div class="container-fluit">
             <div class="row">
-                <h3 class="topic topic--white categories--topic" data-aos="fade-up">Chuyên mục</h3>
+                <h3 class="topic topic--white categories--topic">Chuyên mục</h3>
                 <div class="col-md-12">
                     <!-- Swiper categories -->
                     <div class="swiper categories-swiper" data-aos="fade-right">

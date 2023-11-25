@@ -27,6 +27,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
+
+    <link rel="shortcut icon" href="/assets/images/logo-favicon.png">
 </head>
 <body>
     <!-- Back to top button -->
@@ -103,7 +105,7 @@
             <div class="footer">
                 <div class="footer__scence" data-aos="fade-up" data-aos-duration="1000000"></div>
                     <div class="container" data-aos="fade-up">
-                        <div class="row">
+                        <div class="row footer--mobile">
                             <!-- address -->
                             <div class="col-md-3">
                                 <a class="footer__logo" href="#">
