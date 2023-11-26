@@ -20,13 +20,17 @@ class PostController extends Controller
         $query = Post::query();
         $post = new Post();
         $postTypes = $post->postTypes;
-        $query->whereNotNull('category_id')->orWhereNotNull('menu_id');
-
-        if ($request->get('search')) {
+        $query->whereNotNull('menu_id');
+        
+        if ($request->get('search')!= null) {
             $query->where('title', 'like', '%' . $request->get('search') . '%');
         }
 
-        if ($request->get('category_id')) {
+        if ($request->get('menu_id')) {
+            $query->where('menu_id', $request->get('menu_id'));
+        }
+
+        if ($request->get('category_id')!= null) {
             $query->where('category_id', $request->get('category_id'));
         }
 
@@ -36,8 +40,9 @@ class PostController extends Controller
 
         $query->orderBy('created_at', 'desc');
         $posts = $query->paginate(10);
-        $categories = Category::all();
-        return view('admin.posts.index', compact('posts', 'categories', 'postTypes'));
+        $categories = Category::whereNotNull('menu_id')->select(['id', 'name', 'menu_id'])->get();
+        $menus = Menu::all()->pluck('name', 'id');
+        return view('admin.posts.index', compact('posts', 'menus', 'categories', 'postTypes'));
     }
 
     public function saledieng_posts(Request $request)

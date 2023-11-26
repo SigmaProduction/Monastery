@@ -12,12 +12,24 @@
                         <input type="text" name="search" class="form-control" placeholder="Search by title..." value="{{ request('search') }}">
                     </div>
 
+                    <!-- Dropdown for menu_id -->
+                    <div class="col-md-3">
+                        <select class="form-control" id="menu_id" name="menu_id">
+                            <option value="">Select Menu</option>
+                            @foreach ($menus as $id => $name)
+                                <option value="{{ $id }}" {{ (request('menu_id') == $id) ? 'selected' : '' }}>
+                                    {{ $name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <!-- Dropdown for category_id -->
-                    <div class="col-md-4">
-                        <select name="category_id" class="form-control">
+                    <div class="col-md-3">
+                        <select id="category_id" name="category_id" class="form-control">
                             <option value="">Select Category</option>
                             @foreach($categories as $category)
-                                <option value="{{ $category->id }}" {{ (request('category_id') == $category->id) ? 'selected' : '' }}>
+                                <option value="{{ $category->id }}" data-menu-id="{{ $category->menu_id }}" {{ (request('category_id') == $category->id) ? 'selected' : '' }}>
                                     {{ $category->name }}
                                 </option>
                             @endforeach
@@ -25,7 +37,7 @@
                     </div>
 
                     <!-- Dropdown for post_type -->
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <select class="form-control" name="post_type">
                             <option value="" {{ request('post_type') == null ? 'selected' : '' }}>Select Post type</option>
                             @foreach ($postTypes as $type => $value)
@@ -43,7 +55,7 @@
                     </div>
 
 
-                    <div class="input-group col-md-2">
+                    <div class="input-group col-md-1">
                         <button type="submit" class="btn btn-primary form-control">Search</button>
                     </div>
                 </div>
@@ -63,6 +75,7 @@
                     <thead>
                         <tr>
                             <th>Title</th>
+                            <th>Menu</th>
                             <th>Category</th> <!-- Change from Category ID to Category -->
                             <th>Description</th>
                             <th>Is Hide</th>
@@ -76,6 +89,7 @@
                         @forelse ($posts as $post)
                             <tr>
                                 <td>{{ $post->title }}</td>
+                                <td>{{ $post->menu->name ?? '' }}</td>
                                 <td>{{ $post->category->name ?? '' }}</td>
                                 <td>{{ $post->description }}</td>
                                 <td>{{ $post->is_hide ? 'Yes' : 'No' }}</td>
@@ -109,3 +123,26 @@
         </div>
     </div>
 @endsection
+@section('js')
+    <script>
+        // Initialize functions when menus select is changed category select's options will filter according to selected menu.
+        // Category select's options will store menu_id data attribute. This data attribute will be used to filter category select's options.
+        // Reset option select's options will be shown when menus select is changed.
+        // the <option value="">Select Category</option> should keep in category select.
+        $('#menu_id').change(function() {
+            const menuId = $(this).val();
+            $('#category_id option').each(function() {
+                if ($(this).data('menu-id') == menuId) {
+                    $(this).show();
+                } else {
+                    if ($(this).val() == '') {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                }
+            });
+            $('#category_id').val('');
+        });
+    </script>
+@stop
