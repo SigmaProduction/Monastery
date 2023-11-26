@@ -99,7 +99,7 @@
                                     @endif
                                 </div>
                                 <div class="post__cart--tag">{{ $first_post[0]->getTranslatedPostType() }}</div>
-                                <p class="post__cart--content">{{ $first_post[0]->description; }}</p>
+                                <p class="post__cart--content">{{ $first_post[0]->title; }}</p>
                             </div>
                         </a>
                     @endif
@@ -120,7 +120,7 @@
 
                                             <div class="item-cart__content">
                                                 <div class="item-cart__content--tag">{{ $new_post->getTranslatedPostType() }}</div>
-                                                <p>{{ $new_post->description; }}</p>
+                                                <p>{{ $new_post->title; }}</p>
                                             </div>
                                         </div>
                                     </a>
@@ -147,7 +147,7 @@
                                     @endif
                                 </div>
                                 <div class="post__cart--tag">{{$mega_post->getTranslatedPostType();}}</div>
-                                <p class="post__cart--content">{{ $mega_post->description; }}</p>
+                                <p class="post__cart--content">{{ $mega_post->title; }}</p>
                             </div>
                         </a>
                     @endforeach
