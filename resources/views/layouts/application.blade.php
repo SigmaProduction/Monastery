@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam">
-    <meta property="og:url"           content="http://fmavtn.org/" />
+    <meta name="description" content="@yield('description')">
+    <meta property="og:url"           content="@yield('url')" />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="DÒNG CON ĐỨC MẸ PHÙ HỘ" />
-    <meta property="og:description"   content="Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam" />
-    <!-- <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" /> -->
-    <title>@yield('title', 'DÒNG CON ĐỨC MẸ PHÙ HỘ')</title>
+    <meta property="og:title"         content="@yield('title')" />
+    <meta property="og:description"   content="@yield('description')" />
+    <meta property="og:image"         content="@yield('image')" />
+    <title>@yield('title')</title>
     <!-- CSS assets -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -28,7 +28,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
 
-    <link rel="shortcut icon" href="/assets/images/logo-favicon.png">
+    <link rel="shortcut icon" href="/assets/images/icon/logo-favicon.png">
 </head>
 <body>
     <!-- Back to top button -->
@@ -136,7 +136,7 @@
                                     </ul>
                                 </div>
                                 <div>
-                                    <div class="footer__title">Lượt Truy Cập</div>
+                                    <div class="footer__title">Lượt truy cập</div>
                                     <div class="footer__list footer__list--access">
                                         <ul>
                                             <li class="item">
@@ -152,7 +152,7 @@
                             <!-- related links -->
                             <div class="col-md-3">
                             <div class="mb-20">
-                                <div class="footer__title">Liên Kết</div>
+                                <div class="footer__title">Liên kết</div>
                                 <div class="footer__list footer__list--content">
                                     <ul>
                                         <li class="item">
@@ -181,7 +181,7 @@
                             </div>
                             <!-- Flick link -->
                             <div class="col-md-3">
-                                <div class="footer__title">Liên Kết Flick</div>
+                                <div class="footer__title">Liên kết flick</div>
                                 <a href="https://www.flickr.com/photos/fmavtn/albums" class="footer__img-flick" target="_blank">
                                     <img src="/assets/images/img/img-flick.png" alt="flick" />
                                 </a>

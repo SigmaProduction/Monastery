@@ -1,14 +1,17 @@
 @extends('layouts.application')
 
-@section('title', 'My Donate Title')
+@section('title', $menu)
+@section('url', Request::url())
+@section('description', $menu)
+@section('image', 'https://stg.fmavtn.org/assets/images/img/IMG-3.png')
 
 @section('content')
 <section>
     <div class="header-wrap">
         <!--  master heading news -->
         <div class="heading__post">
-            @if(!empty($first_post[0]->category->menu->image))
-                <div class="heading__post--img" style="background-image: url({{asset($first_post[0]->category->menu->image)}})">
+            @if(!empty($menu_image))
+                <div class="heading__post--img" style="background-image: url({{asset($menu_image)}})">
                     <h1 class="heading--white">{{$menu}}</h1>
                     <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
                         <ol class="breadcrumb">

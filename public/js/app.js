@@ -6,6 +6,8 @@ AOS.init({
 
 // ======= Slider Head ========
 var swiper = new Swiper(".slide-swiper", {
+  speed: 1000,
+  effect: 'fade',
   loop: true,
   pagination: {
     el: ".swiper-pagination",
@@ -34,6 +36,8 @@ var swiper = new Swiper(".categories-swiper", {
 var swiper = new Swiper(".gallery-swiper", {
   slidesPerView: "auto",
   spaceBetween: 30,
+  speed: 1000,
+  effect: 'fade',
   pagination: {
     el: ".swiper-pagination",
     clickable: true,

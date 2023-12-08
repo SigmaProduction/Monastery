@@ -1,6 +1,9 @@
 @extends('layouts.application')
 
-@section('title', 'Bài viết')
+@section('title', 'Bài viết Saledieng')
+@section('url', Request::url())
+@section('description', 'Bài viết Saledieng')
+@section('image', 'https://stg.fmavtn.org/assets/images/img/img-default.jpg')
 
 @section('content')
 <section>

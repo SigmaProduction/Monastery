@@ -1,6 +1,9 @@
 @extends('layouts.application')
 
-@section('title', 'Bài viết chi tiết')
+@section('title', $post_detail->title)
+@section('url', Request::url())
+@section('description', $post_detail->description)
+@section('image', asset($post_detail->image))
 
 @section('content')
 <!-- ================================= Content ================================= -->

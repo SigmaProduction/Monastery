@@ -29,7 +29,7 @@ class AboutUsController extends Controller
         $request->validate([
             'subtitle' => 'nullable|string|max:255',
             'title' => 'nullable|string|max:255',
-            'description' => 'nullable|string|max:1000',
+            'description' => 'nullable|string',
             'top_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'dream_1_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'dream_2_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'

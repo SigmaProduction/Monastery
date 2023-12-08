@@ -63,7 +63,7 @@ class SalediengFamiliesController extends Controller
             'birth_date' => 'nullable|string|max:255',
             'death_date' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'description' => 'nullable|string|max:10000',
+            'description' => 'nullable|string',
         ];
          // Validate the form data
          $validatedData = $request->validate($validationRules);
