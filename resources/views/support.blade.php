@@ -1,6 +1,9 @@
 @extends('layouts.application')
 
-@section('title', 'Liên hệ')
+@section('title', 'Liên Hệ')
+@section('url', Request::url())
+@section('description', 'Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam')
+@section('image', 'https://stg.fmavtn.org/assets/images/img/img-default.jpg')
 
 @section('content')
 <!-- ================================= Content ================================= -->

@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Default Title')</title>
+    <meta name="description" content="@yield('description')">
+    <meta property="og:url"           content="@yield('url')" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="@yield('title')" />
+    <meta property="og:description"   content="@yield('description')" />
+    <meta property="og:image"         content="@yield('image')" />
+    <title>@yield('title')</title>
 
     <!-- CSS assets -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -22,6 +28,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
+    <link rel="shortcut icon" href="/assets/images/icon/logo-favicon.png">
 </head>
 <body>
     <!-- Back to top button -->
@@ -46,7 +53,8 @@
             <h1>MEGA STORY</h1>
         </a>
         <div class="detail__sub--shared">
-          <img src="/assets/images/img/share-face.png" alt="share" />
+            <div class="fb-like" data-href="'{{Request::url()}}'" data-width="100px" data-layout="" data-action="" data-size="" data-share="true"></div>
+            <!-- <img src="/assets/images/img/share-face.png" alt="share" /> -->
         </div>
       </div>
     </section>
@@ -155,7 +163,9 @@
             </div>
         </footer>
     </section>
-
+    
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v18.0&appId=234792643829801" nonce="ZDsa5Twx"></script>
     <!--jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>

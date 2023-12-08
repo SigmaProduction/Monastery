@@ -1,6 +1,9 @@
 @extends('layouts.application')
 
 @section('title', 'Tìm Kiếm Bài viết')
+@section('url', Request::url())
+@section('description', 'Tìm Kiếm Bài viết')
+@section('image', 'https://stg.fmavtn.org/assets/images/img/IMG-3.png')
 
 @section('content')
 <section>
