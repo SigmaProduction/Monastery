@@ -102,7 +102,7 @@ class PostController extends Controller
 
         return view('admin.posts.create', compact('categories', 'postTypes', 'menus','saledieng_months','saledieng_families'));
     }
-
+    // unlimited content
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -114,7 +114,7 @@ class PostController extends Controller
             'saledieng_months_id' => 'nullable|integer',
             'saledieng_family_id' => 'nullable|integer',
             'description' => 'nullable|string|max:255',
-            'content' => 'nullable|string|max:10000',
+            'content' => 'nullable|string',
             'is_hide' => 'nullable|boolean',
             'is_important' => 'nullable|boolean',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -171,7 +171,7 @@ class PostController extends Controller
             'category_id' => 'nullable|integer',
             'menu_id' => 'nullable|integer',
             'description' => 'nullable|string|max:255',
-            'content' => 'nullable|string|max:10000',
+            'content' => 'nullable|string',
             'is_hide' => 'nullable|boolean',
             'is_important' => 'nullable|boolean',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',

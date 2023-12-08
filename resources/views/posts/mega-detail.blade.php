@@ -1,6 +1,9 @@
 @extends('layouts.mega-application')
 
-@section('title', 'Mega story chi tiết')
+@section('title', $mega_detail->title)
+@section('url', Request::url())
+@section('description', $mega_detail->title)
+@section('image', asset($mega_detail->image))
 
 @section('content')
 <!-- ================================= Content ================================= -->

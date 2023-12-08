@@ -25,6 +25,7 @@ class CategoriePostController extends Controller
     public function list_post_menu($menu = null) {
 
         $menu_id = Menu::where('name', $menu)->first()->id;
+        $menu_image = Menu::find($menu_id)->image;
 
         $first_post = Post::orderBy('created_at', 'desc')
             ->where('menu_id', $menu_id)
@@ -33,12 +34,13 @@ class CategoriePostController extends Controller
         $posts = Post::orderBy('created_at', 'desc')
                 ->where('category_id', $menu_id)->offset(1)->paginate(10);
 
-        return view('posts.post-menus', compact('first_post', 'posts', 'menu'));
+        return view('posts.post-menus', compact('first_post', 'posts', 'menu', 'menu_image'));
     }
 
     public function list_post_category($menu = null, $category = null) {
 
         $category_id = Category::where('name', $category)->first()->id;
+        $menu_image = Menu::where('name', $menu)->first()->image;
 
         $first_post = Post::orderBy('created_at', 'desc')
             ->where('category_id', $category_id)
@@ -47,12 +49,12 @@ class CategoriePostController extends Controller
         $posts = Post::orderBy('created_at', 'desc')
                 ->where('category_id', $category_id)->offset(1)->paginate(10);
 
-        return view('posts.post-categories', compact('first_post', 'posts', 'menu', 'category'));
+        return view('posts.post-categories', compact('first_post', 'posts', 'menu', 'menu_image', 'category'));
     }
 
     public function detail_post($id, $title = null) {
         $post_detail = Post::find($id);
-        $posts_relation = Post::inRandomOrder()->limit(6)->get();
+        $posts_relation = Post::inRandomOrder()->where('post_type', 0)->limit(6)->get();
 
         return view('posts.post-detail', compact('post_detail', 'posts_relation'));
     }

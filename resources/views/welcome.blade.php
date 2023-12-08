@@ -1,6 +1,9 @@
 @extends('layouts.application')
 
-@section('title', 'Trang chủ')
+@section('title', 'DÒNG CON ĐỨC MẸ PHÙ HỘ')
+@section('url', 'http://fmavtn.org')
+@section('description', 'Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam')
+@section('image', 'https://stg.fmavtn.org/assets/images/img/img-default.jpg')
 
 @section('content')
 <div class="header-wrap">
@@ -239,18 +242,18 @@
                             @foreach($categories_important as $category_important)
                             <div class="swiper-slide">
                                 <div class="categories__cart">
-                                    @if(!empty($category_important->posts[0]))
-                                        <a href="{{ route('detail.post', ['id' => $category_important->posts[0]->id, 'title' => $category_important->posts[0]->title]) }}">
+                                    @if(!empty($category_important->posts->sortDesc()->first()))
+                                        <a href="{{ route('detail.post', ['id' => $category_important->posts->sortDesc()->first()->id, 'title' => $category_important->posts->sortDesc()->first()->title]) }}">
                                             <div class="categories__cart--post">
                                                 <div class="post__img">
-                                                    @if(empty($category_important->posts[0]->image))
+                                                    @if(empty($category_important->posts->sortDesc()->first()->image))
                                                         <img src="/assets/images/img/img-default.jpg" alt="slider" />
                                                     @else
-                                                        <img src="{{ asset($category_important->posts[0]->image) }}" alt="img" />
+                                                        <img src="{{ asset($category_important->posts->sortDesc()->first()->image) }}" alt="img" />
                                                     @endif
                                                 </div>
                                                 <p class="post__content">
-                                                    {{ $category_important->posts[0]->title }}
+                                                    {{ $category_important->posts->sortDesc()->first()->title }}
                                                 </p>
                                             </div>
                                         </a>
@@ -320,58 +323,61 @@
                     </div>
 
                     <div class="tab-content" id="pills-tabContent">
+                        <!-- <div class="saints__card--default">
+                            <img src="/assets/images/img/default-saledieng.jpg" alt="donbosco" />
+                        </div> -->
                         @foreach($saledieng_months as $saledieng_month)
                             <div class="tab-pane fade show {{$saledieng_month->month == 1 ? 'active' : ''}}" id="thang{{$saledieng_month->id}}" role="tabpanel">
-                                <!-- content -->
-                                <div class="row align-items-center">
-                                <div class="col-md-4">
-                                    @if(!empty($saledieng_month->saledieng_families->first()))
-                                        <a id="link-thanh" href="{{ route('saledieng.index', ['id' => $saledieng_month->saledieng_families->first()->id]) }}">
-                                            <div class="saints__card" id="thanh" style="background-image: url({{asset($saledieng_month->saledieng_families->first()->image)}})">
-                                                <div class="saints__card--content">
-                                                    <div id="thanh-date" class="content--date">{{ $saledieng_month->saledieng_families->first()->death_date}}</div>
-                                                    <div  id="thanh-title"class="content--title">{{ $saledieng_month->saledieng_families->first()->name}}</div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    @endif
-                                </div>
-                                <div class="col-md-8">
-                                    @if(empty($saledieng_month->saledieng_families))
-                                        <div class="saints__card--default">
-                                            <img src="/assets/images/img/default-salefieng.jpg" alt="donbosco" />
-                                        </div>
-                                    @else
-                                        <!-- Swiper -->
-                                        <div class="saints-swiper swiper swiper-container-multirow-column">
-                                            <div class="swiper-wrapper">
-                                                @foreach($saledieng_month->saledieng_families as $saledieng_family)
-                                                    <div class="swiper-slide">
-                                                        <div class="saints-sub__card">
-                                                            <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
-                                                                <div class="saints-sub__card--img">
-                                                                    @if(empty($saledieng_family->image))
-                                                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
-                                                                    @else
-                                                                        <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />
-                                                                    @endif
-                                                                </div>
-                                                            </a>
-                                                            <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
-                                                                <div class="saints-sub__card--title">{{$saledieng_family->subname}}<br/>{{ $saledieng_family->name }}</div>
-                                                                <div class="saints-sub__card--date">{{ $saledieng_family->death_date }}</div>
-                                                            </a>
+                                @if($saledieng_month->saledieng_families->isEmpty())
+                                    <div class="saints__card--default">
+                                        <img src="/assets/images/img/default-saledieng.jpg" alt="donbosco" />
+                                    </div>
+                                @else
+                                    <!-- content -->
+                                    <div class="row align-items-center">
+                                        <div class="col-md-4">
+                                            @if(!empty($saledieng_month->saledieng_families->first()))
+                                                <a id="link-thanh" href="{{ route('saledieng.index', ['id' => $saledieng_month->saledieng_families->first()->id]) }}">
+                                                    <div class="saints__card" id="thanh" style="background-image: url({{asset($saledieng_month->saledieng_families->first()->image)}})">
+                                                        <div class="saints__card--content">
+                                                            <div id="thanh-date" class="content--date">{{ $saledieng_month->saledieng_families->first()->death_date}}</div>
+                                                            <div  id="thanh-title"class="content--title">{{ $saledieng_month->saledieng_families->first()->name}}</div>
                                                         </div>
                                                     </div>
-                                                @endforeach
-                                            </div>
-
-                                            <div class="swiper-button-next"></div>
-                                            <div class="swiper-button-prev"></div>
+                                                </a>
+                                            @endif
                                         </div>
-                                    @endif
-                                </div>
-                                </div>
+                                        <div class="col-md-8">
+                                            <!-- Swiper -->
+                                            <div class="saints-swiper swiper swiper-container-multirow-column">
+                                                <div class="swiper-wrapper">
+                                                    @foreach($saledieng_month->saledieng_families as $saledieng_family)
+                                                        <div class="swiper-slide">
+                                                            <div class="saints-sub__card">
+                                                                <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
+                                                                    <div class="saints-sub__card--img">
+                                                                        @if(empty($saledieng_family->image))
+                                                                            <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                                                        @else
+                                                                            <img src="{{ asset($saledieng_family->image) }}" alt="donbosco" />
+                                                                        @endif
+                                                                    </div>
+                                                                </a>
+                                                                <a href="{{ route('saledieng.index', ['id' => $saledieng_family->id]) }}">
+                                                                    <div class="saints-sub__card--title">{{$saledieng_family->subname}}<br/>{{ $saledieng_family->name }}</div>
+                                                                    <div class="saints-sub__card--date">{{ $saledieng_family->death_date }}</div>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+
+                                                <div class="swiper-button-next"></div>
+                                                <div class="swiper-button-prev"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                         @endforeach
                     </div>
