@@ -19,7 +19,7 @@
             </div>
         @endif
 
-        @if($post_detail->post_type == 'video_post' || $post_detail->post_type == 'pdf_post')
+        @if($post_detail->post_type == 'video_post')
             <div class="post__cart--img" style="margin-top: 40px;">
                 <iframe width="100%" height="810" src="{{ $post_detail->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
@@ -56,6 +56,21 @@
                         </div>
 
                         <h1 class="detail__title">{{$post_detail->title}}</h1>
+                        @if($post_detail->post_type == 'postcard_post')
+                            <a href="{{$post_detail->url}}" target="_blank" class="post__cart--podcasts">
+                                <span class="arrow">
+                                    <img src="/assets/images/icon/play.svg" alt="slider" />
+                                </span>
+                                <label for="toggle" class="label">play</label>
+                            </a>
+                        @endif
+
+                        @if($post_detail->post_type == 'pdf_post')
+                            <a href="{{$post_detail->url}}" target="_blank" class="post__cart--podcasts">
+                                <label for="toggle" class="label">PDF</label>
+                            </a>
+                        @endif
+
                         <div class="detail__writer">{{$post_detail->description}}</div>
                         <div class="detail__content">
                             {!! $post_detail->content !!}
@@ -65,26 +80,70 @@
             </div>
 
             <h3 class="topic-related" data-aos="fade-up">Bài liên quan</h3>
-            <div class="row" data-aos="fade-up">
-                @foreach($posts_relation as $post_relation)
-                    <div class="col-md-4">
-                        <a href="{{ route('detail.post', ['id' => $post_relation->id, 'title' => $post_relation->title]) }}">
-                            <div class="categories-card">
-                                <div class="categories-card__img">
-                                    @if(empty($post_relation->image))
-                                        <img src="/assets/images/img/slider-default.jpg" alt="slider" />
-                                    @else
-                                        <img src="{{ asset($post_relation->image) }}" alt="img" />
-                                    @endif
-                                </div>
+            @if($post_detail->post_type == 'postcard_post')
+                <div class="row" data-aos="fade-up">
+                    @foreach($post_relation_postcard as $post_postcard)
+                        <div class="col-md-4">
+                            <a href="{{ route('detail.post', ['id' => $post_postcard->id, 'title' => $post_postcard->title]) }}">
+                                <div class="categories-card">
+                                    <div class="categories-card__img">
+                                        @if(empty($post_postcard->image))
+                                            <img src="/assets/images/img/slider-default.jpg" alt="slider" />
+                                        @else
+                                            <img src="{{ asset($post_postcard->image) }}" alt="img" />
+                                        @endif
+                                    </div>
 
-                                <div class="categories-card__title">{{$post_relation->title}}</div>
-                                <div class="categories-card__tag">{{$post_relation->getTranslatedPostType();}}</div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
+                                    <div class="categories-card__title">{{$post_postcard->title}}</div>
+                                    <div class="categories-card__tag">{{$post_postcard->getTranslatedPostType();}}</div>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            @elseif ($post_detail->post_type == 'pdf_post')
+                <div class="row" data-aos="fade-up">
+                    @foreach($post_relation_pdf as $post_pdf)
+                        <div class="col-md-4">
+                            <a href="{{ route('detail.post', ['id' => $post_pdf->id, 'title' => $post_pdf->title]) }}">
+                                <div class="categories-card">
+                                    <div class="categories-card__img">
+                                        @if(empty($post_pdf->image))
+                                            <img src="/assets/images/img/slider-default.jpg" alt="slider" />
+                                        @else
+                                            <img src="{{ asset($post_pdf->image) }}" alt="img" />
+                                        @endif
+                                    </div>
+
+                                    <div class="categories-card__title">{{$post_pdf->title}}</div>
+                                    <div class="categories-card__tag">{{$post_pdf->getTranslatedPostType();}}</div>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <div class="row" data-aos="fade-up">
+                    @foreach($posts_relation as $post_relation)
+                        <div class="col-md-4">
+                            <a href="{{ route('detail.post', ['id' => $post_relation->id, 'title' => $post_relation->title]) }}">
+                                <div class="categories-card">
+                                    <div class="categories-card__img">
+                                        @if(empty($post_relation->image))
+                                            <img src="/assets/images/img/slider-default.jpg" alt="slider" />
+                                        @else
+                                            <img src="{{ asset($post_relation->image) }}" alt="img" />
+                                        @endif
+                                    </div>
+
+                                    <div class="categories-card__title">{{$post_relation->title}}</div>
+                                    <div class="categories-card__tag">{{$post_relation->getTranslatedPostType();}}</div>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
         </div>
     </div>
 </section>
