@@ -55,8 +55,10 @@ class CategoriePostController extends Controller
     public function detail_post($id, $title = null) {
         $post_detail = Post::find($id);
         $posts_relation = Post::inRandomOrder()->where('post_type', 0)->limit(6)->get();
+        $post_relation_postcard = Post::where('post_type', 3)->limit(6)->get();
+        $post_relation_pdf = Post::where('post_type', 4)->limit(6)->get();
 
-        return view('posts.post-detail', compact('post_detail', 'posts_relation'));
+        return view('posts.post-detail', compact('post_detail', 'posts_relation', 'post_relation_postcard', 'post_relation_pdf'));
     }
 
     public function list_mega_post() {
