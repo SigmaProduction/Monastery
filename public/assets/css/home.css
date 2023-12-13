@@ -690,6 +690,34 @@ hr.hr-limited {
   width: 100%;
   height: 410px;
 }
+.post__cart--podcasts {
+    width: 200px;
+    height: 60px;
+    position: relative;
+    font-family: inherit;
+    transition: all 0.1s ease-in;
+    display: flex;
+    gap: 1.65rem;
+    cursor: pointer;
+    border-radius: 3rem;
+    padding: 1.2rem 3rem;
+    background-color: #3a393b;
+    color: #fff;
+    border: none;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    min-width: 15rem;
+    justify-content: center;
+}
+.post__cart--podcasts > .arrow img {
+  width: 38px;
+  height: 38px;
+}
+.post__cart--podcasts:hover {
+	background-color: #052664;
+  color: #ffffff;
+}
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .post__cart .post__cart--img, .post__cart .post__cart--video {
     height: 246px;
