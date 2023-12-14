@@ -192,8 +192,8 @@
                     // Hide other fields and their labels
                     $('#description, #description_label, #content_label').hide();
                     // Disable the Summernote editor
-                    $('#content').summernote('destroy');
-                    $('#content').hide();
+                    // $('#content').summernote('destroy');
+                    // $('#content').hide();
                 } else {
                     // Show all fields and their labels
                     $('#title, #title_label, #url, #url_label, #description, #description_label, #content_label').show();

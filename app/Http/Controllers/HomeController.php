@@ -25,32 +25,40 @@ class HomeController extends Controller
         $about_us = AboutUs::limit(1)->get();
 
         $first_post = Post::orderBy('created_at', 'desc')
+                        ->where('is_hide', 0)
                         ->whereNotNull('menu_id')
+                        ->orWhere('is_important', 1)
                         ->where('post_type', 0)
                         ->take(1)->get();
 
         $new_posts = Post::orderBy('created_at', 'desc')
+                        ->where('is_hide', 0)
                         ->whereNotNull('menu_id')
                         ->where('post_type', 0)
+                        ->orWhere('is_important', 1)
                         ->offset(1)->limit(4)
                         ->get();
         
         $mega_posts = Post::orderBy('created_at', 'desc')
+                        ->where('is_hide', 0)
                         ->where('post_type', 1)
                         ->limit(2)
                         ->get();
         
         $first_video_post = Post::orderBy('created_at', 'desc')
+                            ->where('is_hide', 0)
                             ->whereNotNull('post_type')
                             ->where('post_type', 2)
                             ->take(1)->get();
 
         $video_posts = Post::orderBy('created_at', 'desc')
+                        ->where('is_hide', 0)
                         ->where('post_type', 2)
                         ->offset(1)->limit(3)
                         ->get();
         
         $podcast_posts = Post::orderBy('created_at', 'desc')
+                        ->where('is_hide', 0)
                         ->where('post_type', 3)
                         ->limit(2)
                         ->get();

@@ -41,6 +41,7 @@
                 <thead>
                     <tr>
                         <th>Saledieng month</th>
+                        <th>Sub Name</th>
                         <th>Name</th>
                         <th>Image</th>
                         <th>Date of Birth</th>
