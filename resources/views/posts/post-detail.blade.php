@@ -20,8 +20,8 @@
         @endif
 
         @if($post_detail->post_type == 'video_post')
-            <div class="post__cart--img" style="margin-top: 40px;">
-                <iframe width="100%" height="810" src="{{ $post_detail->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="post-detail__video" style="margin-top: 40px;">
+                <iframe width="100%" src="{{ $post_detail->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         @endif
 
