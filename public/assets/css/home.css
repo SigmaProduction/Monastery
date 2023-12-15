@@ -634,7 +634,7 @@ hr.hr-limited {
 }
 .post__cart .post__cart--content {
   width: 100%;
-  height: 50px;
+  height: 52px;
   font-size: 22px;
   line-height: 26px;
   font-weight: 600;
@@ -1296,7 +1296,7 @@ footer .footer .footer__list ul li.item > a {
   line-height: 30px;
   font-weight: 400;
   color: #ffffff;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 footer .footer .footer__list ul li.item > a .item__icon {
   width: 24px;

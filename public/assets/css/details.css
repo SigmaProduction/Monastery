@@ -9,14 +9,23 @@
   background-repeat: repeat-y;
   background-size: cover;
 }
-.post-detail .post-detail__img {
+.post-detail .post-detail__img, .post-detail .post-detail__video {
+  position: relative;
   width: 100%;
   height: auto;
   /* overflow: hidden; */
 }
+.post-detail .post-detail__video > iframe {
+  height: 810px;
+}
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .post-detail .post-detail__img {
+    position: relative;
     height: auto;
+  }
+
+  .post-detail .post-detail__video > iframe {
+    height: 350px;
   }
 }
 .post-detail .post-detail__img > img {
