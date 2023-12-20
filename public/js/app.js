@@ -54,6 +54,7 @@ var swiper = new Swiper(".saints-swiper", {
   slidesPerColumnFill: 'row',
   grid: {
     rows: 2,
+    fill: 'row',
   },
   spaceBetween: 30,
   pagination: {
