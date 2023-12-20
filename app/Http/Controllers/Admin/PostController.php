@@ -38,6 +38,14 @@ class PostController extends Controller
             $query->where('post_type', $request->get('post_type'));
         }
 
+        if ($request->get('is_hide') != null) {
+            $query->where('is_hide', $request->get('is_hide'));
+        }
+
+        if ($request->get('is_important') != null) {
+            $query->where('is_important', $request->get('is_important'));
+        }
+
         $query->orderBy('created_at', 'desc');
         $posts = $query->paginate(10);
         $categories = Category::whereNotNull('menu_id')->select(['id', 'name', 'menu_id'])->get();
