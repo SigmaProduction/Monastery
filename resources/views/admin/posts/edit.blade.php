@@ -69,6 +69,35 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="saledieng_months_id" id="saledieng_months_id_label">Saledieng Months</label>
+                    <h1>{{old('saledieng_months_id')}}</h1>
+                    <select class="form-control" id="saledieng_months_id" name="saledieng_months_id">
+                        <option value="">Select Saledieng Months</option>
+                        @foreach ($saledieng_months as $id => $month)
+                            <option value="{{ $id }}" {{ $post->saledieng_months_id == $id ? 'selected' : '' }}>Tháng {{ $month }}</option>
+                        @endforeach
+                    </select>
+                    @error('saledieng_months_id')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label for="saledieng_family_id" id="saledieng_family_id_label">Saledieng Family</label>
+                    <select class="form-control" id="saledieng_family_id" name="saledieng_family_id">
+                        <option value="">Select Saledieng Family</option>
+                        @foreach ($saledieng_families as $saledieng_family)
+                            <option value="{{ $saledieng_family->id }}" data-saledieng-id="{{ $saledieng_family->saledieng_month_id }}" {{ $post->saledieng_family_id == $saledieng_family->id ? 'selected' : '' }}>
+                                {{ $saledieng_family->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('saledieng_family_id')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                </div>
+
+                <div class="form-group">
                     <label id="description_label" for="description">Description</label>
                     <input type="text" class="form-control" id="description" name="description" value="{{ old('description', $post->description) }}">
                     @error('description')
