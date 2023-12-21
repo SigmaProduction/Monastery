@@ -15,10 +15,10 @@ class SearchPostController extends Controller
         $post = new Post();
 
         if ($request->get('search')) {
-            $query->where('is_hide', 0)->where('title', 'like', '%' . $request->get('search') . '%');
+            $query->where('title', 'like', '%' . $request->get('search') . '%');
         }
 
-        $query->orderBy('created_at', 'desc');
+        $query->orderBy('created_at', 'desc')->where('is_hide', 0);
         $posts = $query->paginate(10);
 
         return view('posts.post-search', compact('posts'));

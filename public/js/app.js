@@ -56,6 +56,16 @@ var swiper = new Swiper(".saints-swiper", {
     rows: 2,
     fill: 'row',
   },
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+        grid: {
+          rows: 2,
+          fill: 'row',
+        }
+    },
+  },
   spaceBetween: 30,
   pagination: {
     el: ".swiper-pagination",
