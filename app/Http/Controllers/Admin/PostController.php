@@ -167,8 +167,10 @@ class PostController extends Controller
         $categories = Category::whereNotNull('menu_id')->select(['id', 'name', 'menu_id'])->get();
         $menus = Menu::all()->pluck('name', 'id');
         $postTypes = $post->postTypes;
+        $saledieng_months = SalediengMonth::all()->pluck('month', 'id');
+        $saledieng_families = SalediengFamily::whereNotNull('saledieng_month_id')->select(['id', 'name', 'saledieng_month_id'])->get();
 
-        return view('admin.posts.edit', compact('post', 'categories', 'postTypes', 'menus'));
+        return view('admin.posts.edit', compact('post', 'categories', 'postTypes', 'menus','saledieng_months','saledieng_families'));
     }
 
     public function update(Request $request, Post $post)
@@ -178,6 +180,8 @@ class PostController extends Controller
             'url' => 'nullable|string|max:255',
             'category_id' => 'nullable|integer',
             'menu_id' => 'nullable|integer',
+            'saledieng_months_id' => 'nullable|integer',
+            'saledieng_family_id' => 'nullable|integer',
             'description' => 'nullable|string|max:255',
             'content' => 'nullable|string',
             'is_hide' => 'nullable|boolean',

@@ -43,7 +43,7 @@
           <div class="row">
             <div class="col-md-12 post-categories__new">
                 @if(!empty($first_post[0]))
-                    <a href="{{ route('detail.post', ['id' => $first_post[0]->id, 'title' => $first_post[0]->title]) }}">
+                    <a href="{{ $first_post[0]->post_type == 'mega_post' ? route('detail.mega', ['id' => $first_post[0]->id, 'title' => $first_post[0]->title]) : route('detail.post', ['id' => $first_post[0]->id, 'title' => $first_post[0]->title]) }}">
                         <div class="categories-card categories-card--large" data-aos="fade-up">
                             <div class="categories-card__img">
                                 @if(empty($first_post[0]->image))
@@ -64,20 +64,20 @@
           <div class="row" data-aos="fade-up">
             @foreach($posts as $post)
                 <div class="col-md-3">
-                <a href="{{ route('detail.post', ['id' => $post->id, 'title' => $post->title]) }}">
-                    <div class="categories-card">
-                        <div class="categories-card__img">
-                            @if(empty($post->image))
-                                <img src="/assets/images/img/img-default.jpg" alt="slider" />
-                            @else
-                                <img src="{{ asset($post->image) }}" alt="img" />
-                            @endif
-                        </div>
+                    <a href="{{ $post->post_type == 'mega_post' ? route('detail.mega', ['id' => $post->id, 'title' => $post->title]) : route('detail.post', ['id' => $post->id, 'title' => $post->title]) }}">
+                        <div class="categories-card">
+                            <div class="categories-card__img">
+                                @if(empty($post->image))
+                                    <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                @else
+                                    <img src="{{ asset($post->image) }}" alt="img" />
+                                @endif
+                            </div>
 
-                        <div class="categories-card__title">{{$post->title}}</div>
-                        <div class="categories-card__tag">{{$post->getTranslatedPostType()}}</div>
-                    </div>
-                </a>
+                            <div class="categories-card__title">{{$post->title}}</div>
+                            <div class="categories-card__tag">{{$post->getTranslatedPostType()}}</div>
+                        </div>
+                    </a>
                 </div>
             @endforeach
           </div>
