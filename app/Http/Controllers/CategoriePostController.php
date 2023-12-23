@@ -21,7 +21,7 @@ class CategoriePostController extends Controller
         $posts = Post::orderBy('created_at', 'desc')
                 ->where('is_hide', 0)
                 ->where('post_type', '!=' , 1)
-                ->offset(1)->paginate(10);
+                ->offset(1)->paginate(12);
 
         return view('posts.post-all', compact('first_post', 'posts'));
     }
@@ -38,7 +38,7 @@ class CategoriePostController extends Controller
 
         $posts = Post::orderBy('created_at', 'desc')
                 ->where('is_hide', 0)
-                ->where('category_id', $menu_id)->offset(1)->paginate(10);
+                ->where('category_id', $menu_id)->offset(1)->paginate(12);
 
         return view('posts.post-menus', compact('first_post', 'posts', 'menu', 'menu_image'));
     }
@@ -55,7 +55,7 @@ class CategoriePostController extends Controller
 
         $posts = Post::orderBy('created_at', 'desc')
                 ->where('is_hide', 0)
-                ->where('category_id', $category_id)->offset(1)->paginate(10);
+                ->where('category_id', $category_id)->offset(1)->paginate(12);
 
         return view('posts.post-categories', compact('first_post', 'posts', 'menu', 'menu_image', 'category'));
     }
@@ -74,7 +74,7 @@ class CategoriePostController extends Controller
                             ->where('is_hide', 0)
                             ->where('post_type', 1)->take(1)->get();
 
-        $mega_posts = Post::orderBy('created_at', 'desc')->where('is_hide', 0)->where('post_type', 1)->paginate(10);
+        $mega_posts = Post::orderBy('created_at', 'desc')->where('is_hide', 0)->where('post_type', 1)->paginate(12);
 
         return view('posts.mega', compact('first_mega_post', 'mega_posts'));
     }

@@ -19,7 +19,7 @@ class SearchPostController extends Controller
         }
 
         $query->orderBy('created_at', 'desc')->where('is_hide', 0);
-        $posts = $query->paginate(10);
+        $posts = $query->paginate(12);
 
         return view('posts.post-search', compact('posts'));
     }
