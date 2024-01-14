@@ -37,22 +37,23 @@
         </div>
 
         <div class="about-wrap__cloud--bottom"></div><!-- /.Cloud- -->
+        <div>
+            <div class="about-wrap__dream-1" data-aos="fade-left" data-aos-duration="5000">
+                @if(!empty($about_us[0]) && $about_us[0]->dream_1_image == null)
+                    <img src="/assets/images/img/dream-1.png" alt="don-bosco" />
+                @else
+                    <img src="{{ asset($about_us[0]->dream_1_image) }}" alt="don-bosco" />
+                @endif
+            </div>
 
-        <div class="about-wrap__dream-1" data-aos="fade-left" data-aos-duration="5000">
-            @if(!empty($about_us[0]) && $about_us[0]->dream_1_image == null)
-                <img src="/assets/images/img/dream-1.png" alt="don-bosco" />
-            @else
-                <img src="{{ asset($about_us[0]->dream_1_image) }}" alt="don-bosco" />
-            @endif
+            <div class="about-wrap__dream-2" data-aos="fade-right" data-aos-duration="5000">
+                @if(!empty($about_us[0]) && $about_us[0]->dream_2_image == null)
+                    <img src="/assets/images/img/dream-2.png" alt="mazzelo" />
+                @else
+                    <img src="{{ asset($about_us[0]->dream_2_image) }}" alt="mazzelo" />
+                @endif
+            </div><!-- /.Dream- -->
         </div>
-
-        <div class="about-wrap__dream-2" data-aos="fade-right" data-aos-duration="5000">
-            @if(!empty($about_us[0]) && $about_us[0]->dream_2_image == null)
-                <img src="/assets/images/img/dream-2.png" alt="mazzelo" />
-            @else
-                <img src="{{ asset($about_us[0]->dream_2_image) }}" alt="mazzelo" />
-            @endif
-        </div><!-- /.Dream- -->
 
         <div class="about-wrap__content">
             <div class="about-wrap__content--img-top" data-aos="fade-up">
@@ -280,21 +281,23 @@
     <div class="gallery">
         <div class="container-fluit">
             <div class="row">
-                <div class="swiper gallery-swiper" data-aos="fade-left" data-aos-duration="5000">
-                    <div class="swiper-wrapper">
-                        @foreach($image_galleries as $image_gallery)
-                            <div class="swiper-slide">
-                                <div class="gallery-img">
-                                    @if(empty($image_gallery->url))
-                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
-                                    @else
-                                        <img src="{{ asset($image_gallery->url) }}" alt="slide-vertical-2" />
-                                    @endif
+                <div class="col-md-12">
+                    <div class="swiper gallery-swiper">
+                        <div class="swiper-wrapper">
+                            @foreach($image_galleries as $image_gallery)
+                                <div class="swiper-slide">
+                                    <div class="gallery-img">
+                                        @if(empty($image_gallery->url))
+                                            <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                        @else
+                                            <img src="{{ asset($image_gallery->url) }}" alt="slide-vertical-2" />
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>

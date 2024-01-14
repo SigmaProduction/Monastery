@@ -47,7 +47,7 @@ class HomeController extends Controller
                             ->where('post_type', 0)
                             ->where('id', '!=', $first_post[0]->id)
                             ->whereNotNull('menu_id')
-                            ->offset(1)->limit(4)
+                            ->limit(4)
                             ->get();
 
         $mega_posts = Post::orderBy('created_at', 'desc')
