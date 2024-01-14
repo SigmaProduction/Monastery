@@ -28,8 +28,13 @@
     <div class="donation">
         <div class="container">
             <div class="row">
-            <div class="donation__title" data-aos="fade-up">Hỗ Trợ</div>
-            <p class="donation__content" data-aos="fade-up">Quý vị vui lòng điền đầy đủ thông tin để nhà Dòng tiện liên lạc. Xin Chúa chúc lành cho Quý Vị. Xin chân thành cám ơn! Kindly fill out all the information needed so that we will be in touch with you shortly. Thank you for supporting us! God bless you!</p>
+                <div class="col-md-12">
+                    <div class="donation__img">
+                        <img src="/assets/images/img/IMG-8.png" alt="nha dong" />
+                    </div>
+                </div>
+                <p class="donation__content" data-aos="fade-up">Quý vị vui lòng điền đầy đủ thông tin để nhà Dòng tiện liên lạc. Xin Chúa chúc lành cho Quý Vị. Xin chân thành cám ơn! 
+                    <br/> Kindly fill out all the information needed so that we will be in touch with you shortly. Thank you for supporting us! God bless you!</p>
             </div>
 
             <div class="row" data-aos="fade-up">

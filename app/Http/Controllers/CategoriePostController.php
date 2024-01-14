@@ -62,7 +62,7 @@ class CategoriePostController extends Controller
 
     public function detail_post($id, $title = null) {
         $post_detail = Post::find($id);
-        $posts_relation = Post::inRandomOrder()->where('post_type', 0)->where('is_hide', 0)->limit(6)->get();
+        $posts_relation = Post::where('menu_id', $post_detail->menu_id)->where('post_type', 0)->where('is_hide', 0)->limit(6)->get(); //random thuộc trong cùng menu lớn
         $post_relation_postcard = Post::where('post_type', 3)->where('is_hide', 0)->limit(6)->get();
         $post_relation_pdf = Post::where('post_type', 4)->where('is_hide', 0)->limit(6)->get();
 

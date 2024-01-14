@@ -1,1 +1,162 @@
-@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=STIX+Two+Text:wght@400;500;600&display=swap);.btn-more,.btn-more:hover{text-decoration:none;color:#fff}.btn-more,.topic.topic--white{color:#fff}@font-face{font-family:"STIX Two Text";src:url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=STIX+Two+Text:wght@400;500;600&display=swap") format("truetype")}@font-face{font-family:Roboto;src:url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap") format("truetype")}.m-auto{margin:auto}.p-0{padding:0}.mt-26{margin-top:26px}.mb-20{margin-bottom:20px}.mb-40{margin-bottom:40px}.mb-60{margin-bottom:60px}.mt-40{margin-top:40px}a:hover{text-decoration:none!important}html{scroll-behavior:smooth}body{font-family:Roboto,sans-serif;overflow-x:hidden;position:relative;height:100%;font-size:16px}#button-top{display:flex;align-items:center;justify-content:center;background-color:#ff9800;border-radius:50%;width:60px;height:60px;position:fixed;bottom:30px;right:30px;transition:background-color .3s,opacity .5s,visibility .5s;opacity:0;visibility:hidden;z-index:1000}#button-top>img{width:26px}#button-top:hover{cursor:pointer;background-color:#333;transition:.5s}#button-top:active{background-color:#555}#button-top.show{opacity:1;visibility:visible}.btn-more{width:150px;display:flex;justify-content:center;align-items:center;font-size:20px;line-height:auto;font-weight:500;background-color:#2974b8;border-radius:20px;padding:8px;margin:auto}.btn-more:hover{box-shadow:-5px -5px 10px #fafbff,5px 5px 10px #a6abbd;transition:.5s;background:#052664}.topic{display:block;font-size:60px;line-height:74px;font-weight:600;color:#052664;text-align:center;margin:20px auto 26px;z-index:5}@media screen and (min-width:310px) and (max-width:768px){.btn-more{width:120px;display:flex;justify-content:center;align-items:center;text-decoration:none;font-size:18px;line-height:auto;font-weight:500;color:#fff;background-color:#2974b8;border-radius:10px;padding:4px 10px}.topic{font-size:40px;line-height:60px;font-weight:600}}
+/* ======================= Font family =======================*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=STIX+Two+Text:wght@400;500;600&display=swap");
+@font-face {
+  font-family: "STIX Two Text";
+  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=STIX+Two+Text:wght@400;500;600&display=swap") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap") format("truetype");
+}
+@font-face {
+    font-family: "Lato";
+    src: url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap") format("truetype");
+}
+
+/*======================= Spacing =======================*/
+.m-auto {
+margin: auto;
+}
+
+.p-0 {
+padding: 0;
+}
+
+.mt-26 {
+margin-top: 26px;
+}
+
+.mb-20 {
+margin-bottom: 20px;
+}
+
+.mb-40 {
+margin-bottom: 40px;
+}
+
+.mb-60 {
+margin-bottom: 60px;
+}
+
+.mb-60 {
+margin-bottom: 60px;
+}
+
+.mt-40 {
+margin-top: 40px;
+}
+
+/* Link and body */
+a:hover {
+  text-decoration: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  height: 100%;
+}
+
+/* ======================= Button =======================*/
+#button-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF9800;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button-top > img {
+    width: 26px;
+  }
+  #button-top:hover {
+    cursor: pointer;
+    background-color: #333;
+    transition: all 0.5s ease;
+  }
+  #button-top:active {
+    background-color: #555;
+  }
+  #button-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .btn-more {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 24px;
+    line-height: auto;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #2974B8;
+    border-radius: 20px;
+    padding: 8px 20px;
+    margin: auto;
+  }
+  @media screen and (min-width: 310px) and (max-width: 768px) {
+    .btn-more {
+      width: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: auto;
+      font-weight: 500;
+      color: #ffffff;
+      background-color: #2974B8;
+      border-radius: 10px;
+      padding: 4px 10px;
+    }
+  }
+  .btn-more:hover {
+    text-decoration: none;
+    box-shadow: -5px -5px 10px #FAFBFF, 5px 5px 10px #A6ABBD;
+    transition: all 0.5s ease;
+    background: #052664;
+    color: #ffffff;
+  }
+
+/* ======================= Topic =======================*/
+  .topic {
+    display: block;
+    /* font-family: "STIX Two Text"; */
+    font-size: 60px;
+    line-height: 74px;
+    font-weight: 600;
+    color: #052664;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 26px;
+    margin-top: 20px;
+    z-index: 5;
+  }
+
+  @media screen and (min-width: 310px) and (max-width: 768px) {
+    .topic {
+      font-size: 40px;
+      line-height: 60px;
+      font-weight: 600;
+    }
+  }
+
+  .topic.topic--white {
+    color: #ffffff;
+  }
