@@ -65,6 +65,8 @@
                             <div class="categories-card__tag">{{$first_post[0]->getTranslatedPostType()}}</div>
                         </div>
                     </a>
+                @else
+                    <h3 class="update-text">Bài viết đang cập nhật...</h3>
                 @endif
             </div>
           </div>

@@ -242,7 +242,11 @@
   }
 }
 
-.mega-about .mega-about__description .description__cap {
+.mega-about .description__cap.cap-bottom {
+  margin-bottom: 30px !important;
+}
+
+.mega-about .description__cap {
   color: #000000;
   text-align: justify;
   font-family: "Lato", sans-serif;
@@ -253,7 +257,7 @@
   margin: auto;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
-  .mega-about .mega-about__description .description__cap {
+  .mega-about .description__cap {
     width: 90%;
     font-size: 18px;
     font-style: italic;
@@ -294,7 +298,6 @@
     font-size: 28px;
     font-weight: 800;
     line-height: 36px;
-    margin: auto;
   }
 }
 
@@ -408,7 +411,7 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .mega-about .mega-about__img > img {
