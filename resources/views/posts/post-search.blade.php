@@ -34,24 +34,28 @@
     <div class="post-categories">
         <div class="container">
           <div class="row" data-aos="fade-up">
-            @foreach($posts as $post)
-                <div class="col-md-3">
-                    <a href="{{ $post->post_type == 'mega_post' ? route('detail.mega', ['id' => $post->id, 'title' => $post->title]) : route('detail.post', ['id' => $post->id, 'title' => $post->title]) }}">
-                        <div class="categories-card">
-                            <div class="categories-card__img">
-                                @if(empty($post->image))
-                                    <img src="/assets/images/img/img-default.jpg" alt="slider" />
-                                @else
-                                    <img src="{{ asset($post->image) }}" alt="img" />
-                                @endif
-                            </div>
+            @if($posts->isNotEmpty())
+                @foreach($posts as $post)
+                    <div class="col-md-3">
+                        <a href="{{ $post->post_type == 'mega_post' ? route('detail.mega', ['id' => $post->id, 'title' => $post->title]) : route('detail.post', ['id' => $post->id, 'title' => $post->title]) }}">
+                            <div class="categories-card">
+                                <div class="categories-card__img">
+                                    @if(empty($post->image))
+                                        <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                    @else
+                                        <img src="{{ asset($post->image) }}" alt="img" />
+                                    @endif
+                                </div>
 
-                            <div class="categories-card__title">{{$post->title}}</div>
-                            <div class="categories-card__tag">{{$post->getTranslatedPostType()}}</div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
+                                <div class="categories-card__title">{{$post->title}}</div>
+                                <div class="categories-card__tag">{{$post->getTranslatedPostType()}}</div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            @else
+                <h3 class="update-text">Không tìm thấy kết quả nào</h3>
+            @endif
           </div>
 
           {{ $posts->appends(request()->query())->links('vendor.pagination.bootstrap-4') }}

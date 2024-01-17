@@ -306,7 +306,52 @@
                 </div>
             </div>
 
-            <p class="mega-about__description description--bottom" data-aos="fade-up">Qua các công cuộc mục vụ - giáo dục, Hội dòng giáo dục và thăng tiến toàn diện người trẻ trở thành Ki-tô hữu tốt và công dân lương thiện.</p>
+            <p class="mega-about__description" data-aos="fade-up">Qua các công cuộc mục vụ - giáo dục, Hội dòng giáo dục và thăng tiến toàn diện người trẻ trở thành Ki-tô hữu tốt và công dân lương thiện.</p>
+        </div>
+
+        <div class="container-fluit">
+            <div class="row">
+                <div class="mega-about__img">
+                    <img src="/assets/images/img/IMG-mazello.png" alt="limit-about" />
+                </div>
+            </div>
+        </div>
+
+        <!-- ================================= Mục vụ Truyền giáo trong và ngoài nước ================================= -->
+        <div class="row">
+            <div class="limited">
+                <div class="mega-about__title-wrap">
+                    <h2 class="mega-about__title" data-aos="fade-up"> Mục vụ Truyền giáo trong và ngoài nước</h2>
+                    <h4 class="mega-about__title">Một số cộng đoàn truyền giáo trong nước </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <p class="mega-about__description" data-aos="fade-up">
+                    Truyền giáo Ad Gentes: Tính đến tháng 9 năm 2023 Tỉnh dòng FMA Việt Nam có 39 nữ tu FMA Việt Nam truyền giáo muôn dân, trong đó có 37 nữ tu đang phục vụ ở 22 quốc gia thuộc 4 châu lục, 2 nữ tu đang được chuẩn bị tại Roma. 
+                </p>
+
+                <p class="mega-about__description" data-aos="fade-up">
+                    Trải qua hơn 60 năm hiện diện trên quê hương Việt Nam, Tỉnh dòng FMA Việt Nam có 313 nữ tu thuộc 24 cộng đoàn ở 15 giáo phận. Bên cạnh đó, Chúa cũng ban cho Tỉnh dòng các Tập sinh, Thỉnh sinh, Đệ tử, Tiền đệ tử, Định hướng và nhiều thiếu nữ đang khao khát dâng mình cho Chúa trong ơn gọi Con Đức Mẹ Phù Hộ.
+                </p>
+
+                <div class="col-md-12">
+                    <div class="mega-about__img">
+                        <img src="/assets/images/img/IMG-mazello.png" alt="limit-about" />
+                    </div>
+                    <small class="description__cap cap-bottom">Hình FMA Việt Nam mới, hình Tập sinh, Thỉnh sinh, Đệ tử- Định hướng</small>
+                </div>
+
+                <p class="mega-about__description" data-aos="fade-up">
+                    Hướng về tương lai, các nữ tu Con Đức Mẹ Phù Hộ kế thừa đoàn sủng của Cha Thánh Gioan Bosco và Mẹ Thánh Maria Mazzarello cũng như tinh thần vững mạnh của các thế hệ trước, tiếp tục tiến bước với sức năng động của đoàn sủng và niềm hy vọng lớn lao vào Thiên Chúa – Đấng có mặt trong lịch sử.
+                </p>
+
+                <p class="mega-about__description description__bottom" data-aos="fade-up">
+                    Hội dòng luôn mong ước ngày càng có nhiều bạn trẻ nhận biết và tiếp bước Cha Bosco và Mẹ Mazzarello để cứu rỗi các linh hồn người trẻ.
+                </p>
+            </div>
         </div>
     </div>
 </section>
