@@ -198,7 +198,7 @@
                         </div>
                     </div>
                 <hr class="limited-footer" />
-                <div class="footer-copyright">Copyright © 2023 Dòng Con Đức Mẹ Phù Hộ</div>
+                <div class="footer-copyright">Copyright © 2024 Dòng Con Đức Mẹ Phù Hộ</div>
             </div>
         </footer>
     </section>
