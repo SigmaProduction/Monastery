@@ -38,7 +38,7 @@ class CategoriePostController extends Controller
 
         $posts = Post::orderBy('created_at', 'desc')
                 ->where('is_hide', 0)
-                ->where('category_id', $menu_id)->offset(1)->paginate(12);
+                ->where('menu_id', $menu_id)->offset(1)->paginate(12);
 
         return view('posts.post-menus', compact('first_post', 'posts', 'menu', 'menu_image'));
     }
