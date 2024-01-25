@@ -13,30 +13,10 @@
         <div class="container-fluit">
             <div class="row">
                 <div class="mega-about__description">
-                    <div class="description--flying">
-                        <div class="flying--left" data-aos="fade-left">
-                            <img src="/assets/images/img/flying-left.svg" alt="fly-left" />
-                        </div>
-                        <div class="flying--right" data-aos="fade-right">
-                            <img src="/assets/images/img/flying-right.svg" alt="fly-right" />
-                        </div>
+                    <div class="description__img-central" data-aos="fade-up">
+                        <img src="/assets/images/img/ducmephuho.png" alt="ducmephuho" />
                     </div>
-
-                    <div class="description__img" data-aos="fade-up">
-                        @if(!empty($about_us[0]) && $about_us[0]->dream_2_image == null)
-                            <img src="/assets/images/img/about-maria.svg" alt="logo-top" />
-                        @else
-                            <img src="{{ asset($about_us[0]->top_image) }}" alt="maria" />
-                        @endif
-                    </div>
-
-                    <div class="description__sub" data-aos="fade-up">
-                        {{$about_us[0]->subtitle}}
-                    </div>
-
-                    <h1 class="description__title" data-aos="fade-up">
-                        {{$about_us[0]->title}}
-                    </h1>
+                    <!-- <small class="description__cap">Được Đức Thánh Giáo Hoàng Pio X phê chuẩn, Hội dòng thuộc quyền giáo hoàng (HL 1)</small> -->
 
                     <div class="description__title-under" data-aos="fade-up">
                         Hội <span>DÒNG CON ĐỨC MẸ PHÙ HỘ</span> <br/>
@@ -46,11 +26,6 @@
                     <p class="description__content" data-aos="fade-up">
                         {{$about_us[0]->description}}
                     </p>
-
-                    <div class="description__img-central" data-aos="fade-up">
-                        <img src="/assets/images/img/ducmephuho.png" alt="ducmephuho" />
-                    </div>
-                    <small class="description__cap">Được Đức Thánh Giáo Hoàng Pio X phê chuẩn, Hội dòng thuộc quyền giáo hoàng (HL 1)</small>
                 </div>
             </div>
         </div>
@@ -74,8 +49,8 @@
             <div class="row mega-about--vertical-middle" data-aos="fade-up">
                 <div class="col-md-6">
                     <div class="mega-about__creator">
-                        <div class="creator__title">Đấng sáng lập</div>
-                        <div class="creator__name">Cha Thánh Gioan Bosco</div>
+                        <div class="creator__title">Đấng Sáng Lập</div>
+                        <div class="creator__name">Cha Thánh <br/>Gioan Bosco</div>
                         <div class="creator__date">(1815 - 1888)</div>
                         <div class="creator__slogan">
                             “Xin cho tôi các linh hồn
@@ -109,7 +84,7 @@
                 <div class="col-md-6">
                     <div class="mega-about__creator">
                         <div class="creator__title">Đấng Đồng Sáng Lập</div>
-                        <div class="creator__name">Mẹ Thánh Maria Mazzarello</div>
+                        <div class="creator__name">Mẹ Thánh <br/>Maria Mazzarello</div>
                         <div class="creator__date">(1837 - 1881)</div>
                         <div class="creator__slogan">
                             “Ta trao phó chúng cho con.”
@@ -165,7 +140,7 @@
         <div class="container-fluit">
             <div class="row">
                 <div class="mega-about__img">
-                    <img src="/assets/images/img/IMG-mazello.png" alt="limit-about" />
+                    <img src="/assets/images/img/FMA.png" alt="limit-about" />
                 </div>
             </div>
         </div>
@@ -204,14 +179,14 @@
                 </div>
                 <div class="col-md-6">
                     <div class="mega-about__mission-img">
-                        <img src="/assets/images/img/IMG-10.png" alt="about__mission" />
+                        <img src="/assets/images/img/hinhthinhsinh.jpg" alt="about__mission" />
                     </div>
                 </div>
             </div>
             <div class="row mega-about__mission--bottom">
                 <div class="col-md-6">
                     <div class="mega-about__mission-img">
-                        <img src="/assets/images/img/me-mazz-tre.png" alt="me-mazz-tre" />
+                        <img src="/assets/images/img/truyengiao.JPG" alt="me-mazz-tre" />
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -245,7 +220,7 @@
                     </p>
                     
                     <div class="mega-about__lib" data-aos="fade-up">
-                        <img src="/assets/images/img/FMA1.png" alt="ducme_hoatrai" />
+                        <img src="/assets/images/img/dinhhuong-detu.jpg" alt="ducme_hoatrai" />
                     </div>
 
                     <p class="mega-about__description" data-aos="fade-up">
@@ -257,10 +232,12 @@
             </div>
         </div>
         
-        <div class="container-fluit">
+        <div class="container">
             <div class="row">
-                <div class="mega-about__lib lib--top" data-aos="fade-up">
-                    <img src="/assets/images/img/BTTQ.jpeg" alt="BTTQ" />
+                <div class="col-md-12">
+                    <div class="mega-about__lib lib--top" data-aos="fade-up">
+                        <img src="/assets/images/img/BTTQ.png" alt="BTTQ" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -269,8 +246,8 @@
         <div class="container">
             <div class="row">
                 <div class="mega-about__title-wrap" data-aos="fade-up">
-                    <h3 class="mega-about__title title--bottom"> Hội dòng con Đức Mẹ Phù Hộ <br/> tại VIỆT NAM</h3>
-                    <h3 class="mega-about__title title--bottom"> TỈNH DÒNG MẸ PHÙ HỘ (VTN)</h3>
+                    <h3 class="mega-about__title"> HỘI DÒNG CON ĐỨC MẸ PHÙ HỘ tại Việt Nam</h3>
+                    <h3 class="mega-about__subtitle title--bottom"> TỈNH DÒNG MẸ PHÙ HỘ (VTN)</h3>
                 </div>
                 <p class="mega-about__description" data-aos="fade-up">
                     Nhiệt tình “Xin cho tôi các linh hồn” đã thúc đẩy các nữ tu Con Đức Mẹ Phù Hộ đến trên miền đất Việt năm 1961. Thiên Chúa Quan Phòng đã tỏ lộ uy quyền của Ngài trong những can thiệp lớn nhỏ, để công việc giáo dục và truyền giáo tại đây mang lại nhiều lợi ích cho người trẻ.
@@ -312,25 +289,22 @@
         <div class="container-fluit">
             <div class="row">
                 <div class="mega-about__img">
-                    <img src="/assets/images/img/IMG-mazello.png" alt="limit-about" />
+                    <img src="/assets/images/img/FMATruyengiao.png" alt="limit-about" />
                 </div>
             </div>
         </div>
 
         <!-- ================================= Mục vụ Truyền giáo trong và ngoài nước ================================= -->
         <div class="row">
-            <div class="limited">
-                <div class="mega-about__title-wrap">
-                    <h2 class="mega-about__title" data-aos="fade-up"> Mục vụ Truyền giáo trong và ngoài nước</h2>
-                    <h4 class="mega-about__title">Một số cộng đoàn truyền giáo trong nước </h4>
-                </div>
+            <div class="mega-about__title-wrap">
+                <h2 class="mega-about__title title--bottom" data-aos="fade-up"> Mục vụ Truyền giáo</h2>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
                 <p class="mega-about__description" data-aos="fade-up">
-                    Truyền giáo Ad Gentes: Tính đến tháng 9 năm 2023 Tỉnh dòng FMA Việt Nam có 39 nữ tu FMA Việt Nam truyền giáo muôn dân, trong đó có 37 nữ tu đang phục vụ ở 22 quốc gia thuộc 4 châu lục, 2 nữ tu đang được chuẩn bị tại Roma. 
+                    Tính đến tháng 9 năm 2023 Tỉnh dòng FMA Việt Nam có 39 nữ tu FMA Việt Nam truyền giáo muôn dân, trong đó có 37 nữ tu đang phục vụ ở 22 quốc gia thuộc 4 châu lục, 2 nữ tu đang được chuẩn bị tại Roma. 
                 </p>
 
                 <p class="mega-about__description" data-aos="fade-up">
@@ -339,7 +313,7 @@
 
                 <div class="col-md-12">
                     <div class="mega-about__img">
-                        <img src="/assets/images/img/IMG-mazello.png" alt="limit-about" />
+                        <img src="/assets/images/img/FMATapsinh.png" alt="limit-about" />
                     </div>
                     <small class="description__cap cap-bottom">Hình FMA Việt Nam mới, hình Tập sinh, Thỉnh sinh, Đệ tử- Định hướng</small>
                 </div>
@@ -351,6 +325,14 @@
                 <p class="mega-about__description description__bottom" data-aos="fade-up">
                     Hội dòng luôn mong ước ngày càng có nhiều bạn trẻ nhận biết và tiếp bước Cha Bosco và Mẹ Mazzarello để cứu rỗi các linh hồn người trẻ.
                 </p>
+            </div>
+        </div>
+
+        <div class="container-fluit">
+            <div class="row">
+                <div class="mega-about__img">
+                    <img src="/assets/images/img/SINHHOATHE.jpg" alt="limit-about" />
+                </div>
             </div>
         </div>
     </div>

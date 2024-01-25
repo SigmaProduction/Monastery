@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="donation__img">
-                        <img src="/assets/images/img/IMG-8.png" alt="nha dong" />
+                        <img src="/assets/images/img/FMA.png" alt="nha dong" />
                     </div>
                 </div>
                 <p class="donation__content" data-aos="fade-up">Quý vị vui lòng điền đầy đủ thông tin để nhà Dòng tiện liên lạc. Xin Chúa chúc lành cho Quý Vị. Xin chân thành cám ơn! 
@@ -41,9 +41,9 @@
             <div class="col-md-6">
                 <div class="donation__topic">Tại Việt Nam, xin chuyển khoản như sau:</div>
                 <div class="donation__info">
-                Tên tài khoản: Tỉnh Dòng Tên Việt Nam <br/>
-                Số tài khoản (VND): 046.100.0469919<br/>
-                Ngân hàng Vietcombank, chi nhánh Tân Bình Dương
+                Tên tài khoản: Đang cập nhật... <br/>
+                Số tài khoản (VND): Đang cập nhật...<br/>
+                Ngân hàng: Đang cập nhật...
                 </div>
             </div>
             <div class="col-md-6"></div>
