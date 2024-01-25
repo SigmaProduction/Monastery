@@ -183,9 +183,9 @@
 }
 .mega-about .mega-about__description .description__content {
   width: 42%;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 32px;
   color: #070E12;
   text-align: justify;
   margin: auto;
@@ -252,6 +252,8 @@
   font-style: italic;
   font-weight: 400;
   line-height: 32px;
+  display: flex;
+  justify-content: center;
   margin: auto;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
@@ -337,6 +339,10 @@
   line-height: 58px;
 }
 
+.mega-about .mega-about__creator .creator__slogan.slogan-nowrap {
+  white-space: nowrap;
+}
+
 .mega-about .mega-about__creator-img {
   width: 100%;
   height: auto;
@@ -351,9 +357,9 @@
 .mega-about .mega-about__description {
   color: #000000;
   text-align: justify;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 32px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .mega-about .mega-about__description {
@@ -379,7 +385,7 @@
 .mega-about .mega-about__title-wrap .mega-about__subtitle {
   color: #017095;
   text-align: center;
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 800;
   line-height: 42px;
   margin: auto;
@@ -408,9 +414,9 @@
 .mega-about .mega-about__mission .mission__content {
   color: #000;
   text-align: justify;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 32px;
 }
 
 .mega-about .mega-about__img {

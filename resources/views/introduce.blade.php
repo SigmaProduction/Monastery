@@ -19,7 +19,7 @@
                     <!-- <small class="description__cap">Được Đức Thánh Giáo Hoàng Pio X phê chuẩn, Hội dòng thuộc quyền giáo hoàng (HL 1)</small> -->
 
                     <div class="description__title-under" data-aos="fade-up">
-                        Hội <span>DÒNG CON ĐỨC MẸ PHÙ HỘ</span> <br/>
+                        <span>HỘI DÒNG CON ĐỨC MẸ PHÙ HỘ</span> <br/>
                         trong kế hoạch của Thiên Chúa
                     </div>
                     
@@ -86,7 +86,7 @@
                         <div class="creator__title">Đấng Đồng Sáng Lập</div>
                         <div class="creator__name">Mẹ Thánh <br/>Maria Mazzarello</div>
                         <div class="creator__date">(1837 - 1881)</div>
-                        <div class="creator__slogan">
+                        <div class="creator__slogan slogan-nowrap">
                             “Ta trao phó chúng cho con.”
                         </div>
                     </div>
@@ -140,7 +140,7 @@
         <div class="container-fluit">
             <div class="row">
                 <div class="mega-about__img">
-                    <img src="/assets/images/img/FMA.png" alt="limit-about" />
+                    <img src="/assets/images/img/IMG-mazello.png" alt="limit-about" />
                 </div>
             </div>
         </div>
@@ -179,14 +179,14 @@
                 </div>
                 <div class="col-md-6">
                     <div class="mega-about__mission-img">
-                        <img src="/assets/images/img/hinhthinhsinh.jpg" alt="about__mission" />
+                        <img src="/assets/images/img/IMG-10.png" alt="about__mission" />
                     </div>
                 </div>
             </div>
             <div class="row mega-about__mission--bottom">
                 <div class="col-md-6">
                     <div class="mega-about__mission-img">
-                        <img src="/assets/images/img/truyengiao.JPG" alt="me-mazz-tre" />
+                        <img src="/assets/images/img/IMG-11.png" alt="me-mazz-tre" />
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -218,10 +218,6 @@
                     <p class="mega-about__description" data-aos="fade-up">
                         Trung thành với khoa sư phạm kế thừa từ Cha Bosco và Mẹ Mazzarello, từ buổi đầu thành lập đến nay, Hội dòng đã được Chúa ban cho nhiều hoa trái thánh thiện thuộc các thành phần và độ tuổi khác nhau.
                     </p>
-                    
-                    <div class="mega-about__lib" data-aos="fade-up">
-                        <img src="/assets/images/img/dinhhuong-detu.jpg" alt="ducme_hoatrai" />
-                    </div>
 
                     <p class="mega-about__description" data-aos="fade-up">
                         Như vậy, hơn 150 năm thành lập, Hội dòng Con Đức Mẹ Phù Hộ có 10.962 nữ tu, 67 Tỉnh dòng, 5 Á Tỉnh, hiện diện trên 98 quốc gia thuộc 5 châu lục (dữ liệu 2022).
@@ -286,18 +282,25 @@
             <p class="mega-about__description" data-aos="fade-up">Qua các công cuộc mục vụ - giáo dục, Hội dòng giáo dục và thăng tiến toàn diện người trẻ trở thành Ki-tô hữu tốt và công dân lương thiện.</p>
         </div>
 
-        <div class="container-fluit">
-            <div class="row">
-                <div class="mega-about__img">
-                    <img src="/assets/images/img/FMATruyengiao.png" alt="limit-about" />
-                </div>
-            </div>
-        </div>
-
         <!-- ================================= Mục vụ Truyền giáo trong và ngoài nước ================================= -->
         <div class="row">
             <div class="mega-about__title-wrap">
                 <h2 class="mega-about__title title--bottom" data-aos="fade-up"> Mục vụ Truyền giáo</h2>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mega-about__img">
+                        <img src="/assets/images/img/FMATruyengiao.png" alt="limit-about" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mega-about__img">
+                        <img src="/assets/images/img/truyengiao.JPG" alt="limit-about" />
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -313,9 +316,26 @@
 
                 <div class="col-md-12">
                     <div class="mega-about__img">
+                        <img src="/assets/images/img/FMA.png" alt="limit-about" />
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="mega-about__img">
                         <img src="/assets/images/img/FMATapsinh.png" alt="limit-about" />
                     </div>
-                    <small class="description__cap cap-bottom">Hình FMA Việt Nam mới, hình Tập sinh, Thỉnh sinh, Đệ tử- Định hướng</small>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="mega-about__img">
+                        <img src="/assets/images/img/hinhthinhsinh.jpg" alt="limit-about" />
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="mega-about__img">
+                        <img src="/assets/images/img/dinhhuong-detu.jpg" alt="limit-about" />
+                    </div>
                 </div>
 
                 <p class="mega-about__description" data-aos="fade-up">

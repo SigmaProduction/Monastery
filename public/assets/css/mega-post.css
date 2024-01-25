@@ -151,8 +151,9 @@
     .header-mega .header-mega__logo {
         display: none;
     }
-    .header-mega .header-mega__topic {
+    .header-mega .header-mega__topic > h1 {
         font-size: 24px;
+        white-space: nowrap;
     }
     .mega-content {
         overflow-x: hidden;
