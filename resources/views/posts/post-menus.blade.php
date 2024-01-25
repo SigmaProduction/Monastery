@@ -12,24 +12,28 @@
         <div class="heading__post">
             @if(!empty($menu_image))
                 <div class="heading__post--img" style="background-image: url({{asset($menu_image)}})">
-                    <h1 class="heading--white">{{$menu}}</h1>
-                    <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-                            <li class="breadcrumb-item active active--white" aria-current="page">{{$menu}}</li>
-                        </ol>
-                    </nav>
+                    <div class="heading__post--center">
+                        <h1 class="heading--white">{{$menu}}</h1>
+                        <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                                <li class="breadcrumb-item active active--white" aria-current="page">{{$menu}}</li>
+                            </ol>
+                        </nav>
+                    </div>
                     <div class="heading__post--component"></div>
                 </div>
             @else
                 <div class="heading__post--img" style="background-image: url('/assets/images/img/IMG-3.png');">
-                    <h1>{{$menu}}</h1>
-                    <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{$menu}}</li>
-                        </ol>
-                    </nav>
+                    <div class="heading__post--center">
+                        <h1>{{$menu}}</h1>
+                        <nav class="heading__post--breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{$menu}}</li>
+                            </ol>
+                        </nav>
+                    </div>
                     <div class="heading__post--component"></div>
                 </div>
             @endif
