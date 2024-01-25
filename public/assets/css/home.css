@@ -74,8 +74,8 @@ footer .footer .footer__list ul {
 .header-wrap .heading__post .heading__post--img .heading__post--breadcrumb {
     position: absolute;
     top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 51%;
+    transform: translate(-50%, -51%);
 }
 .header-wrap .heading__post .heading__post--img .heading__post--breadcrumb .breadcrumb > li {
     font-size: 24px;
@@ -265,13 +265,17 @@ footer .footer .footer__list > ul {
     height: 840px;
     margin-top: 70px;
 }
+.header-wrap .swiper-container .swiper-zoom-container {
+    width: 100%;
+    height: auto;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+}
 .header-wrap .swiper-container .swiper-zoom-container > img {
     width: 100%;
     height: auto;
-    -o-object-fit: cover;
-    object-fit: cover;
-    -o-object-position: center;
-    object-position: center;
 }
 .header-wrap .swiper-button-next,
 .header-wrap .swiper-button-prev {

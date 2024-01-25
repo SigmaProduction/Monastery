@@ -138,7 +138,6 @@
 .mega-about .mega-about__description .description__title {
   color: #017095;
   text-align: center;
-  font-family: "Lato", sans-serif;
   font-size: 60px;
   line-height: 72px;
   font-weight: 700;
@@ -157,18 +156,17 @@
 .mega-about .mega-about__description .description__title-under {
   color: #0096C7;
   text-align: center;
-  font-family: "Lato", sans-serif;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 600;
-  line-height: 58px;
+  line-height: 46px;
   margin-bottom: 20px;
+  /* padding-top: 120px; */
 }
 .mega-about .mega-about__description .description__title-under > span {
-  font-family: "Lato", sans-serif;
   color: #017095;
-  font-size: 52px;
+  font-size: 46px;
   font-weight: 800;
-  line-height: 60px;
+  line-height: 48px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .mega-about .mega-about__description .description__title-under {
@@ -184,10 +182,10 @@
   }
 }
 .mega-about .mega-about__description .description__content {
-  width: 50%;
-  font-size: 32px;
+  width: 42%;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 42px;
+  line-height: 26px;
   color: #070E12;
   text-align: justify;
   margin: auto;
@@ -196,9 +194,9 @@
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .mega-about .mega-about__description .description__content {
     width: 80%;
-    font-size: 22px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 32px;
+    line-height: 22px;
     margin-bottom: 20px;
   }
 }
@@ -223,11 +221,12 @@
 }
 
 .mega-about .mega-about__description .description__img-central {
-  width: 690px;
+  width: 350px;
   height: auto;
   object-fit: contain;
   margin: auto;
   margin-bottom: 20px;
+  margin-top: 120px;
 }
 
 .mega-about .mega-about__description .description__img-central > img {
@@ -249,30 +248,29 @@
 .mega-about .description__cap {
   color: #000000;
   text-align: justify;
-  font-family: "Lato", sans-serif;
-  font-size: 28px;
+  font-size: 18px;
   font-style: italic;
   font-weight: 400;
-  line-height: 36px;
+  line-height: 32px;
   margin: auto;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .mega-about .description__cap {
     width: 90%;
-    font-size: 18px;
+    font-size: 14px;
     font-style: italic;
     font-weight: 400;
-    line-height: 26px;
+    line-height: 22px;
   }
 }
 .mega-about .mega-about__lib {
   width: 100%;
   object-fit: cover;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .mega-about .mega-about__lib {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 }
 .mega-about .mega-about__lib > img {
@@ -287,21 +285,21 @@
 .mega-about .mega-about__title {
   color: #017095;
   text-align: center;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 800;
-  line-height: 58px;
+  line-height: 48px;
   margin: auto;
 }
 
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .mega-about .mega-about__title {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 800;
-    line-height: 36px;
+    line-height: 34px;
   }
 }
 
-.mega-about .mega-about__title.title--bottom {
+.mega-about .mega-about__title.title--bottom, .mega-about .mega-about__subtitle.title--bottom  {
   margin-bottom: 40px !important;
 }
 
@@ -353,15 +351,15 @@
 .mega-about .mega-about__description {
   color: #000000;
   text-align: justify;
-  font-size: 34px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 44px;
+  line-height: 26px;
 }
 @media screen and (min-width: 310px) and (max-width: 768px) {
   .mega-about .mega-about__description {
-    font-size: 26px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 34px;
+    line-height: 22px;
   }
 }
 .mega-about .mega-about__title-wrap {
@@ -372,9 +370,18 @@
 .mega-about .mega-about__title-wrap .mega-about__title {
   color: #017095;
   text-align: center;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 800;
-  line-height: 58px;
+  line-height: 52px;
+  margin: auto;
+}
+
+.mega-about .mega-about__title-wrap .mega-about__subtitle {
+  color: #017095;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 42px;
   margin: auto;
 }
 
@@ -401,10 +408,9 @@
 .mega-about .mega-about__mission .mission__content {
   color: #000;
   text-align: justify;
-  font-family: "Lato", sans-serif;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 26px;
 }
 
 .mega-about .mega-about__img {
@@ -431,20 +437,18 @@
 
 .mega-about .mega-about__link {
   color: #008AB5;
-  font-family: "Lato", sans-serif;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 400;
-  line-height: 42px;
+  line-height: 32px;
   text-decoration-line: underline;
 }
 
 .mega-about .mega-about__list > ul > li {
   color: #000000;
   text-align: justify;
-  font-family: "Lato", sans-serif;
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 36px;
+  line-height: 28px;
   margin-bottom: 10px;
 }
 
@@ -452,7 +456,6 @@
   .mega-about .mega-about__list > ul > li {
     color: #000000;
     text-align: justify;
-    font-family: "Lato", sans-serif;
     font-size: 26px;
     font-weight: 400;
     line-height: 32px;
