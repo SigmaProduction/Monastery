@@ -16,8 +16,7 @@
                     <div class="description__img-central" data-aos="fade-up">
                         <img src="/assets/images/img/ducmephuho.png" alt="ducmephuho" />
                     </div>
-                    <!-- <small class="description__cap">Được Đức Thánh Giáo Hoàng Pio X phê chuẩn, Hội dòng thuộc quyền giáo hoàng (HL 1)</small> -->
-
+                   
                     <div class="description__title-under" data-aos="fade-up">
                         <span>HỘI DÒNG CON ĐỨC MẸ PHÙ HỘ</span> <br/>
                         trong kế hoạch của Thiên Chúa
@@ -70,7 +69,7 @@
                     <p class="mega-about__description" data-aos="fade-up">
                         Gioan Bosco sinh ngày 16 tháng 8 năm 1815, tại Becchi, miền Piemonte, nước Ý.
                         &nbsp;<br/>
-                        Ngài thụ phong linh mục ngày 5 tháng 6 năm 1841. Thiên Chúa đã ban cho ngài một trái tim đầy tình yêu dành cho giới trẻ. Ngài đã thành lập Hiệp hội Thánh Phan-xi-cô Sa-lê, hay còn gọi là Dòng Sa-lê-diêng Don Bosco để có thể chăm sóc và giáo dục những người trẻ nghèo và bị bỏ rơi thành những công dân lương thiện và Ki-tô hữu tốt lành.
+                        Ngài thụ phong linh mục ngày 5 tháng 6 năm 1841. Thiên Chúa đã ban cho ngài một trái tim đầy tình yêu dành cho giới trẻ. Ngài đã thành lập Hiệp hội Thánh Phanxicô Salê, hay còn gọi là Dòng Salêdiêng Don Bosco để có thể chăm sóc và giáo dục những người trẻ nghèo và bị bỏ rơi thành những công dân lương thiện và Kitô hữu tốt lành.
                     </p>
                 </div>
             </div>
@@ -96,7 +95,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p class="mega-about__description" data-aos="fade-up">
-                        Cùng thời với Cha Bosco, tại Mornese, miền Bắc nước Ý, có Maria Domenica Mazzarello và một số bạn trong nhóm Con Đức Mẹ Vô Nhiễm, họ dấn thân chăm sóc cho các thanh thiếu nữ trong vùng, giúp các em sống vui tươi, yêu mến Chúa Giê-su Thánh Thể, siêng năng thực hành việc đạo đức.
+                        Cùng thời với Cha Bosco, tại Mornese, miền Bắc nước Ý, có Maria Domenica Mazzarello và một số bạn trong nhóm Con Đức Mẹ Vô Nhiễm, họ dấn thân chăm sóc cho các thanh thiếu nữ trong vùng, giúp các em sống vui tươi, yêu mến Chúa Giêsu Thánh Thể, siêng năng thực hành việc đạo đức.
                     </p>
                     <p class="mega-about__description" data-aos="fade-up">
                         Một ngày kia, đang đi trên đường, Mazzarello có một thị kiến nhiệm màu: một căn nhà lớn xuất hiện với rất nhiều trẻ nữ chạy nhảy, vui chơi trên sân, trong khi đó có tiếng nói “Ta trao phó chúng cho con”. Tiếng nói này thôi thúc trong lòng Mazzarello một ước mơ giáo dục và làm cho định hướng tông đồ giữa các trẻ nữ ngày càng rõ nét hơn.
@@ -159,7 +158,7 @@
         <div class="row">
             <div class="limited">
                 <div class="mega-about__title-wrap">
-                    <h2 class="mega-about__title" data-aos="fade-up"> Đoàn Sủng và Sứ Mệnh</h2>
+                    <h2 class="mega-about__title" data-aos="fade-up"> Đoàn sủng và Sứ mệnh</h2>
                 </div>
             </div>
         </div>
@@ -173,7 +172,7 @@
                             Đức ái Tiên liệu
                         </div>
                         <p class="mission__content">
-                            Đoàn sủng giáo dục là ân huệ của Chúa Thánh Thần ban tặng cho cha Bosco và ngài đã chuyển trao di sản tinh thần đó cho đại Gia đình Sa-lê-diêng nhằm phục vụ người trẻ.
+                            Đoàn sủng giáo dục là ân huệ của Chúa Thánh Thần ban tặng cho cha Bosco và ngài đã chuyển trao di sản tinh thần đó cho đại Gia đình Salêdiêng nhằm phục vụ người trẻ.
                         </p>
                     </div>
                 </div>
@@ -196,7 +195,7 @@
                             Giáo dục & Truyền giáo
                         </div>
                         <p class="mission__content">
-                            Trong Giáo hội, các nữ tu Con Đức Mẹ Phù Hộ dâng hiến chính mình cách triệt để cho Đức Ki-tô bằng việc sống kinh nghiệm Đức ái tiên liệu như các Đấng Sáng Lập, phục vụ nước trời ngang qua sứ mệnh giáo dục và truyền giáo theo tinh thần Hệ thống Giáo dục Dự phòng.
+                            Trong Giáo hội, các nữ tu Con Đức Mẹ Phù Hộ dâng hiến chính mình cách triệt để cho Đức Kitô bằng việc sống kinh nghiệm Đức ái tiên liệu như các Đấng Sáng Lập, phục vụ nước trời ngang qua sứ mệnh giáo dục và truyền giáo theo tinh thần Hệ thống Giáo dục Dự phòng.
                             Hội dòng Con Đức Mẹ Phù Hộ ưu ái đối với người trẻ thuộc giới bình dân, đặc biệt các thanh thiếu nữ.
                         </p>
                     </div>
@@ -204,7 +203,7 @@
             </div>
         </div>
 
-        <div class="container-fluit">
+        <div class="container">
             <div class="row">
                 <div class="mega-about__lib" data-aos="fade-up">
                     <img src="/assets/images/img/ducme_hoatrai.png" alt="ducme_hoatrai" />
@@ -218,12 +217,16 @@
                     <p class="mega-about__description" data-aos="fade-up">
                         Trung thành với khoa sư phạm kế thừa từ Cha Bosco và Mẹ Mazzarello, từ buổi đầu thành lập đến nay, Hội dòng đã được Chúa ban cho nhiều hoa trái thánh thiện thuộc các thành phần và độ tuổi khác nhau.
                     </p>
+                </div>
+            </div>
+        </div>
 
-                    <p class="mega-about__description" data-aos="fade-up">
-                        Như vậy, hơn 150 năm thành lập, Hội dòng Con Đức Mẹ Phù Hộ có 10.962 nữ tu, 67 Tỉnh dòng, 5 Á Tỉnh, hiện diện trên 98 quốc gia thuộc 5 châu lục (dữ liệu 2022).
-                    </p>
-
-                    <a href="https://www.cgfmanet.org/en/fma-institute-world/" class="mega-about__link"><b>Đường dẫn:</b> https://www.cgfmanet.org/en/fma-institute-world/</a>
+        <div class="container-fluit">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mega-about__lib" data-aos="fade-up">
+                        <img src="/assets/images/img/hoatrai_thanhthien.jpg" alt="ducme_hoatrai" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,9 +234,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mega-about__lib lib--top" data-aos="fade-up">
-                        <img src="/assets/images/img/BTTQ.png" alt="BTTQ" />
-                    </div>
+                    <p class="mega-about__description" data-aos="fade-up">
+                        Như vậy, hơn 150 năm thành lập, Hội dòng Con Đức Mẹ Phù Hộ có 10.962 nữ tu, 67 Tỉnh dòng, 5 Á Tỉnh, hiện diện trên 98 quốc gia thuộc 5 châu lục (dữ liệu 2022).
+                    </p>
+
+                    <a href="https://www.cgfmanet.org/en/fma-institute-world/" class="mega-about__link mb-3" target="_blank"><b>Đường dẫn:</b> https://www.cgfmanet.org/en/fma-institute-world/</a>
                 </div>
             </div>
         </div>
@@ -242,7 +247,7 @@
         <div class="container">
             <div class="row">
                 <div class="mega-about__title-wrap" data-aos="fade-up">
-                    <h3 class="mega-about__title"> HỘI DÒNG CON ĐỨC MẸ PHÙ HỘ tại Việt Nam</h3>
+                    <h3 class="mega-about__title title--top"> HỘI DÒNG CON ĐỨC MẸ PHÙ HỘ tại Việt Nam</h3>
                     <h3 class="mega-about__subtitle title--bottom"> TỈNH DÒNG MẸ PHÙ HỘ (VTN)</h3>
                 </div>
                 <p class="mega-about__description" data-aos="fade-up">
@@ -279,7 +284,7 @@
                 </div>
             </div>
 
-            <p class="mega-about__description" data-aos="fade-up">Qua các công cuộc mục vụ - giáo dục, Hội dòng giáo dục và thăng tiến toàn diện người trẻ trở thành Ki-tô hữu tốt và công dân lương thiện.</p>
+            <p class="mega-about__description" data-aos="fade-up">Qua các công cuộc mục vụ - giáo dục, Hội dòng giáo dục và thăng tiến toàn diện người trẻ trở thành Kitô hữu tốt và công dân lương thiện.</p>
         </div>
 
         <!-- ================================= Mục vụ Truyền giáo trong và ngoài nước ================================= -->
@@ -293,12 +298,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="mega-about__img">
-                        <img src="/assets/images/img/FMATruyengiao.png" alt="limit-about" />
+                        <img src="/assets/images/img/truyengiao.JPG" alt="limit-about" />
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mega-about__img">
-                        <img src="/assets/images/img/truyengiao.JPG" alt="limit-about" />
+                        <img src="/assets/images/img/FMATruyengiao.png" alt="limit-about" />
                     </div>
                 </div>
             </div>
