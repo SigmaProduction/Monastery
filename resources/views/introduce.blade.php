@@ -101,7 +101,7 @@
                         Một ngày kia, đang đi trên đường, Mazzarello có một thị kiến nhiệm màu: một căn nhà lớn xuất hiện với rất nhiều trẻ nữ chạy nhảy, vui chơi trên sân, trong khi đó có tiếng nói “Ta trao phó chúng cho con”. Tiếng nói này thôi thúc trong lòng Mazzarello một ước mơ giáo dục và làm cho định hướng tông đồ giữa các trẻ nữ ngày càng rõ nét hơn.
                     </p>
                     <p class="mega-about__description" data-aos="fade-up">
-                        Chúa quan phòng đã sắp xếp cuộc gặp gỡ giữa Cha Bosco và Maria Mazzarello tại Mornese năm 1864. Cha Bosco đã ban huấn từ cho nhóm Con Đức Mẹ Vô Nhiễm và ngài đã nhìn thấy một số thiếu nữ phù hợp cho việc thành lập Kội dòng mới, trong đó Maria Mazzarello nổi bật hơn cả.
+                        Chúa quan phòng đã sắp xếp cuộc gặp gỡ giữa Cha Bosco và Maria Mazzarello tại Mornese năm 1864. Cha Bosco đã ban huấn từ cho nhóm Con Đức Mẹ Vô Nhiễm và ngài đã nhìn thấy một số thiếu nữ phù hợp cho việc thành lập Hội dòng mới, trong đó Maria Mazzarello nổi bật hơn cả.
                     </p>
                 </div>
             </div>
@@ -265,9 +265,9 @@
                         <ul>
                             <li>Nguyện xá, dạy Giáo lý và đào tạo GLV</li>
                             <li>Trường Mẫu giáo,</li>
-                            <li>Trường Phổ Cập cấp 1,2 cho các em có hoàn cảnh khó khăn,</li>
-                            <li>Trung tâm Giáo dục Nghề Nghiệp cho người nữ,</li>
-                            <li>Trung tâm Tiếng Anh và Âm nhạc,</li>
+                            <li>Trường Phổ cập cấp 1,2 cho các em có hoàn cảnh khó khăn,</li>
+                            <li>Trung tâm Giáo dục Nghề nghiệp cho người nữ,</li>
+                            <li>Trung tâm Anh ngữ và Âm nhạc,</li>
                         </ul>
                     </div>
                 </div>
