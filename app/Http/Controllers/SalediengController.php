@@ -23,7 +23,7 @@ class SalediengController extends Controller
 
         $saledieng_posts = Post::orderBy('created_at', 'desc')
                     ->where('is_hide', 0)
-                    ->where('saledieng_family_id', $id)->offset(1)->paginate(10);
+                    ->where('saledieng_family_id', $id)->offset(1)->paginate(12);
 
         return view('saledieng', compact('saledieng_family_subname', 'saledieng_family_name','first_saledieng_post','saledieng_posts'));
     }

@@ -34,24 +34,34 @@
     <div class="post-categories">
         <div class="container">
           <div class="row" data-aos="fade-up">
-            @foreach($posts as $post)
-                <div class="col-md-3">
-                    <a href="{{ $post->post_type == 'mega_post' ? route('detail.mega', ['id' => $post->id, 'title' => $post->title]) : route('detail.post', ['id' => $post->id, 'title' => $post->title]) }}">
-                        <div class="categories-card">
-                            <div class="categories-card__img">
-                                @if(empty($post->image))
-                                    <img src="/assets/images/img/img-default.jpg" alt="slider" />
+            @if($posts->isNotEmpty())
+                @foreach($posts as $post)
+                    <div class="col-md-3">
+                        <a href="{{ $post->post_type == 'mega_post' ? route('detail.mega', ['id' => $post->id, 'title' => $post->title]) : route('detail.post', ['id' => $post->id, 'title' => $post->title]) }}">
+                            <div class="categories-card">
+                                @if($post->post_type == 'video_post')
+                                    <div class="categories-card__img">
+                                        <iframe width="100%" height="100%" src="{{ $post->url; }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+                                        </iframe>
+                                    </div>
                                 @else
-                                    <img src="{{ asset($post->image) }}" alt="img" />
+                                    <div class="categories-card__img">
+                                        @if(empty($post->image))
+                                            <img src="/assets/images/img/img-default.jpg" alt="slider" />
+                                        @else
+                                            <img src="{{ asset($post->image) }}" alt="img" />
+                                        @endif
+                                    </div>
                                 @endif
+                                <div class="categories-card__title">{{$post->title}}</div>
+                                <div class="categories-card__tag">{{$post->getTranslatedPostType()}}</div>
                             </div>
-
-                            <div class="categories-card__title">{{$post->title}}</div>
-                            <div class="categories-card__tag">{{$post->getTranslatedPostType()}}</div>
-                        </div>
-                    </a>
-                </div>
-            @endforeach
+                        </a>
+                    </div>
+                @endforeach
+            @else
+                <h3 class="update-text">Không tìm thấy kết quả nào</h3>
+            @endif
           </div>
 
           {{ $posts->appends(request()->query())->links('vendor.pagination.bootstrap-4') }}

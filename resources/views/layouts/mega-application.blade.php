@@ -140,6 +140,9 @@
                                         <li class="item">
                                             <a href="https://ktcgkpv.org/" target="_blank">Các Giờ Kinh Phụng Vụ </a>
                                         </li>
+                                        <li class="item">
+                                            <a href="{{ url('/quyen-gop') }}" target="_blank">Quyên Góp </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -159,7 +162,7 @@
                         </div>
                     </div>
                 <hr class="limited-footer" />
-                <div class="footer-copyright">Copyright © 2023 Dòng Con Đức Mẹ Phù Hộ</div>
+                <div class="footer-copyright">Copyright © 2024 Dòng Con Đức Mẹ Phù Hộ</div>
             </div>
         </footer>
     </section>

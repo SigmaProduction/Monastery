@@ -40,54 +40,54 @@
         <div class="header-wrap">
             <div class="header-wrap__heading">
                 <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-                        <a class="navbar-brand navbar-custom__logo" href="/">
-                            <img src="/assets/images/logo/logo-white.svg" alt="logo"/>
-                        </a><!-- /.logo -->
+                    <div class="row">
+                        <div class="col-md-12">
+                        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+                            <a class="navbar-brand navbar-custom__logo" href="/">
+                                <img src="/assets/images/logo/logo-white.svg" alt="logo"/>
+                            </a><!-- /.logo -->
 
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                    
-                        <div class="collapse navbar-collapse navbar-custom__collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/">Trang chủ</a>
-                            </li>
-                            @foreach($menus as $menu)
-                                <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="{{ route('list.menus', ['menu' => $menu->name]) }}">
-                                    {{$menu->name}}
-                                </a>
-                                <div class="dropdown-menu">
-                                    @foreach($menu->categories as $category)
-                                        <a class="dropdown-item" href="{{ route('list.categories', ['menu' => $menu->name, 'category' => $category->name]) }}">{{$category->name}}</a>
-                                    @endforeach
-                                </div>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        
+                            <div class="collapse navbar-collapse navbar-custom__collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/">Trang chủ</a>
                                 </li>
-                            @endforeach
+                                @foreach($menus as $menu)
+                                    <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="{{ route('list.menus', ['menu' => $menu->name]) }}">
+                                        {{$menu->name}}
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        @foreach($menu->categories as $category)
+                                            <a class="dropdown-item" href="{{ route('list.categories', ['menu' => $menu->name, 'category' => $category->name]) }}">{{$category->name}}</a>
+                                        @endforeach
+                                    </div>
+                                    </li>
+                                @endforeach
 
-                            <li class="nav-item search">
-                                <a class="btn-custom btn-custom__hotline" href="{{ route('search.post') }}">
-                                    <img src="/assets/images/icon/search.svg" alt="phone" />
-                                </a>
-                            </li>
-                            <li class="nav-item search social">
-                                <a class="btn-custom btn-custom__hotline" href="https://www.youtube.com/@TruyenThongDongConDucMePhuHo" target="_blank">
-                                    <img src="/assets/images/icon/youtube.svg" alt="phone" />
-                                </a>
-                            </li>
-                            <li class="nav-item search social">
-                                <a class="btn-custom btn-custom__hotline" href="https://www.facebook.com/fmavtn" target="_blank">
-                                    <img src="/assets/images/icon/facebook.svg" alt="phone" />
-                                </a>
-                            </li>
-                        </ul>
-                        </div><!-- /.menu- -->
+                                <li class="nav-item search">
+                                    <a class="btn-custom btn-custom__hotline" href="{{ route('search.post') }}">
+                                        <img src="/assets/images/icon/search.svg" alt="phone" />
+                                    </a>
+                                </li>
+                                <li class="nav-item search social">
+                                    <a class="btn-custom btn-custom__hotline" href="https://www.youtube.com/@TruyenThongDongConDucMePhuHo" target="_blank">
+                                        <img src="/assets/images/icon/youtube.svg" alt="phone" />
+                                    </a>
+                                </li>
+                                <li class="nav-item search social">
+                                    <a class="btn-custom btn-custom__hotline" href="https://www.facebook.com/fmavtn" target="_blank">
+                                        <img src="/assets/images/icon/facebook.svg" alt="phone" />
+                                    </a>
+                                </li>
+                            </ul>
+                            </div><!-- /.menu- -->
+                        </div>
                     </div>
-                </div>
                 </div>
             </div><!-- /.navbar- -->
         </div>
@@ -175,6 +175,9 @@
                                         <li class="item">
                                             <a href="https://ktcgkpv.org/" target="_blank">Các Giờ Kinh Phụng Vụ </a>
                                         </li>
+                                        <li class="item">
+                                            <a href="{{ url('/quyen-gop') }}" target="_blank">Quyên Góp </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -195,7 +198,7 @@
                         </div>
                     </div>
                 <hr class="limited-footer" />
-                <div class="footer-copyright">Copyright © 2023 Dòng Con Đức Mẹ Phù Hộ</div>
+                <div class="footer-copyright">Copyright © 2024 Dòng Con Đức Mẹ Phù Hộ</div>
             </div>
         </footer>
     </section>
