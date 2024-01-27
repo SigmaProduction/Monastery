@@ -23,22 +23,33 @@ class HomeController extends Controller
                         ->get();
         
         $about_us = AboutUs::limit(1)->get();
+        
+        $first_post_important = Post::orderBy('created_at', 'desc')
+            ->where('is_hide', 0)
+            ->where('post_type', 0)
+            ->whereNotNull('menu_id')
+            ->where('is_important', 1)
+            ->take(1)
+            ->get();
 
-        $first_post = Post::orderBy('created_at', 'desc')
+        if ($first_post_important->isNotEmpty()) {
+            $first_post = $first_post_important;
+        } else {
+            $first_post = Post::orderBy('created_at', 'desc')
                         ->where('is_hide', 0)
-                        ->whereNotNull('menu_id')
-                        ->orWhere('is_important', 1)
                         ->where('post_type', 0)
+                        ->whereNotNull('menu_id')
                         ->take(1)->get();
+        }
 
         $new_posts = Post::orderBy('created_at', 'desc')
-                        ->where('is_hide', 0)
-                        ->whereNotNull('menu_id')
-                        ->where('post_type', 0)
-                        ->orWhere('is_important', 1)
-                        ->offset(1)->limit(4)
-                        ->get();
-        
+                            ->where('is_hide', 0)
+                            ->where('post_type', 0)
+                            ->where('id', '!=', $first_post[0]->id)
+                            ->whereNotNull('menu_id')
+                            ->limit(4)
+                            ->get();
+
         $mega_posts = Post::orderBy('created_at', 'desc')
                         ->where('is_hide', 0)
                         ->where('post_type', 1)

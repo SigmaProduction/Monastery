@@ -16,12 +16,14 @@ class SalediengController extends Controller
         $saledieng_family_subname = SalediengFamily::find($id)->subname;
         $saledieng_family_name = SalediengFamily::find($id)->name;
         $first_saledieng_post = Post::orderBy('created_at', 'desc')
+                        ->where('is_hide', 0)
                         ->whereNotNull('saledieng_family_id')
                         ->where('saledieng_family_id', $id)
                         ->take(1)->get();
 
         $saledieng_posts = Post::orderBy('created_at', 'desc')
-                    ->where('saledieng_family_id', $id)->offset(1)->paginate(10);
+                    ->where('is_hide', 0)
+                    ->where('saledieng_family_id', $id)->offset(1)->paginate(12);
 
         return view('saledieng', compact('saledieng_family_subname', 'saledieng_family_name','first_saledieng_post','saledieng_posts'));
     }

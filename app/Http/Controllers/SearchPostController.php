@@ -18,9 +18,9 @@ class SearchPostController extends Controller
             $query->where('title', 'like', '%' . $request->get('search') . '%');
         }
 
-        $query->orderBy('created_at', 'desc');
-        $posts = $query->paginate(10);
-
+        $query->orderBy('created_at', 'desc')->where('is_hide', 0);
+        $posts = $query->paginate(12);
+        
         return view('posts.post-search', compact('posts'));
     }
 }

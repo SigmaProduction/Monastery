@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="contact__img">
-                        <img src="/assets/images/img/IMG-8.png" alt="nha dong" />
+                        <img src="/assets/images/img/FMA.png" alt="nha dong" />
                     </div>
                 </div>
             </div>

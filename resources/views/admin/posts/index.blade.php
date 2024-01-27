@@ -8,12 +8,12 @@
         <div class="card-body">
             <form action="{{ route('admin.posts.index') }}" method="get">
                 <div class="input-group mb-3">
-                    <div class="col-md-2">
+                    <div class="col-md-4">
                         <input type="text" name="search" class="form-control" placeholder="Search by title..." value="{{ request('search') }}">
                     </div>
 
                     <!-- Dropdown for menu_id -->
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <select class="form-control" id="menu_id" name="menu_id">
                             <option value="">Select Menu</option>
                             @foreach ($menus as $id => $name)
@@ -25,7 +25,7 @@
                     </div>
 
                     <!-- Dropdown for category_id -->
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <select id="category_id" name="category_id" class="form-control">
                             <option value="">Select Category</option>
                             @foreach($categories as $category)
@@ -37,8 +37,8 @@
                     </div>
 
                     <!-- Dropdown for post_type -->
-                    <div class="col-md-3">
-                        <select class="form-control" name="post_type">
+                    <div class="col-md-4">
+                        <select class="form-control mt-2" name="post_type">
                             <option value="" {{ request('post_type') == null ? 'selected' : '' }}>Select Post type</option>
                             @foreach ($postTypes as $type => $value)
                                 @if ($value == 0)
@@ -54,9 +54,24 @@
                         </select>
                     </div>
 
+                    <div class="col-md-4">
+                        <div class="form-group mt-2">
+                            <label for="is_hide" id="is_hide_label" class="form-group">Is Hide
+                                <input type="checkbox" id="is_hide" name="is_hide" value="1" {{ old('is_hide') ? 'checked' : '' }}>
+                            </label>
+                        </div>
+                    </div>
 
-                    <div class="input-group col-md-1">
-                        <button type="submit" class="btn btn-primary form-control">Search</button>
+                    <div class="col-md-4">
+                        <div class="form-group mt-2">
+                            <label for="is_important" id="is_important_label" class="form-group">Is Important
+                                <input type="checkbox" id="is_important" name="is_important" value="1" {{ old('is_important') ? 'checked' : '' }}>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="input-group col-md-3">
+                        <button type="submit" class="btn btn-primary form-control mt-2">Search</button>
                     </div>
                 </div>
             </form>
