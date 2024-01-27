@@ -87,3 +87,6 @@ Brief description or introduction of the project.
   ```
 
 - For more detailed troubleshooting, refer to the Docker and Laravel documentation.
+
+## About us reset page
+- example page: about-us-example.md
