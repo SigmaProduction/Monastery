@@ -10,7 +10,7 @@
     <div class="header-wrap">
         <!--  master heading news -->
         <div class="heading__post">
-            <div class="heading__post--img" style="background-image: url('/assets/images/img/IMG-3.png');">
+            <div class="heading__post--img" style="background-image: url('/assets/images/img/donation.jpg');">
                 <div class="heading__post--center">
                     <h1>Quyên Góp</h1>
                     <nav class="heading__post--breadcrumb" aria-label="breadcrumb">

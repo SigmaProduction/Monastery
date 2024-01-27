@@ -140,6 +140,9 @@
                                         <li class="item">
                                             <a href="https://ktcgkpv.org/" target="_blank">Các Giờ Kinh Phụng Vụ </a>
                                         </li>
+                                        <li class="item">
+                                            <a href="{{ url('/quyen-gop') }}" target="_blank">Quyên Góp </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
