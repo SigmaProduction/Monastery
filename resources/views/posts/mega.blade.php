@@ -3,7 +3,7 @@
 @section('title', 'Mega story')
 @section('url', Request::url())
 @section('description', 'Mega story')
-@section('image', 'https://stg.fmavtn.org/assets/images/img/img-default.jpg')
+@section('image', 'https://www.fmavtn.org/assets/images/img/img-default.jpg')
 
 @section('content')
 <section>
