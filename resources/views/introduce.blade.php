@@ -3,7 +3,7 @@
 @section('title', 'Giới thiệu')
 @section('url', Request::url())
 @section('description', $about_us[0]->description)
-@section('image', 'https://stg.fmavtn.org/assets/images/img/img-default.jpg')
+@section('image', 'https://www.fmavtn.org/assets/images/img/img-default.jpg')
 
 @section('content')
 <!-- ================================= Content ================================= -->

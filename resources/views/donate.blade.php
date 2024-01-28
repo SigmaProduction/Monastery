@@ -3,7 +3,7 @@
 @section('title', 'Quyên góp')
 @section('url', Request::url())
 @section('description', 'Quý vị vui lòng điền đầy đủ thông tin để nhà Dòng tiện liên lạc. Xin Chúa chúc lành cho Quý Vị. Xin chân thành cám ơn!')
-@section('image', 'https://stg.fmavtn.org/assets/images/img/img-default.jpg')
+@section('image', 'https://www.fmavtn.org/assets/images/img/img-default.jpg')
 
 @section('content')
 <section>

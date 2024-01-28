@@ -3,7 +3,7 @@
 @section('title', $category)
 @section('url', Request::url())
 @section('description', $category)
-@section('image', 'https://stg.fmavtn.org/assets/images/img/IMG-3.png')
+@section('image', 'https://www.fmavtn.org/assets/images/img/IMG-3.png')
 
 @section('content')
 <section>
