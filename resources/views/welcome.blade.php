@@ -3,7 +3,7 @@
 @section('title', 'DÒNG CON ĐỨC MẸ PHÙ HỘ')
 @section('url', 'http://fmavtn.org')
 @section('description', 'Website chính thức của Dòng Con Đức Mẹ Phù Hộ (FMA) - Việt Nam')
-@section('image', 'https://stg.fmavtn.org/assets/images/img/img-default.jpg')
+@section('image', 'https://www.fmavtn.org/assets/images/img/img-default.jpg')
 
 @section('content')
 <div class="header-wrap">
