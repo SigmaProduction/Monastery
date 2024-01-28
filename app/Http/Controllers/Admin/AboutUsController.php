@@ -45,7 +45,8 @@ class AboutUsController extends Controller
                 $filename = time() . '.' . $file->getClientOriginalExtension();
                 $imagePath = 'images/about_us/' . $aboutUsId . '/' . $filename;
                 // Move the image to the specified directory
-                $file->move(public_path('images/about_us/' . $aboutUsId), $filename);
+                // $file->move(public_path('images/about_us/' . $aboutUsId), $filename);
+                $file->move(base_path('/images/about_us/'.$aboutUsId), $filename);
                 $data[$imageField] = $imagePath;
             }
         }
@@ -69,7 +70,7 @@ class AboutUsController extends Controller
         $imageName = time().'.'.$request->image->extension();
         $imagePath = 'images/about_us/' . $aboutUsId . '/' . $imageName;
 
-        $request->image->move(public_path('images/about_us/' . $aboutUsId), $imageName);
+        $request->image->move(base_path('images/about_us/' . $aboutUsId), $imageName);
 
         // Store image details in the database
         $aboutUsImage = AboutUsImage::create([
