@@ -76,7 +76,7 @@ class SalediengFamiliesController extends Controller
             $imagePath = 'images/saledieng_families/' . $imageName;
 
             // Move the uploaded file to the desired location
-            $file->move(public_path('images/saledieng_families'), $imageName);
+            $file->move(base_path() . '/images/saledieng_families' , $imageName);
 
             $validatedData['image'] = $imagePath;
         }
@@ -110,7 +110,7 @@ class SalediengFamiliesController extends Controller
             $imagePath = 'images/saledieng_families/' . $imageName;
 
             // Move the uploaded file to the desired location
-            $file->move(public_path('images/saledieng_families'), $imageName);
+            $file->move(base_path() . '/images/saledieng_families/' , $imageName);
 
             $validatedData['image'] = $imagePath;
         }
