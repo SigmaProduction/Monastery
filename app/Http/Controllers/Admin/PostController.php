@@ -142,7 +142,7 @@ class PostController extends Controller
             $imageName = time().'.'.$file->extension();
             $imagePath = 'image/post_images/' . $post->id . '/' . $imageName;
 
-            $file->move(public_path('image/post_images/' . $post->id), $imageName);
+            $file->move(base_path('image/post_images/' . $post->id), $imageName);
 
             $postImage = new PostImage();
             $postImage->image_path = $imagePath;
@@ -201,7 +201,7 @@ class PostController extends Controller
             $imageName = time().'.'.$file->extension();
             $imagePath = 'image/post_images/' . $post->id . '/' . $imageName;
 
-            $file->move(public_path('image/post_images/' . $post->id), $imageName);
+            $file->move(base_path('image/post_images/' . $post->id), $imageName);
 
             $validatedData['image'] = $imagePath;
         }
@@ -238,7 +238,7 @@ class PostController extends Controller
             $imageName = time().'.'.$file->extension();
             $imagePath = '/image/post_images/' . $imageName;
 
-            $file->move(public_path('image/post_images'), $imageName);
+            $file->move(base_path() . '/image/post_images/' , $imageName);
 
             $imageUrl = asset($imagePath);
             return response()->json(['url' => $imageUrl]);

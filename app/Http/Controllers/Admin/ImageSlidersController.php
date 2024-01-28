@@ -60,7 +60,7 @@ class ImageSlidersController extends Controller
         if ($request->file('url')) {
             $image = $request->file('url');
             $new_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images/image_sliders'), $new_name);
+            $image->move(base_path('images/image_sliders'), $new_name);
             $url_path = '/images/image_sliders/' . $new_name;
         }
 
@@ -99,7 +99,7 @@ class ImageSlidersController extends Controller
             $imageName = time().'.'.$file->extension();
             $imagePath = 'image/image_sliders/' . $imageName;
 
-            $file->move(public_path('image/image_sliders/'), $imageName);
+            $file->move(base_path('image/image_sliders/'), $imageName);
 
             $validatedData['url'] = $imagePath;
         }
