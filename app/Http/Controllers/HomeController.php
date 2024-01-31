@@ -110,4 +110,9 @@ class HomeController extends Controller
     {
         return view('donate');
     }
+
+    public function html_content()
+    {
+        return view('html-content');
+    }
 }
