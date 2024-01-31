@@ -50,8 +50,9 @@
                                 {{date('d/m/Y', strtotime($post_detail->created_at));}}
                             </div>
                             <div class="detail__sub--shared">
-                                <div class="fb-like" data-href="'{{Request::url()}}'" data-width="100px" data-layout="" data-action="" data-size="" data-share="true"></div>
-                                <!-- <img src="/assets/images/img/share-face.png" alt="share" /> -->
+                                <div id="fb-root"></div>
+                                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v19.0&appId=234792643829801" nonce="Rb7ioyvy"></script>
+                                <div class="fb-like" data-href="{{Request::url()}}" data-width="" data-layout="" data-action="" data-size="" data-share="true"></div>
                             </div>
                         </div>
 

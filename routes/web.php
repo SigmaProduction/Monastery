@@ -32,6 +32,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/gioi-thieu', [HomeController::class, 'introduce'])->name('introduce');
 Route::get('/ho-tro', [HomeController::class, 'support']);
 Route::get('/quyen-gop', [HomeController::class, 'donate']);
+Route::get('/html-content', [HomeController::class, 'html_content']);
 
 Route::get('/news', [CategoriePostController::class, 'list_post_all'])->name('post_all');
 Route::get('news/{menu?}', [CategoriePostController::class, 'list_post_menu'])->name('list.menus');

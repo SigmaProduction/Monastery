@@ -243,18 +243,18 @@
                             @foreach($categories_important as $category_important)
                             <div class="swiper-slide">
                                 <div class="categories__cart">
-                                    @if(!empty($category_important->posts->sortDesc()->first()))
-                                        <a href="{{ route('detail.post', ['id' => $category_important->posts->sortDesc()->first()->id, 'title' => $category_important->posts->sortDesc()->first()->title]) }}">
+                                    @if(!empty($category_important->posts->where('is_hide', 0)->sortDesc()->first()))
+                                        <a href="{{ route('detail.post', ['id' => $category_important->posts->where('is_hide', 0)->sortDesc()->first()->id, 'title' => $category_important->posts->where('is_hide', 0)->sortDesc()->first()->title]) }}">
                                             <div class="categories__cart--post">
                                                 <div class="post__img">
-                                                    @if(empty($category_important->posts->sortDesc()->first()->image))
+                                                    @if(empty($category_important->posts->where('is_hide', 0)->sortDesc()->first()->image))
                                                         <img src="/assets/images/img/img-default.jpg" alt="slider" />
                                                     @else
-                                                        <img src="{{ asset($category_important->posts->sortDesc()->first()->image) }}" alt="img" />
+                                                        <img src="{{ asset($category_important->posts->where('is_hide', 0)->sortDesc()->first()->image) }}" alt="img" />
                                                     @endif
                                                 </div>
                                                 <p class="post__content">
-                                                    {{ $category_important->posts->sortDesc()->first()->title }}
+                                                    {{ $category_important->posts->where('is_hide', 0)->sortDesc()->first()->title }}
                                                 </p>
                                             </div>
                                         </a>

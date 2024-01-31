@@ -140,7 +140,7 @@
                                     <div class="footer__list footer__list--access">
                                         <ul>
                                             <li class="item">
-                                            Số lượng truy cập trong ngày: 10
+                                            Số lượng truy cập trong ngày: {{count(Session::all())}}
                                             </li>
                                             <li class="item">
                                                 Tổng số lượng truy cập: 100
@@ -184,7 +184,7 @@
                             </div>
                             <!-- Flick link -->
                             <div class="col-md-3">
-                                <div class="footer__title">Liên kết flick</div>
+                                <div class="footer__title">Liên kết flickr</div>
                                 <a href="https://www.flickr.com/photos/fmavtn/albums" class="footer__img-flick" target="_blank">
                                     <img src="/assets/images/img/img-flick.png" alt="flick" />
                                 </a>
