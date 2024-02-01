@@ -43,9 +43,14 @@
             <div class="col-md-6">
                 <div class="donation__topic">Tại Việt Nam, xin chuyển khoản như sau:</div>
                 <div class="donation__info">
-                Tên tài khoản: Đang cập nhật... <br/>
-                Số tài khoản (VND): Đang cập nhật...<br/>
-                Ngân hàng: Đang cập nhật...
+                Tên tài khoản: {{ $donate[0]->bank_account_name }} <br/>
+                @if(!empty($donate[0]->bank_account_number))
+                    Số tài khoản (VND): {{$donate[0]->bank_account_number}}<br/>
+                @else
+                    Số tài khoản (VND): Đang cập nhật...<br/>
+                @endif
+                
+                Ngân hàng: {{$donate[0]->bank_branch_name}}
                 </div>
             </div>
             <div class="col-md-6"></div>
