@@ -6,6 +6,7 @@ use App\Models\ImageSlider;
 use App\Models\Post;
 use App\Models\AboutUs;
 use App\Models\Category;
+use App\Models\MonetaryInformation;
 use App\Models\SalediengMonth;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Validator;
@@ -108,7 +109,8 @@ class HomeController extends Controller
 
     public function donate()
     {
-        return view('donate');
+        $donate = MonetaryInformation::limit(1)->get();
+        return view('donate',compact('donate'));
     }
 
     public function html_content()
